@@ -228,6 +228,7 @@
         <span class="go">▶</span></a>` : `<div class="continue done">🏆 Du hast alle Lektionen geschafft! Mach ein Schnellquiz.</div>`}
       <div class="fact pop-in"><b>⚡ Fakt des Tages</b><p>${fact}</p></div>
       <h2 class="section-title">Wähle dein Thema</h2>
+      <p class="sub">${allLessons().length} Lektionen · ${allLessons().reduce((n, l) => n + l.cards.length, 0)} Lernkarten · ${Object.keys(P.done).length} geschafft</p>
       <div class="cats">${cats.map(catCard).join("")}</div>
       <a class="big-btn red pop-in" href="#/quiz">🎯 Schnellquiz starten</a>
     `);
@@ -246,15 +247,15 @@
       if (!q) { res.innerHTML = ""; cats.hidden = false; return; }
       const hits = allLessons().filter((l) => (l.title + " " + l.cat.name + " " + l.cards.map((c) => c.h + " " + c.t).join(" ")).toLowerCase().includes(q));
       cats.hidden = true;
-      res.innerHTML = hits.length ? `<div class="lessons">${hits.map(lessonRow).join("")}</div>` : `<p class="empty">Nichts gefunden 🤔</p>`;
+      res.innerHTML = hits.length ? `<p class="sub">${hits.length} Treffer</p><div class="lessons">${hits.map((l, i) => lessonRow(l, i)).join("")}</div>` : `<p class="empty">Nichts gefunden 🤔</p>`;
       hydratePics(res);
     });
   }
 
-  function lessonRow(l, i = 0) {
+  function lessonRow(l, i = 0, num = 0) {
     const sc = P.done[l.id];
-    return `<a class="lesson pop-in" style="--d:${i * 40}ms" href="#/lektion/${l.id}">
-      ${pic(l.w, l.emoji, "mini")}
+    return `<a class="lesson pop-in" style="--d:${Math.min(i, 12) * 40}ms" href="#/lektion/${l.id}">
+      ${num ? `<span class="num">${num}</span>` : ""}${pic(l.w, l.emoji, "mini")}
       <div><b>${esc(l.title)}</b><small>${l.cards.length} Karten · ${l.quiz.length} Fragen</small></div>
       <span class="state">${sc == null ? "▶" : sc === 100 ? "🏆" : "✅"}</span></a>`;
   }
@@ -270,9 +271,10 @@
         <div><h1>${esc(c.name)}</h1><p>${esc(c.desc)}</p></div>
         <button class="fav ${fav ? "on" : ""}" id="fav" aria-label="Favorit">${fav ? "💛" : "🤍"}</button>
       </section>
-      <div class="lessons">${c.lessons.map(lessonRow).join("")}</div>
-      <h2 class="section-title">📺 Videos zum Thema</h2>
-      <div class="yt-list">${c.lessons.flatMap((l) => l.yt).map(ytCard).join("")}</div>
+      <div class="cat-stats"><span>📚 ${c.lessons.length} Lektionen</span><span>🃏 ${c.lessons.reduce((n, l) => n + l.cards.length, 0)} Lernkarten</span><span>❓ ${c.lessons.reduce((n, l) => n + l.quiz.length, 0)} Fragen</span></div>
+      <div class="lessons">${c.lessons.map((l, i) => lessonRow(l, i, i + 1)).join("")}</div>
+      <details class="vid-group" style="--c:${c.color}"><summary>📺 Videos zum Thema</summary>
+      <div class="yt-list">${c.lessons.map((l) => ytCard(l.yt[0])).join("")}</div></details>
     `);
     $("#fav").onclick = () => {
       S.favs = fav ? S.favs.filter((x) => x !== c.id) : [...S.favs, c.id];

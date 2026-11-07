@@ -359,3 +359,8 @@ body[data-theme="nacht"] .bonus { color: var(--yellow); }
 
 body.noanim *, body.noanim *::before, body.noanim *::after { animation: none !important; transition: none !important; }
 @media (prefers-reduced-motion: reduce) { .confetti, .burst { display: none; } }
+
+.num { flex: none; width: 28px; height: 28px; border-radius: 50%; display: grid; place-items: center; background: var(--yellow); border: 2px solid var(--ink); font-weight: 900; font-size: .8em; color: #0b0f2a; }
+.cat-stats { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 12px; font-weight: 900; font-size: .85em; }
+.cat-stats span { background: var(--card); border: 2px solid var(--ink); border-radius: 99px; padding: 4px 12px; }
+.cat-head + .cat-stats { margin-top: -2px; }

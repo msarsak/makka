@@ -1,6 +1,6 @@
 // Offline-Unterstützung: App-Dateien und geladene Bilder werden zwischengespeichert.
-const CACHE = "skova-v1";
-const CORE = ["./", "index.html", "css/style.css", "js/data.js", "js/app.js", "manifest.webmanifest", "icons/icon.svg", "icons/icon-192.png", "icons/icon-512.png"];
+const CACHE = "skova-v2";
+const CORE = ["./", "index.html", "css/style.css", "js/data.js", "js/app.js", "js/more/politik.js", "js/more/wissen.js", "js/more/laender.js", "js/more/kriege.js", "js/more/geschichte.js", "js/more/wissenschaft.js", "js/more/weltraum.js", "js/more/natur.js", "js/more/geld.js", "js/more/technik.js", "manifest.webmanifest", "icons/icon.svg", "icons/icon-192.png", "icons/icon-512.png"];
 
 self.addEventListener("install", (e) => {
   e.waitUntil(caches.open(CACHE).then((c) => c.addAll(CORE)).then(() => self.skipWaiting()));

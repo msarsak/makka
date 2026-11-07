@@ -528,3 +528,15 @@ const CHANNELS = [
   { name: "logo! Nachrichten", topic: "Nachrichten für Kinder" },
   { name: "Wissen macht Ah!", topic: "Allgemeinwissen" }
 ];
+
+// Kompaktes Format für weitere Lektionen (siehe js/more/*.js):
+// [id, titel, emoji, wiki, [[überschrift, emoji, wiki, text], ...], [[frage, richtig, falsch, falsch, falsch, erklärung], ...], [youtube-suchen]?]
+function addLessons(catId, list) {
+  const c = CATEGORIES.find((x) => x.id === catId);
+  list.forEach(([id, title, emoji, w, cards, quiz, yt]) => c.lessons.push({
+    id: catId + "-" + id, title, emoji, w,
+    cards: cards.map(([h, e, w, t]) => ({ h, e, w, t })),
+    quiz: quiz.map((q) => ({ q: q[0], a: q.slice(1, -1), c: 0, x: q[q.length - 1] })),
+    yt: yt || [title + " einfach erklärt", title + " Doku deutsch"]
+  }));
+}
