@@ -311,7 +311,7 @@ body[data-theme="nacht"] .bonus { color: var(--yellow); }
   background: var(--blue); border-top: 4px solid var(--red);
   padding: 6px 4px calc(6px + env(safe-area-inset-bottom));
 }
-.nav a { display: flex; flex-direction: column; align-items: center; color: #fff; font-weight: 900; font-size: .7em; padding: 4px 8px; border-radius: 12px; transition: all .2s; min-width: 58px; }
+.nav a { display: flex; flex-direction: column; align-items: center; color: #fff; font-weight: 900; font-size: .7em; padding: 4px 4px; border-radius: 12px; transition: all .2s; min-width: 50px; flex: 1; max-width: 90px; }
 .nav a span { font-size: 22px; transition: transform .2s; }
 .nav a.on { background: var(--yellow); color: var(--ink); }
 .nav a.on span { transform: translateY(-3px) scale(1.15); }
@@ -398,3 +398,17 @@ body[data-theme="spinne"] .more-box { background: #eef3ff; }
 .modal-box { max-height: 92vh; overflow-y: auto; }
 .modal-box b { display: block; text-align: left; margin-top: 8px; }
 .modal-box .age-btn b { margin: 0; }
+
+/* ---------- Krasse Fakten ---------- */
+a.fact { display: block; }
+.fact small { display: block; margin-top: 6px; font-weight: 900; opacity: .75; }
+.fgrid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 10px; }
+.fgroup { display: flex; flex-direction: column; gap: 3px; padding: 12px; background: var(--card); border: var(--line); border-radius: var(--radius); box-shadow: var(--shadow); transition: transform .15s; --c: var(--red); }
+.fgroup:hover { transform: translateY(-3px) rotate(-.5deg); }
+.fgroup:active { transform: translate(3px, 3px); box-shadow: 2px 2px 0 var(--ink); }
+.fg-emoji { font-size: 34px; line-height: 1.1; }
+.fgroup small { color: var(--muted); font-weight: 700; font-size: .78em; }
+.card-text.big { font-size: 1.18em; font-weight: 700; line-height: 1.55; }
+.icon-btn.on { background: var(--yellow); color: #0b0f2a; }
+.icon-btn:disabled { cursor: default; }
+@media (max-width: 380px) { .nav a { font-size: .62em; } .nav a span { font-size: 20px; } }

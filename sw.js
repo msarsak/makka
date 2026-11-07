@@ -1,6 +1,6 @@
 // Offline-Unterstützung: App-Dateien und geladene Bilder werden zwischengespeichert.
-const CACHE = "skova-v3";
-const CORE = ["./", "index.html", "css/style.css", "js/data.js", "js/app.js", "js/more/politik.js", "js/more/wissen.js", "js/more/laender.js", "js/more/kriege.js", "js/more/geschichte.js", "js/more/wissenschaft.js", "js/more/weltraum.js", "js/more/natur.js", "js/more/geld.js", "js/more/technik.js", "js/levels/politik.js", "js/levels/wissen.js", "js/levels/laender.js", "js/levels/kriege.js", "js/levels/geschichte.js", "js/levels/wissenschaft.js", "js/levels/weltraum.js", "js/levels/natur.js", "js/levels/geld.js", "js/levels/technik.js", "manifest.webmanifest", "icons/icon.svg", "icons/icon-192.png", "icons/icon-512.png"];
+const CACHE = "skova-v4";
+const CORE = ["./", "index.html", "css/style.css", "js/data.js", "js/app.js", "js/more/politik.js", "js/more/wissen.js", "js/more/laender.js", "js/more/kriege.js", "js/more/geschichte.js", "js/more/wissenschaft.js", "js/more/weltraum.js", "js/more/natur.js", "js/more/geld.js", "js/more/technik.js", "js/levels/politik.js", "js/levels/wissen.js", "js/levels/laender.js", "js/levels/kriege.js", "js/levels/geschichte.js", "js/levels/wissenschaft.js", "js/levels/weltraum.js", "js/levels/natur.js", "js/levels/geld.js", "js/levels/technik.js", "js/facts/themen-a.js", "js/facts/themen-b.js", "js/facts/laender-a.js", "js/facts/laender-b.js", "manifest.webmanifest", "icons/icon.svg", "icons/icon-192.png", "icons/icon-512.png"];
 
 self.addEventListener("install", (e) => {
   e.waitUntil(caches.open(CACHE).then((c) => c.addAll(CORE)).then(() => self.skipWaiting()));

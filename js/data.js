@@ -544,3 +544,10 @@ function addLessons(catId, list) {
 // Erklär-Stufen: pro Lektion für jede Karte [Kinder-Text, Zusatz für Erwachsene] (siehe js/levels/*.js)
 var LEVELS = {};
 function LV(map) { Object.assign(LEVELS, map); }
+
+// Krasse Fakten: Themen-Sammlungen und Länder-Steckbriefe (siehe js/facts/*.js)
+// FX(id, titel, emoji, wiki, art ("thema" | "land"), [[emoji, wiki, text], ...])
+var FACTGROUPS = [];
+function FX(id, title, emoji, w, kind, facts) {
+  FACTGROUPS.push({ id, title, emoji, w, kind, facts: facts.map(([e, w, t]) => ({ e, w, t })) });
+}

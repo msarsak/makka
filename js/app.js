@@ -252,7 +252,9 @@
 
   function home() {
     const name = esc(prof().name || "Held");
-    const fact = FACTS[Math.floor(Date.now() / 864e5) % FACTS.length];
+    const pool = allFacts(), day = Math.floor(Date.now() / 864e5);
+    const ff = pool.length ? pool[(day * 7919) % pool.length] : null;
+    const fact = ff ? `${ff.f.e} ${esc(ff.f.t)}` : FACTS[day % FACTS.length];
     const goalPct = Math.min(100, Math.round((P.todayXp / S.goal) * 100));
     const last = P.last && findLesson(P.last);
     const next = allLessons().find((l) => P.done[l.id] == null);
@@ -273,7 +275,7 @@
         ${pic(cont.w, cont.emoji, "mini")}
         <div><small>${last && cont === last ? "Weiterlernen" : "Als Nächstes"} · ${esc(cont.cat.name)}</small><b>${esc(cont.title)}</b></div>
         <span class="go">▶</span></a>` : `<div class="continue done">🏆 Du hast alle Lektionen geschafft! Mach ein Schnellquiz.</div>`}
-      <div class="fact pop-in"><b>⚡ Fakt des Tages</b><p>${fact}</p></div>
+      <a class="fact pop-in" href="${ff ? "#/fakten/" + ff.g.id + "/" + ff.i : "#/fakten"}"><b>⚡ Fakt des Tages</b><p>${fact}</p>${ff ? `<small>${ff.g.emoji} ${esc(ff.g.title)} · ${pool.length} krasse Fakten entdecken →</small>` : ""}</a>
       <h2 class="section-title">Wähle dein Thema</h2>
       <p class="sub">${allLessons().length} Lektionen · ${allLessons().reduce((n, l) => n + l.cards.length, 0)} Lernkarten · ${Object.keys(P.done).length} geschafft</p>
       <div class="cats">${cats.map(catCard).join("")}</div>
@@ -517,6 +519,82 @@
     show();
   }
 
+  // ---------- Krasse Fakten ----------
+  const fgroups = () => (window.FACTGROUPS || []);
+  const allFacts = () => fgroups().flatMap((g) => g.facts.map((f, i) => ({ g, f, i, k: g.id + ":" + i })));
+  const seenOf = (g) => g.facts.filter((_, i) => (P.seen || {})[g.id + ":" + i]).length;
+  function factGroupCard(g, i) {
+    const s = seenOf(g);
+    return `<a class="fgroup pop-in" style="--d:${Math.min(i, 15) * 30}ms" href="#/fakten/${g.id}">
+      <span class="fg-emoji">${g.emoji}</span><b>${esc(g.title)}</b>
+      <small>${s}/${g.facts.length} gelesen</small>
+      <span class="bar"><b style="width:${(s / g.facts.length) * 100}%"></b></span></a>`;
+  }
+  function factsHome() {
+    const all = allFacts(), seen = Object.keys(P.seen || {}).length, favs = (P.favFacts || []).length;
+    const themen = fgroups().filter((g) => g.kind === "thema");
+    const laender = fgroups().filter((g) => g.kind === "land").sort((a, b) => a.title.localeCompare(b.title, "de"));
+    view(`
+      <h1 class="page-title">🤯 Krasse Fakten</h1>
+      <p class="sub">${all.length} ungewöhnliche Fakten · ${seen} gelesen. Wische von Fakt zu Fakt!</p>
+      <div class="row">
+        <a class="big-btn red grow" href="#/fakten/zufall">🎲 Zufalls-Fakt</a>
+        <a class="big-btn blue grow" href="#/fakten/favs">❤️ Gemerkt (${favs})</a>
+      </div>
+      <h2 class="section-title">📚 Nach Thema</h2>
+      <div class="fgrid">${themen.map(factGroupCard).join("")}</div>
+      <h2 class="section-title">🌍 Länder-Steckbriefe</h2>
+      <input id="fsearch" class="search" type="search" placeholder="🔍 Land suchen …" autocomplete="off">
+      <div class="fgrid" id="lgrid">${laender.map(factGroupCard).join("")}</div>
+    `);
+    $("#fsearch").addEventListener("input", (e) => {
+      const q = e.target.value.trim().toLowerCase();
+      $("#lgrid").innerHTML = laender.filter((g) => g.title.toLowerCase().includes(q)).map(factGroupCard).join("") || `<p class="empty">Kein Land gefunden 🤔</p>`;
+    });
+  }
+  function factView(gid, start) {
+    const all = allFacts();
+    let list, title, emoji, back = "#/fakten";
+    if (gid === "zufall") { list = shuffle(all); title = "Zufalls-Fakten"; emoji = "🎲"; }
+    else if (gid === "favs") { const fk = P.favFacts || []; list = all.filter((x) => fk.includes(x.k)); title = "Gemerkte Fakten"; emoji = "❤️"; }
+    else { const g = fgroups().find((x) => x.id === gid); if (!g) return go("#/fakten"); list = all.filter((x) => x.g === g); title = g.title; emoji = g.emoji; }
+    if (!list.length) return view(`<a class="back" href="${back}">← Fakten</a><div class="card result"><div class="trophy">❤️</div><h2>Noch nichts gemerkt</h2><p>Tippe bei einem Fakt auf ❤️, um ihn hier zu sammeln.</p><a class="big-btn blue" href="#/fakten/zufall">🎲 Zufalls-Fakt</a></div>`);
+    let idx = Math.min(Math.max(+start || 0, 0), list.length - 1);
+    function show() {
+      const x = list[idx], f = x.f;
+      P.seen = P.seen || {}; P.favFacts = P.favFacts || []; P.wow = P.wow || {};
+      if (!P.seen[x.k]) { P.seen[x.k] = 1; saveP(); }
+      const fav = P.favFacts.includes(x.k), wow = P.wow[x.k];
+      view(`
+        <div class="lesson-top"><a class="close" href="${back}">✕</a>
+          <div class="progress"><b style="width:${((idx + 1) / list.length) * 100}%"></b></div>
+          <span class="combo">${idx + 1}/${list.length}</span></div>
+        <div class="stage"><div class="card learn fact-card slide-in">
+          ${pic(f.w || x.g.w, f.e, "large")}
+          <small class="tag" style="--c:var(--red)">${x.g.emoji} ${esc(x.g.title)}</small>
+          <p class="card-text big">${esc(f.t)}</p>
+          <div class="row">
+            <button class="icon-btn" id="read">🔊 Vorlesen</button>
+            <button class="icon-btn ${fav ? "on" : ""}" id="fav">${fav ? "❤️ Gemerkt" : "🤍 Merken"}</button>
+            <button class="icon-btn ${wow ? "on" : ""}" id="wow" ${wow ? "disabled" : ""}>${wow ? "🤯 Neu gelernt!" : "🤯 Wusste ich nicht!"}</button>
+            ${f.w ? `<a class="icon-btn" href="${wikiUrl(f.w)}" target="_blank" rel="noopener">📖 Mehr</a>` : ""}
+          </div>
+          <div class="row nav-row">
+            ${idx > 0 ? `<button class="big-btn ghost" id="prev">←</button>` : ""}
+            <button class="big-btn blue grow" id="next">${idx < list.length - 1 ? "Nächster Fakt →" : "Fertig 🏁"}</button>
+          </div>
+        </div></div>`, "lesson-view");
+      $("#read").onclick = () => speak(f.t);
+      if (S.autoRead) speak(f.t);
+      $("#fav").onclick = () => { P.favFacts = fav ? P.favFacts.filter((k) => k !== x.k) : [...P.favFacts, x.k]; saveP(); beep("click"); show(); };
+      $("#wow").onclick = () => { P.wow[x.k] = 1; saveP(); beep("ok"); burst("WOW!"); addXp(2); show(); };
+      $("#next").onclick = () => { if (idx < list.length - 1) { idx++; beep("click"); show(); } else { confetti(60); go(back); } };
+      const p = $("#prev"); if (p) p.onclick = () => { idx--; show(); };
+      swipe($(".card"), () => $("#next").click(), () => p && p.click());
+    }
+    show();
+  }
+
   // ---------- Videos ----------
   function videos() {
     view(`
@@ -714,6 +792,7 @@
     if (page === "videos") return videos();
     if (page === "einstellungen") return settings();
     if (page === "profil") return profilePage();
+    if (page === "fakten") return arg ? factView(arg, h.split("/")[3]) : factsHome();
     home();
   }
 
