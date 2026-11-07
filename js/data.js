@@ -540,3 +540,7 @@ function addLessons(catId, list) {
     yt: yt || [title + " einfach erklärt", title + " Doku deutsch"]
   }));
 }
+
+// Erklär-Stufen: pro Lektion für jede Karte [Kinder-Text, Zusatz für Erwachsene] (siehe js/levels/*.js)
+var LEVELS = {};
+function LV(map) { Object.assign(LEVELS, map); }

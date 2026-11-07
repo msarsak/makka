@@ -1,0 +1,125 @@
+LV({
+"atome":[
+["Alles besteht aus winzig kleinen Teilchen. Sie heißen Atome.","Ein Atom ist etwa ein Zehnmillionstel Millimeter groß. Schon der Grieche Demokrit vermutete vor 2.400 Jahren unteilbare Teilchen – „atomos“."],
+["In der Mitte vom Atom ist ein Kern. Drumherum flitzen kleine Teilchen.","Ernest Rutherford entdeckte 1911 den Atomkern, indem er Alphateilchen auf Goldfolie schoss. Fast die gesamte Masse steckt im Kern."],
+["Es gibt über 100 verschiedene Sorten von Atomen.","Das Periodensystem ordnete Dmitri Mendelejew 1869. Er sagte sogar Eigenschaften noch unentdeckter Elemente richtig voraus. Heute kennt man 118 Elemente."],
+["Atome halten sich aneinander fest. Wasser ist so ein Team.","In einem Glas Wasser stecken mehr Moleküle, als es Gläser Wasser in allen Ozeanen gibt."]],
+"schwerkraft":[
+["Alles fällt nach unten, weil die Erde es anzieht.","Newton erkannte, dass dieselbe Kraft den Apfel fallen lässt und den Mond auf seiner Bahn hält. Sein Werk „Principia“ erschien 1687."],
+["Große Dinge ziehen stärker. Auf dem Mond könntest du ganz hoch springen.","Die Schwerkraft nimmt mit dem Quadrat der Entfernung ab. Auf dem Jupiter würdest du etwa zweieinhalbmal so viel wiegen wie auf der Erde."],
+["Der Mond zieht am Meer. Darum gibt es Ebbe und Flut.","Auch die Sonne beeinflusst die Gezeiten. Stehen Sonne und Mond in einer Linie, entsteht eine besonders hohe Springflut."],
+["Einstein hat erklärt, dass schwere Dinge den Raum verbiegen.","Einsteins allgemeine Relativitätstheorie von 1915 sagte Gravitationswellen voraus. Sie wurden 2015 erstmals direkt gemessen."]],
+"dinos":[
+["Dinosaurier lebten vor sehr, sehr langer Zeit. Menschen gab es da noch nicht.","Das Zeitalter der Dinosaurier umfasst Trias, Jura und Kreide. Der Name bedeutet „schreckliche Echse“."],
+["Der T-Rex war riesig und hatte große Zähne.","Der T. rex lebte am Ende der Kreidezeit vor etwa 68 bis 66 Millionen Jahren. Der Stegosaurus lebte schon über 80 Millionen Jahre früher."],
+["Ein riesiger Stein aus dem All ist auf die Erde gefallen. Danach starben die meisten Dinos.","Der Asteroid war rund zehn Kilometer groß. Der Krater auf der mexikanischen Halbinsel Yucatán ist etwa 180 Kilometer breit."],
+["Vögel sind die Enkel der Dinosaurier!","Viele Dinosaurier hatten Federn. Der Archaeopteryx aus Bayern war ein wichtiges Bindeglied zwischen Dinosauriern und Vögeln."]],
+"wissenschaft-strom":[
+["Strom sind winzige Teilchen, die durch Kabel fließen.","Die Stromstärke wird in Ampere gemessen, die Spannung in Volt. In deutschen Steckdosen liegen 230 Volt Wechselspannung an."],
+["Metall leitet Strom gut. Plastik nicht.","Stoffe, die keinen Strom leiten, heißen Isolatoren. Halbleiter wie Silizium liegen dazwischen – auf ihnen beruht die gesamte Computertechnik."],
+["Strom fließt nur im Kreis. Mit dem Schalter machst du den Kreis zu.","In einer Reihenschaltung fließt derselbe Strom durch alle Geräte; fällt eins aus, erlischt alles. Im Haushalt sind Geräte darum parallel geschaltet."],
+["Strom aus der Steckdose ist gefährlich! Nie mit Metall hineinfassen.","Schon Ströme von etwa 50 Milliampere durch den Körper können lebensgefährlich sein. FI-Schutzschalter schalten bei Fehlerströmen blitzschnell ab."],
+["Wenn du einen Ballon an deinen Haaren reibst, stehen sie hoch.","Beim Reiben wandern Elektronen von einem Stoff zum anderen. Gleich geladene Haare stoßen sich ab und stellen sich auf."]],
+"wissenschaft-magnet":[
+["Magnete können Eisen anziehen.","Magnetisch sind vor allem Eisen, Nickel und Kobalt. Starke Dauermagnete bestehen oft aus Neodym, einem Metall der Seltenen Erden."],
+["Jeder Magnet hat zwei Enden. Gleiche Enden stoßen sich weg.","Zerbricht man einen Magneten, entstehen zwei neue Magnete mit je eigenem Nord- und Südpol."],
+["Die Erde ist selbst ein riesiger Magnet.","Das Magnetfeld entsteht durch flüssiges Eisen im äußeren Erdkern. Es hat sich in der Erdgeschichte schon viele Male umgepolt."],
+["Ein Kompass zeigt immer nach Norden.","Der magnetische Nordpol liegt nicht genau am geografischen Nordpol und wandert jedes Jahr ein Stück."],
+["Am Himmel gibt es manchmal grüne Lichter. Man nennt sie Polarlichter.","Bei starken Sonnenstürmen sind Polarlichter auch in Deutschland zu sehen, zuletzt etwa im Mai 2024."]],
+"wissenschaft-licht":[
+["Licht ist das Schnellste, was es gibt.","Ole Rømer schätzte die Lichtgeschwindigkeit 1676 erstmals anhand der Jupitermonde. Heute ist sie exakt auf 299.792.458 m/s festgelegt."],
+["Wenn etwas im Licht steht, gibt es einen Schatten.","Bei einer großen Lichtquelle entsteht ein Kernschatten und ein heller Halbschatten. Das sieht man auch bei Sonnenfinsternissen."],
+["Im Spiegel siehst du dich selbst.","Spiegel bestehen meist aus Glas mit einer dünnen Silber- oder Aluminiumschicht. Einfallswinkel und Ausfallswinkel sind dabei immer gleich."],
+["Ein Stift im Wasserglas sieht aus, als wäre er geknickt.","Licht ist in Wasser langsamer als in Luft. Diese Brechung nutzt man in Linsen und Glasfaserkabeln."],
+["Brillen helfen Menschen, besser zu sehen.","Kurzsichtige brauchen Zerstreuungslinsen, Weitsichtige Sammellinsen. Die ersten Lesebrillen gab es im 13. Jahrhundert in Italien."]],
+"wissenschaft-schall":[
+["Wenn etwas wackelt, macht es ein Geräusch.","Schall ist eine Druckwelle. Die Lautstärke misst man in Dezibel; ab etwa 85 dB über längere Zeit kann das Gehör Schaden nehmen."],
+["Schall ist langsamer als Licht. Darum siehst du den Blitz vor dem Donner.","In Wasser ist Schall etwa viermal, in Stahl sogar etwa fünfzehnmal schneller als in Luft."],
+["Im Weltall ist es ganz still.","Ohne Medium gibt es keine Schallwellen. Explosionen im Weltraum sind im Film also nur für das Publikum hörbar."],
+["In den Bergen hörst du dein Rufen noch mal. Das ist ein Echo.","Ein Echo hört man getrennt, wenn die Wand mindestens etwa 17 Meter entfernt ist. Schiffe messen mit Echolot die Wassertiefe."],
+["Manche Tiere hören Töne, die du nicht hören kannst.","Menschen hören etwa 20 bis 20.000 Hertz. Elefanten verständigen sich auch mit tiefem Infraschall über weite Entfernungen."]],
+"wissenschaft-zustaende":[
+["Wasser kann Eis, Wasser oder Dampf sein.","Es gibt weitere Zustände wie Plasma, das in Blitzen und Sternen vorkommt. Bei Sublimation wird ein Stoff direkt von fest zu gasförmig."],
+["Wenn Eis warm wird, schmilzt es.","Salz senkt den Gefrierpunkt von Wasser – darum wird im Winter Salz gestreut."],
+["Wenn Wasser ganz heiß wird, kocht es und wird zu Dampf.","Auf hohen Bergen kocht Wasser schon unter 100 °C, weil der Luftdruck geringer ist. Auf dem Everest sind es etwa 70 °C."],
+["Eis schwimmt oben auf dem Wasser.","Wasser hat bei 4 °C seine größte Dichte. Dieses Wasser sinkt nach unten, sodass Seen am Grund meist nicht zufrieren."],
+["An einem kalten Glas bilden sich Wassertropfen.","Auch Tau am Morgen und beschlagene Brillen entstehen durch Kondensation. Wolken bilden sich nach demselben Prinzip."]],
+"wissenschaft-feuer":[
+["Feuer braucht drei Sachen: etwas zum Brennen, Luft und Hitze.","Die Flamme ist leuchtendes Gas. Ihre Farbe zeigt grob die Temperatur: Blaue Flammen sind heißer als gelbe."],
+["Wenn man eine Sache wegnimmt, geht das Feuer aus.","Feuerlöscher arbeiten mit Wasser, Schaum, Pulver oder CO₂ – je nachdem, was brennt."],
+["Brennendes Fett nie mit Wasser löschen! Lieber einen Deckel drauf.","Das Wasser verdampft schlagartig unter dem heißen Fett und reißt brennendes Fett als Feuerball mit sich."],
+["Wenn etwas brennt, entstehen Rauch, Licht und Wärme.","Bei unvollständiger Verbrennung entsteht das giftige, geruchlose Kohlenmonoxid."],
+["Ein Rauchmelder piept laut, wenn es brennt.","In Deutschland sind Rauchmelder in allen Bundesländern Pflicht. Sie sollten regelmäßig getestet werden."]],
+"wissenschaft-zellen":[
+["Alle Lebewesen sind aus winzigen Bausteinen gemacht. Sie heißen Zellen.","Robert Hooke prägte 1665 den Begriff, als er Kork unter dem Mikroskop betrachtete. Der Mensch besteht aus etwa 30 bis 40 Billionen Zellen."],
+["Zellen sind so klein, dass man ein Mikroskop braucht.","Eine Ausnahme ist die Eizelle des Menschen, die gerade noch mit bloßem Auge erkennbar ist. Das größte Einzelzell-Ei ist das des Straußes."],
+["Es gibt viele Arten von Zellen, zum Beispiel für Muskeln oder Blut.","Rote Blutkörperchen haben keinen Zellkern und leben etwa 120 Tage. Nervenzellen können über einen Meter lang werden."],
+["In der Zelle gibt es einen Kern. Dort steht der Bauplan.","Menschliche Zellen haben 46 Chromosomen im Kern. Die Energie liefern die Mitochondrien, die „Kraftwerke“ der Zelle."],
+["Pflanzen machen sich mit Sonnenlicht ihr Essen selbst.","Chloroplasten waren ursprünglich eigenständige Bakterien, die vor sehr langer Zeit von einer anderen Zelle aufgenommen wurden."]],
+"wissenschaft-dna":[
+["In dir steckt ein Bauplan. Er heißt DNA.","Ausgestreckt wäre die DNA einer einzigen Zelle etwa zwei Meter lang. Das menschliche Erbgut umfasst rund drei Milliarden Bausteine."],
+["Die DNA sieht aus wie eine gedrehte Leiter.","James Watson und Francis Crick beschrieben die Struktur 1953 – mit entscheidender Hilfe von Röntgenbildern Rosalind Franklins."],
+["Die Hälfte von deinem Bauplan kommt von Mama, die andere von Papa.","Darum ähneln Geschwister sich, sind aber nicht gleich. Gregor Mendel entdeckte die Vererbungsregeln im 19. Jahrhundert an Erbsen."],
+["Menschen und Schimpansen haben fast den gleichen Bauplan.","Kleine Unterschiede in der DNA können große Wirkung haben, weil sie steuern, wann und wie stark Gene aktiv sind."],
+["Jeder Mensch hat einen eigenen Bauplan. Das hilft der Polizei.","Seit 2003 ist das gesamte menschliche Genom entschlüsselt. Mit der Genschere CRISPR kann man DNA heute gezielt verändern."]],
+"wissenschaft-keime":[
+["Bakterien sind winzige Lebewesen. Sie sind überall.","Bakterien gehören zu den ältesten Lebewesen der Erde – es gibt sie seit über drei Milliarden Jahren."],
+["Viele Bakterien sind gut. Sie helfen dir beim Verdauen.","Im Darm leben ungefähr genauso viele Bakterien, wie der Körper Zellen hat. Sie beeinflussen sogar das Immunsystem."],
+["Viren sind noch kleiner. Sie machen dich manchmal krank.","Viren haben keinen eigenen Stoffwechsel. Darum streiten Forscher, ob sie als Lebewesen gelten."],
+["Hände waschen mit Seife schützt vor Krankheiten.","Der Arzt Ignaz Semmelweis zeigte schon 1847, dass Händedesinfektion das Kindbettfieber drastisch senkt – er wurde damals verspottet."],
+["Medizin gegen Bakterien hilft nicht bei Schnupfen.","Zu häufiger Einsatz von Antibiotika fördert Resistenzen: Bakterien, gegen die Medikamente nicht mehr wirken."]],
+"wissenschaft-medizin":[
+["Ein Arzt hat die erste Impfung erfunden.","Das Wort Vakzin kommt vom lateinischen „vacca“ (Kuh) – in Erinnerung an Jenners Kuhpocken."],
+["Eine Impfung trainiert deinen Körper. Dann kann er Krankheiten besser abwehren.","Werden genug Menschen geimpft, sind auch Ungeimpfte geschützt – das nennt man Herdenimmunität. Moderne mRNA-Impfstoffe wurden während der Corona-Pandemie zugelassen."],
+["Eine schlimme Krankheit gibt es dank Impfungen nicht mehr.","Die Pocken sind bislang die einzige ausgerottete menschliche Krankheit. Die Kinderlähmung ist kurz davor."],
+["Ein Forscher hat aus Schimmel ein Medikament gemacht.","Penicillin wurde erst in den 1940er-Jahren in großen Mengen hergestellt und rettete im Zweiten Weltkrieg viele Leben. Fleming erhielt 1945 den Nobelpreis."],
+["Mit Röntgenstrahlen kann man in den Körper schauen.","Röntgen erhielt 1901 den allerersten Nobelpreis für Physik. Er verzichtete auf ein Patent, damit alle die Technik nutzen konnten."]],
+"wissenschaft-evolution":[
+["Tiere und Pflanzen verändern sich ganz langsam über sehr lange Zeit.","Das Leben auf der Erde begann vor über 3,5 Milliarden Jahren. Alle Lebewesen haben gemeinsame Vorfahren."],
+["Tiere, die gut zu ihrer Umgebung passen, überleben besser.","Veränderungen entstehen durch zufällige Mutationen im Erbgut. Die Umwelt „wählt“ dann aus, welche sich durchsetzen."],
+["Darwin hat Vögel mit verschiedenen Schnäbeln gesehen.","Forscher beobachten bei den Darwinfinken bis heute, wie sich Schnabelgrößen nach Dürrejahren innerhalb weniger Generationen ändern."],
+["Versteinerte Knochen zeigen, wie Tiere früher aussahen.","Fossilien entstehen nur unter besonderen Bedingungen, etwa wenn ein Tier schnell von Schlamm bedeckt wird."],
+["Menschen und Affen haben gemeinsame Vorfahren.","Bekannt ist das Skelett „Lucy“, ein rund 3,2 Millionen Jahre alter Vormensch aus Äthiopien. Neandertaler und Homo sapiens bekamen sogar gemeinsame Kinder."]],
+"wissenschaft-vulkane":[
+["Aus einem Vulkan kann heißes, flüssiges Gestein kommen.","Weltweit gibt es rund 1.500 potenziell aktive Vulkane an Land. Die meisten liegen an den Grenzen von Erdplatten."],
+["Das flüssige Gestein heißt Lava. Es ist sehr heiß.","Zähflüssige Lava führt oft zu explosiven Ausbrüchen, dünnflüssige wie auf Hawaii zu ruhigen Lavaströmen."],
+["Rund um den Pazifik gibt es ganz viele Vulkane.","Dort taucht ozeanische Kruste unter andere Platten ab und schmilzt. Etwa drei Viertel aller aktiven Vulkane liegen am Feuerring."],
+["Auch in Deutschland gab es Vulkane!","Der Laacher See in der Eifel entstand vor rund 13.000 Jahren durch einen gewaltigen Ausbruch. Bis heute steigen dort Gasblasen auf."],
+["Vulkanerde ist gut für Pflanzen.","Vulkane beeinflussen auch das Klima: Der Ausbruch des Tambora 1815 führte 1816 zum „Jahr ohne Sommer“."]],
+"wissenschaft-erdbeben":[
+["Die Erde ist aus großen Stücken gemacht, die sich ganz langsam bewegen.","Die Theorie der Kontinentaldrift stellte Alfred Wegener 1912 auf. Sie wurde erst Jahrzehnte später allgemein anerkannt."],
+["Wenn die Stücke ruckeln, bebt die Erde.","Die Stärke misst man heute mit der Momenten-Magnituden-Skala. Ein Punkt mehr bedeutet etwa 32-mal mehr freigesetzte Energie."],
+["Ein Erdbeben im Meer kann riesige Wellen machen.","Der Tsunami im Indischen Ozean 2004 tötete über 200.000 Menschen. Heute gibt es dort ein Frühwarnsystem."],
+["Wenn zwei Stücke zusammenstoßen, entstehen Berge.","Der Himalaya entsteht, weil Indien auf Asien drückt. Auch die Alpen entstanden durch den Zusammenstoß von Afrika und Europa."],
+["Früher waren alle Kontinente zusammen. Sie hießen Pangaea.","Die Küsten von Südamerika und Afrika passen wie Puzzleteile zusammen – ein früher Hinweis auf Pangaea."]],
+"wissenschaft-erdaufbau":[
+["Die Erde hat Schichten, wie eine Zwiebel.","Was wir über das Erdinnere wissen, stammt vor allem aus der Messung von Erdbebenwellen, die verschiedene Schichten unterschiedlich durchlaufen."],
+["Wir leben ganz oben auf einer dünnen Schicht.","Die Kruste ist unter den Ozeanen etwa 5 bis 10 Kilometer dick, unter Gebirgen bis zu 70 Kilometer."],
+["Darunter ist heißes Gestein, das sich ganz langsam bewegt.","Der Mantel macht über 80 Prozent des Erdvolumens aus. Konvektionsströme im Mantel bewegen die Platten."],
+["Ganz innen ist die Erde super heiß.","Der äußere Kern ist flüssig, der innere fest – weil der enorme Druck das Eisen trotz der Hitze fest hält."],
+["Niemand war je im Inneren der Erde.","Die Kola-Bohrung in Russland erreichte 1989 rund 12,3 Kilometer. In der Tiefe war es bereits etwa 180 °C heiß."]],
+"wissenschaft-saeuren":[
+["Zitronen schmecken sauer. Darin ist Säure.","Säuren geben in Wasser Wasserstoff-Ionen ab. Starke Säuren wie Salzsäure sind ätzend und gefährlich."],
+["Seife fühlt sich glitschig an. Sie ist das Gegenteil von sauer.","Laugen können ebenfalls ätzen, zum Beispiel Rohrreiniger. Mischt man Säure und Lauge, neutralisieren sie sich zu Salz und Wasser."],
+["Mit einer Zahl misst man, wie sauer etwas ist.","Die pH-Skala ist logarithmisch: pH 3 ist zehnmal saurer als pH 4. Unsere Haut ist mit etwa pH 5,5 leicht sauer."],
+["Rotkohlsaft wechselt die Farbe. Ein lustiges Experiment!","Der Farbstoff im Rotkohl gehört zu den Anthocyanen. Darum heißt er je nach Region und Zubereitung Rotkohl oder Blaukraut."],
+["In deinem Bauch ist Säure. Sie hilft bei der Verdauung.","Magensäure hat einen pH-Wert von etwa 1 bis 2. Eine Schleimschicht schützt die Magenwand davor, sich selbst zu verdauen."]],
+"wissenschaft-methode":[
+["Forscher fangen mit einer Frage an.","Die moderne wissenschaftliche Methode entwickelte sich vor allem im 16. und 17. Jahrhundert, etwa mit Francis Bacon und Galileo Galilei."],
+["Dann raten sie, was die Antwort sein könnte.","Eine Hypothese muss überprüfbar sein. Der Philosoph Karl Popper betonte, dass sie grundsätzlich widerlegbar sein muss."],
+["Dann probieren sie es aus. Das nennt man Experiment.","Gute Experimente ändern nur eine Sache gleichzeitig und haben eine Kontrollgruppe. In der Medizin weiß oft weder Arzt noch Patient, wer das echte Mittel bekommt (Doppelblindstudie)."],
+["Sie messen ganz genau, was passiert.","Bevor Forschung veröffentlicht wird, prüfen andere Fachleute sie im Peer-Review-Verfahren."],
+["Auch wenn man sich irrt, lernt man etwas.","Eine „Theorie“ ist in der Wissenschaft kein bloßes Raten, sondern ein gut geprüftes Erklärungsmodell, etwa die Evolutionstheorie."]],
+"wissenschaft-temperatur":[
+["Wenn etwas warm ist, bewegen sich seine Teilchen schnell.","Temperatur ist ein Maß für die mittlere Bewegungsenergie der Teilchen. Wärme ist die Energie, die dabei übertragen wird."],
+["Mit einem Thermometer misst man, wie warm es ist.","Die Celsius-Skala wurde 1742 von Anders Celsius vorgeschlagen – ursprünglich andersherum, mit 100 als Gefrierpunkt."],
+["In Amerika misst man Temperatur anders.","Die normale Körpertemperatur liegt bei etwa 37 °C, das sind rund 98,6 °F. 100 °F entsprechen etwa 38 °C."],
+["Kälter als minus 273 Grad geht es nicht.","In der Physik misst man oft in Kelvin: 0 Kelvin ist der absolute Nullpunkt. Im Labor erreicht man Temperaturen knapp darüber."],
+["Wärme geht immer vom Warmen zum Kalten.","Wärme wird durch Leitung, Strömung (Konvektion) und Strahlung übertragen. Eine Thermoskanne bremst alle drei."]],
+"wissenschaft-maschinen":[
+["Es gibt einfache Tricks, um schwere Dinge leichter zu bewegen.","Bei einfachen Maschinen gilt die „goldene Regel der Mechanik“: Was man an Kraft spart, muss man an Weg zusetzen."],
+["Mit einer langen Stange kannst du schwere Steine hochheben.","Archimedes soll gesagt haben: „Gebt mir einen festen Punkt, und ich hebe die Welt aus den Angeln.“ Auch Schere und Zange sind Hebel."],
+["Eine Rampe macht das Hochschieben leichter.","Auch Schrauben und Keile sind schiefe Ebenen. Die Pyramiden wurden vermutlich mit Rampen gebaut."],
+["Mit Rollen und Seilen kann man ganz schwere Sachen heben.","Bei einem Flaschenzug mit vier tragenden Seilstücken braucht man nur etwa ein Viertel der Kraft – muss aber viermal so viel Seil ziehen."],
+["Zahnräder geben Bewegung weiter, zum Beispiel beim Fahrrad.","Das Übersetzungsverhältnis ergibt sich aus der Zahl der Zähne. Ein großes vorderes und kleines hinteres Ritzel bringt hohe Geschwindigkeit."]]
+});

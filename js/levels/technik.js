@@ -1,0 +1,126 @@
+LV({
+"internet":[
+["Das Internet verbindet Computer und Handys auf der ganzen Welt.","Über 95 Prozent des interkontinentalen Datenverkehrs laufen durch Unterseekabel. Weltweit nutzen über fünf Milliarden Menschen das Internet."],
+["Vor über 50 Jahren wurden die ersten Computer verbunden.","Das ARPANET wurde vom US-Verteidigungsministerium gefördert. Ein wichtiger Meilenstein war 1983 die Umstellung auf das Protokoll TCP/IP."],
+["Ein Forscher hat Webseiten mit Links erfunden. Daher kommt das www.","Die erste Webseite ging 1991 online und ist heute noch abrufbar. Berners-Lee verzichtete auf Patente, damit das Web für alle frei bleibt."],
+["Wenn du ein Foto schickst, wird es in kleine Stücke geteilt.","Jedes Gerät im Netz hat eine IP-Adresse. Das DNS übersetzt Namen wie „wikipedia.org“ in diese Zahlenadressen – wie ein Telefonbuch."]],
+"ki":[
+["KI ist ein Computerprogramm, das Dinge lernen kann.","Der Begriff „Künstliche Intelligenz“ wurde 1956 auf einer Konferenz in Dartmouth geprägt. Heute basieren viele KI-Systeme auf neuronalen Netzen."],
+["Eine KI lernt, indem sie ganz viele Beispiele anschaut.","Große Sprachmodelle werden mit riesigen Textmengen trainiert und lernen, Wörter vorherzusagen. Dafür braucht es enorme Rechenleistung."],
+["KI hilft uns zum Beispiel beim Übersetzen.","KI wird auch in der Medizin eingesetzt, etwa um Röntgenbilder auszuwerten, und hilft Forschern, Proteinstrukturen vorherzusagen."],
+["KI kann sich auch irren. Prüf wichtige Sachen lieber nach.","Falsche, aber überzeugend klingende Antworten nennt man „Halluzinationen“. Die EU regelt KI-Anwendungen seit 2024 mit dem AI Act."]],
+"technik-computer":[
+["Computer rechnen nur mit 0 und 1.","Eine einzelne 0 oder 1 heißt Bit, acht Bits ergeben ein Byte. Ein Byte kann zum Beispiel einen Buchstaben speichern."],
+["Ein Deutscher hat einen der ersten Computer gebaut.","Die Original-Z3 wurde 1943 bei einem Bombenangriff zerstört. Ein Nachbau steht im Deutschen Museum in München."],
+["Der Prozessor ist das Gehirn vom Computer.","Moderne Prozessoren enthalten Milliarden Transistoren auf einer Fläche kleiner als ein Fingernagel."],
+["Der Computer hat ein Kurzzeit- und ein Langzeitgedächtnis.","Der Arbeitsspeicher (RAM) verliert beim Ausschalten seinen Inhalt. SSDs speichern Daten dauerhaft in Flash-Speicherzellen."],
+["Früher waren Computer so groß wie ein Zimmer.","Der amerikanische ENIAC von 1945 wog rund 27 Tonnen und hatte etwa 17.000 Elektronenröhren."]],
+"technik-smartphone":[
+["Ein Smartphone ist ein kleiner Computer zum Mitnehmen.","Ein Smartphone hat heute mehr Rechenleistung als Supercomputer der 1990er-Jahre."],
+["Das erste iPhone hat alles verändert.","Mit dem App Store ab 2008 entstand ein ganz neuer Markt. Heute laufen die meisten Smartphones mit Googles Android."],
+["Der Bildschirm merkt, wo dein Finger ist.","Kapazitive Touchscreens messen winzige Veränderungen eines elektrischen Feldes. Spezielle Handschuhe haben leitende Fingerspitzen."],
+["Im Handy stecken viele kleine Messgeräte.","Der Beschleunigungssensor erkennt, ob du das Handy drehst. Der Gyroskop-Sensor misst Drehbewegungen, etwa für Spiele."],
+["Alte Handys sollte man zurückgeben, damit sie recycelt werden.","In einem Handy stecken über 30 verschiedene Metalle, darunter Gold, Kupfer und Kobalt. Händler müssen Altgeräte in Deutschland zurücknehmen."]],
+"technik-programmieren":[
+["Beim Programmieren sagt man dem Computer, was er tun soll.","Programme bestehen aus Anweisungen, Bedingungen („wenn … dann“) und Schleifen, die etwas wiederholen."],
+["Eine Frau namens Ada hat das erste Programm geschrieben.","Ada Lovelace war die Tochter des Dichters Lord Byron. Die Programmiersprache „Ada“ ist nach ihr benannt."],
+["Es gibt viele Programmiersprachen, wie bei Menschen.","Python ist eine der beliebtesten Sprachen, etwa in Datenanalyse und KI. JavaScript läuft in jedem Webbrowser."],
+["Mit Scratch kannst du mit bunten Blöcken programmieren.","Scratch wurde am MIT entwickelt und ist kostenlos. Weltweit wurden damit Millionen Projekte erstellt."],
+["Ein Fehler im Programm heißt Bug. Das heißt Käfer.","Die Programmiererin Grace Hopper machte die Motten-Geschichte bekannt. Den Begriff „Bug“ für technische Fehler gab es aber schon vorher, etwa bei Edison."]],
+"technik-games":[
+["Eines der ersten Videospiele war ein Tennisspiel mit zwei Strichen.","Pong stammt von der Firma Atari. Schon 1958 gab es mit „Tennis for Two“ ein frühes Spiel auf einem Oszilloskop."],
+["Bei Tetris fallen Steine runter. Man muss Reihen füllen.","Erfinder ist Alexei Paschitnow. Weltweit bekannt wurde Tetris 1989 auf dem Nintendo Game Boy."],
+["Minecraft ist das meistverkaufte Spiel aller Zeiten.","Minecraft wurde von dem Schweden Markus Persson entwickelt und 2014 von Microsoft gekauft. Es wird auch im Schulunterricht eingesetzt."],
+["Viele Leute bauen zusammen an einem Spiel.","Große Spiele kosten heute oft Hunderte Millionen Euro. Die Spielebranche verdient weltweit mehr als die Film- und Musikindustrie zusammen."],
+["Spielen macht Spaß. Aber mach auch Pausen!","Die USK prüft in Deutschland Spiele und vergibt Altersfreigaben. Die WHO erkennt „Gaming Disorder“ seit 2019 als Krankheit an."]],
+"technik-roboter":[
+["Das Wort Roboter kommt von einem Wort für Arbeit.","Das Theaterstück hieß „R.U.R.“ von Karel Čapek. Der Schriftsteller Isaac Asimov erfand später die berühmten Robotergesetze."],
+["In Fabriken bauen Roboter Autos.","Der erste Industrieroboter, Unimate, arbeitete ab 1961 bei General Motors. Deutschland hat eine der höchsten Roboterdichten in der Industrie."],
+["Manche Roboter saugen den Boden oder mähen den Rasen.","Saugroboter nutzen Sensoren und Kameras oder Laser, um Karten der Wohnung zu erstellen."],
+["Ärzte benutzen Roboter bei Operationen.","Beim verbreiteten Da-Vinci-System steuert der Chirurg die Roboterarme von einer Konsole aus – der Roboter operiert nicht selbstständig."],
+["Roboter erkunden Orte, wo Menschen nicht hinkommen.","Tauchroboter erforschen die Tiefsee, andere Roboter arbeiten in Katastrophengebieten oder beim Rückbau von Atomanlagen."]],
+"technik-autos":[
+["Carl Benz hat das erste Auto gebaut.","Der Motorwagen hatte drei Räder und knapp ein PS. Unabhängig davon bauten Gottlieb Daimler und Wilhelm Maybach in Cannstatt ebenfalls frühe Autos."],
+["Bertha Benz ist als Erste weit mit dem Auto gefahren.","Ihre Fahrt von Mannheim nach Pforzheim bewies, dass das Auto alltagstauglich ist. Die Route ist heute die „Bertha Benz Memorial Route“."],
+["Henry Ford hat Autos ganz schnell am Fließband gebaut.","Durch das Fließband sank die Montagezeit eines Model T von über 12 auf rund 1,5 Stunden."],
+["Elektroautos fahren mit Strom statt Benzin.","Schon um 1900 gab es viele Elektroautos. Die EU hat beschlossen, dass ab 2035 neue Autos im Betrieb kein CO₂ mehr ausstoßen sollen."],
+["Forscher bauen Autos, die alleine fahren können.","Man unterscheidet fünf Stufen des automatisierten Fahrens. Robotaxis ohne Fahrer sind in einigen US-Städten bereits unterwegs."]],
+"technik-flugzeuge":[
+["Otto Lilienthal ist mit selbstgebauten Flügeln geflogen.","Lilienthal machte über 2.000 Gleitflüge. Er starb 1896 nach einem Absturz. Seine Messungen halfen den Brüdern Wright."],
+["Die Brüder Wright haben das erste Motorflugzeug geflogen.","Der erste Flug fand am 17. Dezember 1903 bei Kitty Hawk statt. Am selben Tag schafften sie einen Flug von 59 Sekunden."],
+["Die Flügel sind so geformt, dass die Luft das Flugzeug hochhebt.","Entscheidend ist auch der Anstellwinkel: Der Flügel lenkt Luft nach unten, und das Flugzeug wird nach oben gedrückt."],
+["Es gibt Flugzeuge, in die über 800 Menschen passen.","Der A380 wird in Hamburg und Toulouse montiert, seine Produktion endete 2021. Täglich sind weltweit über 100.000 Flüge unterwegs."],
+["Die Concorde war schneller als der Schall.","Die Concorde flog mit etwa doppelter Schallgeschwindigkeit. Wegen hoher Kosten und eines Absturzes im Jahr 2000 wurde sie stillgelegt."]],
+"technik-zuege":[
+["Die ersten Züge hatten Dampflokomotiven.","Die erste öffentliche Dampfeisenbahn fuhr 1825 in England zwischen Stockton und Darlington."],
+["Der ICE ist ein sehr schneller Zug in Deutschland.","Der ICE fährt seit 1991. Ein Testzug stellte 1988 mit über 400 km/h einen Weltrekord auf."],
+["In Japan fahren superschnelle und sehr pünktliche Züge.","Die durchschnittliche Verspätung der Shinkansen liegt bei weniger als einer Minute. Ihre Nase ist lang, um den Knall in Tunneln zu verringern."],
+["Manche Züge schweben über den Schienen – mit Magneten!","Die deutsche Magnetbahn Transrapid wurde in Shanghai gebaut, in Deutschland aber nie im Regelbetrieb eingesetzt. In Japan entsteht eine Magnetbahn für über 500 km/h."],
+["In der Schweiz gibt es den längsten Zugtunnel der Welt.","Der Gotthard-Basistunnel wurde 2016 eröffnet. Bis zu 2.300 Meter Fels liegen über dem Tunnel."]],
+"technik-telefon":[
+["Das Telefon wurde vor über 150 Jahren erfunden.","Philipp Reis' erster übertragener Satz soll „Das Pferd frisst keinen Gurkensalat“ gewesen sein. Auch Antonio Meucci arbeitete schon früher an ähnlichen Geräten."],
+["Früher haben Frauen die Anrufe mit Kabeln verbunden.","Der erste vollautomatische Wählbetrieb in Deutschland begann 1908 in Hildesheim. Die Handvermittlung verschwand in Deutschland erst in den 1960er-Jahren ganz."],
+["Ganz alte Telefone hatten eine Drehscheibe statt Tasten.","Tastentelefone setzten sich in den 1980er-Jahren durch. Die Wählscheibe sendete für jede Ziffer eine Anzahl von Stromimpulsen."],
+["Die ersten Handys waren riesig und schwer.","Das erste Handygespräch führte Martin Cooper von Motorola 1973 in New York. In Deutschland startete das digitale D-Netz 1992."],
+["Die erste SMS war ein Weihnachtsgruß.","SMS waren auf 160 Zeichen begrenzt. Diese Zahl ergab sich aus Tests, wie lang typische Postkarten und Telegramme sind."]],
+"technik-medien":[
+["Das Radio bringt Töne durch die Luft.","Am 29. Oktober 1923 startete in Berlin der Unterhaltungsrundfunk in Deutschland. Die Funkwellen sagte Heinrich Hertz voraus und wies sie nach."],
+["Früher war Fernsehen nur schwarz-weiß.","Die Fußball-WM 1954 und die Krönung Elisabeths II. 1953 sorgten dafür, dass viele Menschen erstmals fernsahen – oft gemeinsam vor Schaufenstern."],
+["Später gab es Fernsehen in Farbe.","Das Farbfernsehen nutzte das deutsche PAL-System, entwickelt von Walter Bruch. Der Start erfolgte per Knopfdruck durch Willy Brandt."],
+["Die Mondlandung haben ganz viele Menschen im Fernsehen gesehen.","Die Bilder wurden über Antennen in Australien und den USA empfangen und um die Welt übertragen."],
+["Heute schauen viele Videos im Internet.","Video-Streaming macht heute einen großen Teil des gesamten Internet-Datenverkehrs aus."]],
+"technik-foto":[
+["Das erste Foto hat viele Stunden gedauert.","Niépce nutzte eine mit Asphalt beschichtete Zinnplatte. Das Bild wird heute an der Universität von Texas aufbewahrt."],
+["Bei alten Fotos musste man lange stillhalten.","Mit der Daguerreotypie von 1839 dauerte eine Aufnahme zunächst mehrere Minuten. Fotografen nutzten Kopfstützen, damit niemand verwackelte."],
+["Früher hat man Fotos auf einem Film gespeichert.","George Eastman brachte 1888 mit der Kodak-Kamera die Fotografie zu allen: „Sie drücken den Knopf, wir erledigen den Rest.“"],
+["Heute speichert man Fotos auf dem Handy.","Die erste Digitalkamera baute ein Kodak-Ingenieur 1975. Heute werden jährlich über eine Billion Fotos gemacht, fast alle mit Smartphones."],
+["Eine Kamera funktioniert ähnlich wie dein Auge.","Die Camera obscura – ein dunkler Raum mit kleinem Loch – war schon in der Antike bekannt. Das Wort „Kamera“ stammt davon."]],
+"technik-kraftwerke":[
+["In fast jedem Kraftwerk dreht sich ein Generator. Dabei entsteht Strom.","Das Prinzip der elektromagnetischen Induktion entdeckte Michael Faraday 1831. Auch ein Fahrraddynamo funktioniert so."],
+["Kohlekraftwerke verbrennen Kohle. Dabei entsteht viel schlechtes Gas.","Deutschland will bis spätestens 2038 aus der Kohleverstromung aussteigen. Braunkohle gilt als besonders klimaschädlich."],
+["Atomkraftwerke machen Strom aus winzigen Teilchen.","Der Ausstieg wurde nach dem Unglück von Fukushima 2011 beschlossen. Die Frage der Endlagerung des Atommülls ist bis heute ungelöst."],
+["Fließendes Wasser kann auch Strom machen.","Pumpspeicherkraftwerke pumpen Wasser bei Stromüberschuss nach oben und lassen es bei Bedarf wieder herunterfließen."],
+["Über lange Leitungen kommt der Strom zu dir nach Hause.","In Europa schwingt der Wechselstrom 50-mal pro Sekunde (50 Hertz). Weicht diese Frequenz stark ab, droht ein Stromausfall."]],
+"technik-erneuerbar":[
+["Sonne und Wind gehen nie aus. Ihre Energie ist immer da.","Erneuerbare Energien verursachen im Betrieb kaum CO₂. Auch Biomasse und Erdwärme zählen dazu."],
+["Solarzellen machen aus Sonnenlicht Strom.","Solarzellen bestehen meist aus Silizium. Ihre Preise sind in den letzten Jahrzehnten um über 90 Prozent gefallen."],
+["Windräder drehen sich im Wind und machen Strom.","Moderne Windräder sind über 200 Meter hoch. Auf dem Meer (offshore) weht der Wind stärker und stetiger als an Land."],
+["In Deutschland kommt schon viel Strom aus Sonne und Wind.","Windkraft ist in Deutschland die wichtigste Stromquelle. An sonnigen, windigen Tagen decken Erneuerbare zeitweise fast den ganzen Bedarf."],
+["Man muss Strom speichern, für Zeiten ohne Sonne und Wind.","Neben Batterien gelten Wasserstoff und ein besserer Stromnetzausbau zwischen Nord- und Süddeutschland als wichtige Lösungen."]],
+"technik-3d-druck":[
+["Ein 3D-Drucker baut Sachen Schicht für Schicht.","Das gängigste Verfahren schmilzt einen Kunststoffdraht und trägt ihn auf. Andere Drucker härten flüssiges Harz mit Licht aus oder verschmelzen Metallpulver mit Lasern."],
+["Zuerst malt man das Ding am Computer.","Viele Vorlagen sind online kostenlos verfügbar. Mit 3D-Scannern kann man auch reale Gegenstände abbilden."],
+["Mit 3D-Druck macht man auch Sachen für die Medizin.","Ärzte nutzen gedruckte Modelle von Organen, um schwierige Operationen zu planen. Forscher arbeiten an gedrucktem Gewebe."],
+["Riesige Drucker können ganze Häuser drucken.","Das erste 3D-gedruckte Wohnhaus Deutschlands entstand 2021 in Beckum (Nordrhein-Westfalen)."],
+["Wenn ein Teil kaputt ist, kann man es manchmal selbst drucken.","Auch in der Raumfahrt wird gedruckt: Auf der ISS gibt es einen 3D-Drucker für Werkzeuge und Ersatzteile."]],
+"technik-socialmedia":[
+["Auf Social Media teilen Menschen Fotos und Videos.","Viele Plattformen erlauben ein Konto erst ab 13 Jahren. Mehrere Länder diskutieren strengere Altersgrenzen, Australien hat ein Verbot für unter 16-Jährige beschlossen."],
+["Ein Computerprogramm sucht aus, was du siehst.","Plattformen verdienen vor allem mit Werbung – je länger Menschen bleiben, desto mehr Anzeigen sehen sie."],
+["Likes machen glücklich. Darum will man immer mehr davon.","Unregelmäßige Belohnungen wirken besonders stark – ähnlich wie bei Spielautomaten. Funktionen wie endloses Scrollen verstärken das."],
+["Viele Fotos im Internet sind bearbeitet.","Studien zeigen, dass ständige Vergleiche mit geschönten Bildern das Selbstwertgefühl belasten können, besonders bei Jugendlichen."],
+["Wenn jemand im Internet gemein zu dir ist, sag es einem Erwachsenen.","Cybermobbing kann strafbar sein, etwa als Beleidigung oder Bedrohung. Plattformen müssen gemeldete rechtswidrige Inhalte nach EU-Recht prüfen."]],
+"technik-sicherheit":[
+["Ein gutes Passwort ist lang und schwer zu erraten.","Gut sind lange Passphrasen aus mehreren zufälligen Wörtern. Jedes zusätzliche Zeichen macht Rateangriffe exponentiell schwerer."],
+["Nimm für jedes Konto ein anderes Passwort.","Werden Passwörter bei einem Dienst gestohlen, probieren Angreifer sie automatisch bei anderen aus (Credential Stuffing). Ob die eigene Adresse betroffen ist, zeigen Dienste wie „Have I Been Pwned“."],
+["Mit einem extra Code vom Handy ist dein Konto viel sicherer.","Noch sicherer als SMS-Codes sind Authenticator-Apps oder Passkeys, die ganz ohne Passwort funktionieren."],
+["Deine Adresse gehört nicht ins Internet.","Auch Fotos können verraten, wo du bist, etwa durch Ortsdaten in der Bilddatei oder erkennbare Straßenschilder."],
+["Mach Updates auf deinem Handy. Dann ist es sicherer.","Viele große Cyberangriffe nutzten Sicherheitslücken, für die es längst Updates gab. Ältere Geräte bekommen irgendwann keine Updates mehr."]],
+"technik-bauwerke":[
+["Das höchste Haus der Welt steht in Dubai.","Der Burj Khalifa wurde 2010 eröffnet und hat über 160 Stockwerke. In Saudi-Arabien wird an einem noch höheren Turm gebaut."],
+["Hochhäuser haben innen ein Gerüst aus Stahl und Beton.","Der Durchbruch für Hochhäuser kam im 19. Jahrhundert mit Stahlskeletten und dem sicheren Aufzug von Elisha Otis."],
+["Hohe Häuser wackeln ein bisschen im Wind. Das ist normal.","Im Taipei 101 in Taiwan hängt eine rund 660 Tonnen schwere Stahlkugel als Schwingungsdämpfer – eine Touristenattraktion."],
+["Manche Brücken hängen an dicken Seilen.","Die Golden Gate Bridge wurde 1937 eröffnet. Ihre Farbe heißt offiziell „International Orange“."],
+["Die längste Brücke der Welt ist in China.","Die Brücke ist Teil einer Hochgeschwindigkeitsstrecke zwischen Peking und Shanghai. Viele lange Brücken sind Viadukte über Flüssen und Reisfeldern."]],
+"technik-akkus":[
+["Batterien speichern Strom zum Mitnehmen.","Eine Batterie wandelt chemische Energie in elektrische um. Einwegbatterien nennt man Primärzellen, Akkus Sekundärzellen."],
+["Ein Italiener hat die erste Batterie gebaut.","Voltas Säule bestand aus abwechselnden Zink- und Kupferscheiben mit salzgetränkter Pappe dazwischen."],
+["Akkus kann man wieder aufladen.","Für die Entwicklung der Lithium-Ionen-Akkus gab es 2019 den Chemie-Nobelpreis. Forscher arbeiten an Festkörper- und Natrium-Akkus."],
+["Alte Batterien gehören in eine Sammelbox, nicht in den Müll.","Beschädigte Lithium-Akkus können sich selbst entzünden und verursachen immer wieder Brände in Müllfahrzeugen und Recyclinganlagen."],
+["Akkus mögen keine Hitze und keine Kälte.","Am längsten halten Lithium-Akkus, wenn man sie meist zwischen etwa 20 und 80 Prozent Ladung nutzt."]],
+"technik-zukunft":[
+["Quantencomputer sind eine ganz neue Art von Computer.","Quantenbits (Qubits) können Überlagerungen von 0 und 1 annehmen. Sie sind sehr störanfällig und müssen oft nahe dem absoluten Nullpunkt gekühlt werden."],
+["Mit einer VR-Brille bist du in einer anderen Welt.","Bei Augmented Reality (AR) werden digitale Inhalte in die echte Umgebung eingeblendet, etwa bei Navigations- oder Spiele-Apps."],
+["Forscher wollen Energie machen wie die Sonne.","2022 gelang in den USA erstmals ein Fusionsexperiment, das mehr Energie freisetzte, als die Laser hineinsteckten. Bis zu Kraftwerken ist es noch ein weiter Weg."],
+["Im schlauen Haus steuerst du das Licht mit dem Handy.","Smart-Home-Geräte können Energie sparen, etwa durch automatisches Absenken der Heizung. Kritiker weisen auf Risiken für Datenschutz und Sicherheit hin."],
+["Vielleicht erfindest du eines Tages etwas Neues!","Viele wichtige Erfindungen kamen von jungen Menschen. Wettbewerbe wie „Jugend forscht“ fördern Nachwuchs in Wissenschaft und Technik."]]
+});

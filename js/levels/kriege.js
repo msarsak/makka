@@ -1,0 +1,125 @@
+LV({
+"ww1":[
+["Vor über 100 Jahren gab es einen großen Krieg in Europa. Viele Länder haben mitgemacht.","Die Mittelmächte waren Deutschland, Österreich-Ungarn, das Osmanische Reich und Bulgarien. Die USA traten 1917 auf Seiten der Entente ein."],
+["Ein Prinz wurde erschossen. Danach hat ein Land nach dem anderen mitgekämpft.","Der Attentäter Gavrilo Princip gehörte einer serbisch-nationalistischen Gruppe an. Die „Julikrise“ zeigte, wie Bündnisse und Fehleinschätzungen zum Krieg führten."],
+["Die Soldaten mussten in Gräben voller Matsch kämpfen. Das war schrecklich.","An der Westfront bewegte sich die Front jahrelang kaum. Bei Verdun und an der Somme starben 1916 Hunderttausende Soldaten."],
+["Sehr viele Menschen sind gestorben. Dann gab es einen Friedensvertrag.","Der Vertrag gab Deutschland die Alleinschuld am Krieg und verlangte hohe Reparationen. Das Kaiserreich endete 1918 mit der Novemberrevolution."]],
+"ww2":[
+["Deutschland hat 1939 einen schrecklichen Krieg angefangen. Es war der schlimmste Krieg überhaupt.","Kurz vorher hatte Hitler mit Stalin einen Nichtangriffspakt geschlossen. Großbritannien und Frankreich erklärten Deutschland zwei Tage nach dem Überfall auf Polen den Krieg."],
+["Die Nazis haben in Deutschland bestimmt. Sie waren sehr böse und wollten Krieg.","Nach der Machtübernahme 1933 wurden Parteien verboten, Gegner verfolgt und Juden schrittweise entrechtet, etwa durch die Nürnberger Gesetze von 1935."],
+["Die Nazis haben Millionen Menschen getötet, vor allem Juden. Wir erinnern uns daran, damit das nie wieder passiert.","Der Massenmord wurde in Vernichtungslagern wie Auschwitz-Birkenau organisiert. Der 27. Januar, der Tag der Befreiung von Auschwitz 1945, ist internationaler Holocaust-Gedenktag."],
+["1945 war der Krieg endlich vorbei.","Die Rote Armee eroberte Berlin, Hitler beging am 30. April Suizid. In Japan erklärte der Kaiser am 15. August die Kapitulation, die am 2. September unterzeichnet wurde."]],
+"kalterkrieg":[
+["Amerika und die Sowjetunion haben gestritten. Aber sie haben nicht direkt gegeneinander gekämpft.","Beide Supermächte rüsteten massiv mit Atomwaffen auf. Die gegenseitig gesicherte Zerstörung schreckte vor einem direkten Krieg ab, Stellvertreterkriege gab es dennoch."],
+["Die Welt war in zwei Teile geteilt: Westen und Osten.","Der Begriff „Eiserner Vorhang“ wurde 1946 durch eine Rede Winston Churchills bekannt. Der Westen gründete die NATO, der Osten den Warschauer Pakt."],
+["In Berlin wurde eine Mauer gebaut. Die Menschen durften nicht mehr in den Westen.","An der Mauer starben mindestens 140 Menschen bei Fluchtversuchen. Die DDR nannte sie „antifaschistischen Schutzwall“."],
+["Beide wollten als Erste ins Weltall. Am Ende flogen die Amerikaner zum Mond.","Michail Gorbatschows Reformen ab 1985 leiteten das Ende ein. Am 26. Dezember 1991 löste sich die Sowjetunion offiziell auf."]],
+"kriege-warum":[
+["Krieg ist, wenn Länder oder Gruppen mit Waffen gegeneinander kämpfen.","Das Völkerrecht verbietet seit der UN-Charta grundsätzlich Gewalt zwischen Staaten. Ausnahmen sind Selbstverteidigung und Beschlüsse des Sicherheitsrats."],
+["Oft streiten Länder um Land oder Macht.","Forscher nennen neben Machtinteressen auch Faktoren wie Armut, Ungleichheit, schwache Staaten und Nationalismus als Kriegsursachen."],
+["Manchmal kämpfen Menschen im gleichen Land gegeneinander.","Seit 1945 sind Bürgerkriege deutlich häufiger als Kriege zwischen Staaten. Oft mischen sich andere Länder ein."],
+["Im Krieg sind vor allem normale Menschen traurig. Sie müssen oft ihr Zuhause verlassen.","Weltweit waren zuletzt über 100 Millionen Menschen auf der Flucht, so viele wie nie zuvor seit Beginn der Statistik."],
+["Frieden ist ganz wichtig. Länder versuchen, Streit mit Reden zu lösen.","Diplomatie, Vermittlung durch neutrale Staaten und internationale Gerichte sind wichtige Werkzeuge der Friedenssicherung."]],
+"kriege-troja":[
+["Es gibt eine ganz alte Geschichte über einen Krieg um eine Stadt namens Troja.","Homers „Ilias“ schildert nur einige Wochen im zehnten Kriegsjahr. Die List mit dem Pferd wird vor allem in Vergils „Aeneis“ erzählt."],
+["Ein Prinz hat eine schöne Frau entführt. Darum gab es Streit.","Helena war die Frau des spartanischen Königs Menelaos. Ihr Bruder Agamemnon führte das griechische Heer an."],
+["Die Griechen haben die Stadt zehn Jahre lang eingekesselt.","Berühmte Helden der Sage sind Achilles, der nur an der Ferse verwundbar war, und der trojanische Held Hektor."],
+["Die Griechen haben ein Holzpferd gebaut und Soldaten darin versteckt.","Die Idee wird dem listigen Odysseus zugeschrieben. Ein „Trojanisches Pferd“ ist heute auch ein Schadprogramm, das sich als harmlose Software tarnt."],
+["Ein Forscher hat Reste einer alten Stadt ausgegraben. Vielleicht war das Troja.","Der Fundort heißt Hisarlık in der Nordwesttürkei. Dort liegen viele Siedlungsschichten übereinander; welche zum Troja der Sage passt, ist umstritten."]],
+"kriege-perser":[
+["Ein großes Reich wollte Griechenland erobern.","Das Perserreich der Achämeniden war damals das größte Reich der Welt und reichte von Ägypten bis Indien."],
+["Ein Bote ist ganz weit gerannt, um eine gute Nachricht zu bringen. Daher kommt der Marathonlauf.","Der olympische Marathon ist heute 42,195 km lang. Diese genaue Länge wurde bei den Spielen 1908 in London festgelegt."],
+["Wenige mutige Soldaten haben ein riesiges Heer aufgehalten.","Die Perser umgingen die Stellung über einen Bergpfad. Leonidas und seine Männer fielen, verschafften aber der griechischen Flotte Zeit."],
+["Die Griechen haben mit ihren Schiffen gewonnen.","Der Athener Themistokles lockte die größere persische Flotte in die enge Bucht, wo sie sich nicht entfalten konnte."],
+["Danach ging es Athen sehr gut. Es gab Theater und kluge Denker.","Unter Perikles wurde die Akropolis mit dem Parthenon neu gebaut. Diese Zeit gilt als Blüte der klassischen griechischen Kultur."]],
+"kriege-hannibal":[
+["Rom und Karthago haben lange gegeneinander gekämpft.","„Punisch“ kommt vom lateinischen Namen für die Phönizier, die Karthago gegründet hatten."],
+["Hannibal war ein sehr kluger Anführer aus Karthago.","Sein Vater soll ihn schon als Kind schwören lassen haben, ewig ein Feind Roms zu sein."],
+["Hannibal ist mit Elefanten über hohe Berge gezogen!","Von rund 37 Elefanten überlebten nur wenige den Marsch und den folgenden Winter. Auch viele Soldaten starben in Schnee und Kälte."],
+["Hannibal hat eine große Schlacht gewonnen.","Bei Cannae 216 v. Chr. kesselte Hannibal die Römer ein. Die Römer erlitten eine ihrer schwersten Niederlagen."],
+["Am Ende hat Rom gewonnen und Karthago zerstört.","Der römische Feldherr Scipio besiegte Hannibal 202 v. Chr. bei Zama in Afrika. Hannibal starb später im Exil."]],
+"kriege-kreuzzuege":[
+["Ritter aus Europa sind in ein fernes Land gezogen, um zu kämpfen.","Papst Urban II. rief 1095 in Clermont zum ersten Kreuzzug auf. Insgesamt zählt man meist sieben große Kreuzzüge."],
+["Es ging um die Stadt Jerusalem. Sie ist vielen Religionen heilig.","Für Christen ist sie Ort von Jesu Tod und Auferstehung, für Juden Standort des Tempels, für Muslime der Ort von Mohammeds Himmelsreise."],
+["Bei den Kämpfen sind viele Menschen gestorben.","Die Kreuzfahrer gründeten mehrere Kreuzfahrerstaaten, etwa das Königreich Jerusalem. Auch in Europa kam es zu Gewalt gegen Juden."],
+["Ein Herrscher namens Saladin hat Jerusalem zurückerobert.","Saladin besiegte die Kreuzfahrer 1187 in der Schlacht bei Hattin. Mit Richard Löwenherz handelte er später einen Waffenstillstand aus."],
+["Die Ritter haben neue Dinge nach Europa mitgebracht, zum Beispiel Gewürze.","Der Austausch lief vor allem über Handelsstädte wie Venedig und Genua sowie über Spanien und Sizilien."]],
+"kriege-jeanne":[
+["England und Frankreich haben über 100 Jahre lang immer wieder gekämpft.","Auslöser war der Anspruch des englischen Königs Eduard III. auf den französischen Thron. Am Ende blieb England nur die Stadt Calais."],
+["Die Engländer hatten sehr gute Bogenschützen.","In Schlachten wie Crécy (1346) und Azincourt (1415) besiegten englische Langbogenschützen weit überlegene französische Ritterheere."],
+["Ein junges Mädchen namens Jeanne wollte Frankreich helfen.","Jeanne d'Arc stammte aus Domrémy in Lothringen. Sie überzeugte den Thronfolger Karl, ihr Truppen anzuvertrauen."],
+["Jeanne hat geholfen, eine Stadt zu befreien. Das hat allen Mut gemacht.","Danach führte sie Karl zur Krönung nach Reims, wo er als Karl VII. gekrönt wurde."],
+["Jeanne wurde gefangen genommen. Heute ist sie eine Heldin in Frankreich.","Ein kirchliches Gericht in Rouen verurteilte sie. 1456 wurde das Urteil aufgehoben, 1920 sprach die Kirche sie heilig."]],
+"kriege-dreissig":[
+["Vor fast 400 Jahren gab es einen Krieg, der 30 Jahre lang dauerte.","Beteiligt waren neben deutschen Fürsten auch Schweden, Frankreich, Spanien und Dänemark."],
+["Der Krieg begann, als Männer aus einem Fenster geworfen wurden. Sie haben überlebt.","Die Beamten landeten angeblich auf einem Misthaufen. Die Protestanten wehrten sich gegen Einschränkungen ihrer Religionsfreiheit."],
+["Am Anfang stritten Menschen mit verschiedenem Glauben.","Bekannte Feldherren waren Wallenstein auf kaiserlicher und König Gustav II. Adolf von Schweden auf protestantischer Seite."],
+["Viele Menschen hatten großen Hunger und wurden krank.","Die Bevölkerung im Reichsgebiet sank Schätzungen zufolge um rund ein Drittel. Plündernde Söldner verwüsteten ganze Landstriche."],
+["1648 haben alle Frieden geschlossen.","Der Westfälische Friede bestätigte die Gleichberechtigung der Konfessionen. Die Schweiz und die Niederlande wurden als unabhängig anerkannt."]],
+"kriege-napoleon":[
+["Napoleon war erst Soldat. Dann wurde er Kaiser von Frankreich.","Napoleon stammte aus Korsika. 1799 übernahm er durch einen Staatsstreich die Macht und krönte sich 1804 in Notre-Dame selbst."],
+["Napoleon hat viele Länder in Europa erobert.","Sein bekanntester Sieg war die Dreikaiserschlacht von Austerlitz 1805. Viele deutsche Staaten schlossen sich im Rheinbund Frankreich an."],
+["Napoleon hat neue Gesetze gemacht, die für alle gleich waren.","Der Code civil von 1804 galt lange auch in Teilen Deutschlands, etwa im Rheinland, bis 1900 das Bürgerliche Gesetzbuch kam."],
+["Napoleon ist nach Russland gezogen. Es war so kalt, dass er verloren hat.","Die Russen zogen sich zurück und Moskau brannte. Auf dem Rückzug im Winter starben die meisten Soldaten der „Grande Armée“."],
+["Am Ende wurde Napoleon besiegt und auf eine Insel geschickt.","Nach einer ersten Verbannung nach Elba kehrte er für die „Herrschaft der Hundert Tage“ zurück. Er starb 1821 auf St. Helena im Südatlantik."]],
+"kriege-buergerkrieg-usa":[
+["In Amerika haben der Norden und der Süden gegeneinander gekämpft.","Elf Südstaaten traten aus der Union aus und gründeten die Konföderierten Staaten von Amerika."],
+["Im Süden mussten Menschen als Sklaven arbeiten. Das war sehr ungerecht.","Rund vier Millionen Menschen waren in den Südstaaten versklavt. Baumwolle war damals ein zentraler Exportartikel der USA."],
+["Präsident Lincoln hat gesagt: Die Sklaven sollen frei sein.","Die Emanzipationsproklamation galt zunächst nur für die abtrünnigen Gebiete. Lincoln wurde 1865, kurz nach Kriegsende, ermordet."],
+["Der Norden hat gewonnen. Danach war Sklaverei überall verboten.","Der 13. Verfassungszusatz schaffte die Sklaverei ab. Der Bürgerkrieg ist bis heute der verlustreichste Krieg der US-Geschichte."],
+["Schwarze Menschen mussten noch lange für gleiche Rechte kämpfen.","Erst der Civil Rights Act von 1964 und der Voting Rights Act von 1965 beendeten die gesetzliche Rassentrennung im Süden."]],
+"kriege-reichsgruendung":[
+["Früher war Deutschland in viele kleine Länder geteilt.","Nach 1815 schlossen sich 39 Staaten im Deutschen Bund zusammen. Preußen und Österreich rangen um die Vorherrschaft."],
+["Bismarck wollte aus vielen kleinen Ländern ein großes Deutschland machen.","Vor 1870 führte Preußen bereits Kriege gegen Dänemark (1864) und Österreich (1866). Österreich blieb danach außerhalb des neuen Deutschlands."],
+["Deutschland und Frankreich haben gekämpft. Die Deutschen haben gewonnen.","Entscheidend war die Schlacht bei Sedan, wo der französische Kaiser Napoleon III. gefangen genommen wurde."],
+["Dann gab es den ersten Deutschen Kaiser.","Die Kaiserproklamation fand am 18. Januar 1871 statt. Das Reich war ein Bundesstaat mit Reichstag, aber großer Macht für Kaiser und Kanzler."],
+["Frankreich musste ein Gebiet abgeben. Darüber waren viele sehr wütend.","Elsass-Lothringen kam 1919 nach dem Ersten Weltkrieg an Frankreich zurück."]],
+"kriege-korea":[
+["Korea wurde in zwei Teile geteilt: Norden und Süden.","Die Teilung erfolgte 1945 am 38. Breitengrad zwischen sowjetischer und amerikanischer Besatzungszone."],
+["Der Norden hat den Süden angegriffen. Viele Länder haben mitgekämpft.","Es war der erste große militärische Konflikt des Kalten Krieges. Die Front verschob sich mehrmals über fast die ganze Halbinsel."],
+["Die Kämpfe hörten auf. Aber richtigen Frieden gibt es bis heute nicht.","Der Krieg forderte Schätzungen zufolge mehrere Millionen Tote, darunter viele Zivilisten."],
+["Zwischen den beiden Ländern gibt es eine sehr streng bewachte Grenze.","Die Zone ist rund 4 Kilometer breit und etwa 250 Kilometer lang. Im Grenzort Panmunjeom finden gelegentlich Gespräche statt."],
+["Südkorea ist heute reich und frei. Nordkorea ist sehr abgeschottet.","Nordkorea wird seit 1948 von der Familie Kim regiert und hat Atomwaffen entwickelt."]],
+"kriege-vietnam":[
+["Vietnam war auch in zwei Teile geteilt.","Vorher war Vietnam französische Kolonie. Nach der Niederlage Frankreichs 1954 wurde das Land vorläufig geteilt."],
+["Amerika hat Soldaten nach Vietnam geschickt.","Auf dem Höhepunkt 1968 waren über 500.000 US-Soldaten in Vietnam. Die USA warfen mehr Bomben ab als im gesamten Zweiten Weltkrieg."],
+["Die Kämpfer aus dem Norden haben sich im Dschungel versteckt.","Der Nachschub lief über den Ho-Chi-Minh-Pfad durch Laos und Kambodscha. Die USA setzten das giftige Entlaubungsmittel Agent Orange ein."],
+["Viele Menschen auf der Welt haben gegen den Krieg protestiert.","Berichte über Kriegsverbrechen wie das Massaker von My Lai 1968 verstärkten die Ablehnung in der amerikanischen Öffentlichkeit."],
+["Am Ende hat der Norden gewonnen. Vietnam wurde wieder ein Land.","Saigon wurde in Ho-Chi-Minh-Stadt umbenannt. Vietnam ist bis heute ein kommunistischer Einparteienstaat."]],
+"kriege-kubakrise":[
+["Vor über 60 Jahren hatte die ganze Welt Angst vor einem Atomkrieg.","Die Krise dauerte vom 16. bis 28. Oktober 1962. Sie gilt als der gefährlichste Moment des Kalten Krieges."],
+["Die Sowjetunion hat heimlich gefährliche Raketen auf die Insel Kuba gebracht.","US-Aufklärungsflugzeuge vom Typ U-2 entdeckten die Raketenstellungen. Auslöser war auch die Stationierung von US-Raketen in der Türkei."],
+["Der amerikanische Präsident hat Kuba mit Schiffen umstellt.","Kennedy nannte die Blockade „Quarantäne“, weil eine Blockade völkerrechtlich als Kriegshandlung gilt."],
+["Am Ende haben sich beide Seiten geeinigt. Puh!","Der Abzug der US-Raketen aus der Türkei wurde damals geheim gehalten. Auch ein sowjetischer U-Boot-Offizier, Wassili Archipow, verhinderte möglicherweise einen Atomschlag."],
+["Danach gab es ein direktes Telefon zwischen den beiden Ländern.","Der „heiße Draht“ war anfangs eine Fernschreiber-Verbindung, kein Telefon. 1963 folgte auch ein Abkommen über ein teilweises Verbot von Atomtests."]],
+"kriege-jugoslawien":[
+["Jugoslawien war ein Land, in dem viele verschiedene Völker lebten.","Staatschef Josip Broz Tito hielt den Vielvölkerstaat bis zu seinem Tod 1980 zusammen."],
+["Als das Land zerfiel, gab es schlimme Kämpfe.","Slowenien und Kroatien erklärten 1991 ihre Unabhängigkeit. Der Krieg in Kroatien dauerte bis 1995."],
+["In Bosnien gab es einen langen Krieg. Eine Stadt wurde fast vier Jahre eingekesselt.","Die Belagerung Sarajevos dauerte von 1992 bis 1996 und war die längste Belagerung einer Hauptstadt in der modernen Geschichte."],
+["In einer Stadt wurden viele Männer und Jungen getötet. Das war ein schweres Verbrechen.","Der Internationale Strafgerichtshof für das ehemalige Jugoslawien verurteilte unter anderem Radovan Karadžić und Ratko Mladić wegen Völkermords."],
+["Heute gibt es dort mehrere eigene Länder.","Der Bosnienkrieg endete 1995 mit dem Abkommen von Dayton. Slowenien und Kroatien sind heute EU-Mitglieder."]],
+"kriege-golf":[
+["Am Persischen Golf gibt es ganz viel Öl.","In der Region liegen große Teile der bekannten Ölreserven der Welt, etwa in Saudi-Arabien, dem Irak, Iran und Kuwait."],
+["Der Irak hat das kleine Land Kuwait angegriffen.","Saddam Hussein begründete den Überfall mit Schulden und Streit um Ölfelder. Vorher hatte der Irak acht Jahre gegen Iran Krieg geführt (1980–1988)."],
+["Viele Länder haben Kuwait geholfen und es befreit.","Die UNO hatte den Einsatz erlaubt. Beim Rückzug zündeten irakische Truppen Hunderte Ölquellen an."],
+["2003 gab es wieder Krieg im Irak. Der Grund dafür war falsch.","Der Krieg hatte kein Mandat des UN-Sicherheitsrats. Deutschland und Frankreich lehnten eine Beteiligung ab."],
+["Danach gab es im Irak lange keinen Frieden.","Der IS eroberte 2014 große Gebiete im Irak und in Syrien, bevor eine internationale Koalition ihn bis 2019 zurückdrängte."]],
+"kriege-afghanistan":[
+["Am 11. September 2001 haben Terroristen Flugzeuge in Hochhäuser gelenkt.","Insgesamt wurden vier Flugzeuge entführt. Ziele waren auch das Pentagon; ein Flugzeug stürzte nach Gegenwehr der Passagiere in Pennsylvania ab."],
+["Danach haben Amerika und andere Länder Soldaten nach Afghanistan geschickt.","Al-Qaida-Chef Osama bin Laden wurde 2011 von US-Spezialkräften in Pakistan getötet."],
+["Auch deutsche Soldaten waren in Afghanistan.","Insgesamt waren über 90.000 deutsche Soldatinnen und Soldaten im Einsatz; 59 kamen ums Leben."],
+["Es wurden Schulen gebaut. Auch Mädchen durften lernen.","Trotz Milliardenhilfen blieb der Staat schwach. Korruption und der Widerstand der Taliban verhinderten Stabilität."],
+["Als die Soldaten weg waren, kamen die Taliban zurück.","Der Abzug wurde 2020 im Doha-Abkommen zwischen den USA und den Taliban vereinbart. Die chaotische Evakuierung aus Kabul im August 2021 ging um die Welt."]],
+"kriege-ukraine":[
+["Die Ukraine ist ein großes Land in Europa.","Die Ukraine hatte vor dem Krieg über 40 Millionen Einwohner. Sie ist ein wichtiger Getreideexporteur – daher die Sonnenblumen und Weizenfelder als Symbol."],
+["Russland hat sich 2014 ein Stück der Ukraine genommen.","Vorausgegangen waren die Maidan-Proteste in Kyjiw für eine Annäherung an die EU. Die Annexion der Krim wird international überwiegend nicht anerkannt."],
+["2022 hat Russland die Ukraine angegriffen. Das ist verboten.","Der Internationale Strafgerichtshof erließ 2023 einen Haftbefehl gegen Wladimir Putin wegen der Verschleppung ukrainischer Kinder."],
+["Viele Menschen aus der Ukraine mussten fliehen. Manche sind zu uns gekommen.","Die EU gewährte Geflüchteten aus der Ukraine erstmals vorübergehenden Schutz nach einer Richtlinie von 2001, ohne langes Asylverfahren."],
+["Viele Länder helfen der Ukraine.","Zu den größten Unterstützern gehören die USA, Deutschland und Großbritannien. Die EU beschloss zahlreiche Sanktionspakete gegen Russland."]],
+"kriege-frieden":[
+["Das Rote Kreuz hilft Verletzten im Krieg. Es hilft allen.","Henry Dunant erhielt 1901 den ersten Friedensnobelpreis. Das Rote Kreuz und der Rote Halbmond sind die größte humanitäre Bewegung der Welt."],
+["Auch im Krieg gibt es Regeln. Verletzte und Kinder müssen geschützt werden.","Die heutigen vier Genfer Abkommen stammen von 1949. Schwere Verstöße sind Kriegsverbrechen, die vor dem Internationalen Strafgerichtshof in Den Haag verfolgt werden können."],
+["Wer sich für Frieden einsetzt, kann einen großen Preis gewinnen.","Bekannte Preisträger sind Martin Luther King, Nelson Mandela und Malala Yousafzai, die mit 17 Jahren jüngste Preisträgerin."],
+["Soldaten mit blauen Helmen helfen, den Frieden zu bewahren.","UN-Friedenstruppen erhielten 1988 den Friedensnobelpreis. Sie dürfen meist nur zur Selbstverteidigung Waffen einsetzen."],
+["Deutschland und Frankreich waren Feinde. Heute sind sie Freunde!","Der Élysée-Vertrag wurde von Konrad Adenauer und Charles de Gaulle unterzeichnet. Seitdem treffen sich die Regierungen regelmäßig zu Konsultationen."]]
+});

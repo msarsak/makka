@@ -1,0 +1,130 @@
+LV({
+"aegypten":[
+["Vor ganz langer Zeit lebten Menschen am Fluss Nil. Der Fluss machte die Felder nass und fruchtbar.","Um 3000 v. Chr. wurden Ober- und Unterägypten vereint. Das Reich bestand mit Unterbrechungen rund 3.000 Jahre."],
+["Die Pyramiden sind riesige Gräber für Könige.","Die Cheops-Pyramide besteht aus über zwei Millionen Steinblöcken. Nach heutigem Wissen bauten sie bezahlte Arbeiter, keine Sklaven."],
+["Die Könige hießen Pharaonen. Wenn sie starben, wurden sie zu Mumien gemacht.","Das Grab des Tutanchamun entdeckte Howard Carter 1922 fast unberührt im Tal der Könige – mit der berühmten Goldmaske."],
+["Die Ägypter haben mit kleinen Bildern geschrieben.","Der Franzose Jean-François Champollion entzifferte die Hieroglyphen. Der Stein von Rosette steht heute im British Museum in London."]],
+"rom":[
+["Rom war erst eine kleine Stadt. Dann wurde es ein riesiges Reich.","In seiner größten Ausdehnung um 117 n. Chr. reichte das Reich von Britannien bis Mesopotamien. Die Republik ging 27 v. Chr. in die Kaiserzeit über."],
+["Caesar war ein berühmter Römer. Das Wort Kaiser kommt von seinem Namen.","Caesar eroberte Gallien und überschritt 49 v. Chr. den Rubikon, was einen Bürgerkrieg auslöste. An den Iden des März 44 v. Chr. wurde er ermordet."],
+["Die Römer konnten toll bauen. Manches steht heute noch.","Die Römer erfanden einen frühen Beton (opus caementicium). Damit bauten sie etwa die Kuppel des Pantheons, bis heute die größte unbewehrte Betonkuppel."],
+["Die Römer sprachen Latein. Viele Wörter kommen daher.","Das Oströmische Reich bestand als Byzantinisches Reich bis 1453 weiter. Latein blieb im Mittelalter Sprache der Kirche und der Wissenschaft."]],
+"mittelalter":[
+["Das Mittelalter war eine Zeit vor sehr langer Zeit. Sie dauerte etwa 1.000 Jahre.","Historiker unterteilen in Früh-, Hoch- und Spätmittelalter. Der Begriff ist eine spätere Erfindung von Gelehrten der Renaissance."],
+["Ritter ritten auf Pferden und trugen Rüstungen. Reiche Leute wohnten in Burgen.","Ein Junge wurde zuerst Page, dann Knappe und erst mit etwa 21 Jahren durch den Ritterschlag zum Ritter."],
+["Die meisten Menschen waren Bauern. Sie mussten viel arbeiten.","Viele Bauern waren leibeigen und an das Land ihres Grundherrn gebunden. Sie mussten Abgaben und Frondienste leisten."],
+["Eine schlimme Krankheit namens Pest hat sehr viele Menschen getötet.","Die Pest wird durch das Bakterium Yersinia pestis ausgelöst. Sie kam über Handelswege aus Zentralasien nach Europa; Juden wurden fälschlich beschuldigt und verfolgt."]],
+"mauerfall":[
+["Deutschland war früher in zwei Länder geteilt. Viele Familien waren getrennt.","Die innerdeutsche Grenze war fast 1.400 Kilometer lang und mit Zäunen, Minen und Selbstschussanlagen gesichert."],
+["Die Menschen im Osten sind friedlich auf die Straße gegangen. Sie wollten frei sein.","Am 9. Oktober 1989 demonstrierten in Leipzig rund 70.000 Menschen. Die Staatsmacht griff nicht ein – ein Wendepunkt."],
+["Im November 1989 wurde die Grenze geöffnet. Alle haben gefeiert.","Auslöser war eine missverständliche Pressekonferenz von SED-Politbüromitglied Günter Schabowski, der die neue Reiseregelung als „sofort, unverzüglich“ gültig bezeichnete."],
+["1990 wurde Deutschland wieder ein Land.","Voraussetzung war der Zwei-plus-Vier-Vertrag mit den vier Siegermächten. Die DDR trat der Bundesrepublik nach Artikel 23 des Grundgesetzes bei."]],
+"geschichte-steinzeit":[
+["Die ersten Menschen haben gejagt und Beeren gesammelt.","Die Altsteinzeit begann vor etwa 2,6 Millionen Jahren mit den ersten Steinwerkzeugen und endete vor rund 12.000 Jahren."],
+["Sie haben Werkzeuge aus Stein gemacht.","Feuerstein ließ sich besonders scharfkantig bearbeiten. Später gab es auch Nadeln aus Knochen und Speerschleudern."],
+["Die Menschen haben gelernt, Feuer zu machen. Damit war es warm.","Spuren kontrollierter Feuernutzung sind mehrere hunderttausend Jahre alt. Kochen machte Nahrung leichter verdaulich."],
+["Steinzeitmenschen haben Tiere an Höhlenwände gemalt.","Die ältesten Höhlenmalereien in Indonesien sind über 45.000 Jahre alt. In Süddeutschland fand man rund 40.000 Jahre alte Elfenbeinfiguren."],
+["In den Bergen hat man einen Mann aus der Steinzeit im Eis gefunden. Er heißt Ötzi.","Ötzi wurde vermutlich durch einen Pfeil getötet. Er hatte über 60 Tätowierungen und ist heute in Bozen (Südtirol) ausgestellt."]],
+"geschichte-sesshaft":[
+["Vor langer Zeit haben Menschen angefangen, Felder anzulegen und in Häusern zu wohnen.","Das Gebiet des „Fruchtbaren Halbmonds“ im Nahen Osten gilt als eine Wiege der Landwirtschaft. Weizen und Gerste wurden dort zuerst angebaut."],
+["Die Menschen haben Tiere wie Schafe und Kühe gehalten.","Der Hund wurde schon vor über 15.000 Jahren aus dem Wolf domestiziert – lange vor den Nutztieren."],
+["Sie haben Töpfe gemacht, um Essen aufzuheben.","Mit Vorräten entstand auch Besitz – und damit Ungleichheit und Streit um Ressourcen."],
+["Die Menschen haben Dörfer gebaut.","Göbekli Tepe in der Türkei mit seinen riesigen Steinpfeilern ist über 11.000 Jahre alt – älter als Stonehenge und die Pyramiden."],
+["Es gibt alte Steinkreise. Niemand weiß genau, wofür sie waren.","Stonehenge ist auf die Sonnenwenden ausgerichtet. Die großen Steine wurden zum Teil über 200 Kilometer weit transportiert."]],
+"geschichte-schrift":[
+["Zwischen zwei Flüssen haben Menschen die ersten Städte gebaut.","Mesopotamien heißt „Land zwischen den Flüssen“. Dort entstanden auch frühe Bewässerungssysteme."],
+["Die Sumerer haben große Städte mit Tempeln gebaut.","Ihre Stufentempel heißen Zikkurat. Uruk hatte um 3000 v. Chr. vermutlich zehntausende Einwohner."],
+["Sie haben eine der ersten Schriften erfunden. Sie drückten Zeichen in Ton.","Anfangs diente die Schrift vor allem der Buchhaltung, etwa um Getreide und Vieh zu zählen. Später entstanden Literatur wie das Gilgamesch-Epos."],
+["Die Sumerer haben mit der Zahl 60 gerechnet. Darum hat eine Stunde 60 Minuten.","Auch der Kreis mit 360 Grad geht auf das Sechzigersystem zurück. 60 ist durch viele Zahlen teilbar, was das Rechnen erleichterte."],
+["Ein König hat Gesetze auf einen großen Stein geschrieben.","Der Codex Hammurapi entstand um 1750 v. Chr. und enthält rund 280 Gesetze. Die Stele steht heute im Louvre in Paris."]],
+"geschichte-griechen":[
+["Griechenland hatte viele kleine Städte, die eigene Länder waren.","Gemeinsam waren den Griechen Sprache, Götter und die Olympischen Spiele – politisch waren sie jedoch zersplittert."],
+["In Athen durften die Bürger abstimmen. Aber Frauen durften nicht mitmachen.","Kleisthenes führte 508 v. Chr. Reformen ein. Bürger konnten per Scherbengericht unliebsame Politiker für zehn Jahre verbannen."],
+["In Sparta wurden die Jungen zu starken Kämpfern erzogen.","Spartanische Jungen kamen mit sieben Jahren in staatliche Erziehung. Den Großteil der Arbeit erledigten unterdrückte Heloten."],
+["Griechische Denker haben über große Fragen nachgedacht.","Sokrates schrieb selbst nichts auf; wir kennen ihn durch seinen Schüler Platon. Aristoteles war später Lehrer Alexanders des Großen."],
+["Theater und viele Wörter kommen von den Griechen.","Die Griechen entwickelten Tragödie und Komödie. Auch das Wort „Alphabet“ kommt von den ersten Buchstaben Alpha und Beta."]],
+"geschichte-alexander":[
+["Alexander wurde schon mit 20 Jahren König.","Sein Vater Philipp II. hatte Makedonien zur Großmacht gemacht und wurde 336 v. Chr. ermordet."],
+["Sein Lehrer war ein sehr kluger Mann namens Aristoteles.","Aristoteles unterrichtete ihn in Philosophie, Medizin und Literatur. Alexander soll Homers „Ilias“ stets bei sich getragen haben."],
+["Alexander hat ganz viele Länder erobert, bis nach Indien.","Er besiegte den Perserkönig Dareios III. mehrfach. In Indien weigerten sich seine erschöpften Soldaten, weiterzumarschieren."],
+["Sein Pferd hieß Bukephalos. Nur Alexander konnte es reiten.","Als Bukephalos starb, gründete Alexander eine Stadt mit dem Namen des Pferdes."],
+["Alexander hat Städte gegründet und starb sehr jung.","Nach seinem Tod zerfiel sein Reich unter seinen Generälen. Die Verbreitung griechischer Kultur danach nennt man Hellenismus."]],
+"geschichte-germanen":[
+["Die Germanen waren viele verschiedene Stämme.","Der Name „Germanen“ stammt von den Römern. Die Stämme selbst verstanden sich nicht als ein Volk."],
+["Ein Germane namens Arminius hat die Römer besiegt.","Arminius war in Rom ausgebildet worden und lockte Varus in einen Hinterhalt. Kaiser Augustus soll gerufen haben: „Varus, gib mir meine Legionen zurück!“"],
+["Die Römer haben eine lange Mauer gegen die Germanen gebaut.","Der Limes war rund 550 Kilometer lang und ist heute UNESCO-Welterbe. Er war eher eine kontrollierte Grenze als eine undurchdringliche Mauer."],
+["Der Donnerstag hat seinen Namen von einem germanischen Gott.","Der Mittwoch hieß früher nach dem Gott Wodan – im Englischen erinnert „Wednesday“ noch daran."],
+["Viele Germanen sind durch Europa gewandert.","Auslöser der Völkerwanderung war unter anderem der Einfall der Hunnen. 410 plünderten die Westgoten sogar Rom."]],
+"geschichte-wikinger":[
+["Die Wikinger kamen aus dem kalten Norden und fuhren mit Schiffen übers Meer.","Der Überfall auf das Kloster Lindisfarne in England 793 gilt als Beginn der Wikingerzeit."],
+["Ihre Schiffe hatten oft Drachenköpfe vorne dran.","Die Schiffe hatten wenig Tiefgang und konnten auch weit flussaufwärts fahren – bis nach Paris oder über russische Flüsse bis Konstantinopel."],
+["Die Wikinger haben geraubt, aber auch viel gehandelt.","Sie handelten mit Pelzen, Bernstein und Sklaven. Wikinger gründeten auch Städte wie Dublin."],
+["Wikinger hatten in Wirklichkeit keine Hörner auf den Helmen.","Das Bild entstand vor allem durch Kostüme in Opern von Richard Wagner im 19. Jahrhundert."],
+["Ein Wikinger kam vor Kolumbus nach Amerika.","Archäologen fanden in L'Anse aux Meadows auf Neufundland eine Wikingersiedlung. Leif Eriksson war der Sohn von Erik dem Roten, der Grönland besiedelte."]],
+"geschichte-karl":[
+["Karl war ein mächtiger König. Er herrschte über viele Länder.","Karl regierte ab 768. Er führte jahrzehntelange Kriege gegen die Sachsen und zwang sie zum Christentum."],
+["Der Papst hat Karl zum Kaiser gemacht.","Mit der Krönung entstand ein westliches Kaisertum neben dem in Byzanz. Daraus ging später das Heilige Römische Reich hervor."],
+["Karl hat am liebsten in Aachen gewohnt.","In Aachen wurden bis 1531 rund 30 deutsche Könige gekrönt. Karls Thron steht noch heute im Dom."],
+["Karl wollte, dass mehr Menschen lesen und schreiben lernen.","Unter Karl entstand die karolingische Minuskel – eine klare Schrift, aus der sich unsere Kleinbuchstaben entwickelten."],
+["Karl wird auch Vater Europas genannt.","Sein Reich wurde 843 unter seinen Enkeln geteilt. Daraus gingen langfristig Frankreich und Deutschland hervor."]],
+"geschichte-entdecker":[
+["Die Leute in Europa wollten Gewürze aus fernen Ländern holen.","Der Landweg nach Asien war teuer und wurde von Zwischenhändlern kontrolliert. Portugal suchte darum einen Seeweg um Afrika."],
+["Kolumbus ist übers Meer gesegelt und in Amerika angekommen.","Kolumbus landete auf einer Insel der Bahamas. Er unternahm vier Reisen und glaubte bis zu seinem Tod, Asien erreicht zu haben."],
+["Kolumbus dachte, er sei in Indien. Darum sagte er Indianer.","Heute spricht man meist von Indigenen oder den Namen der jeweiligen Völker. Der Name Amerika erschien 1507 erstmals auf einer Karte von Martin Waldseemüller."],
+["Ein Schiff ist einmal um die ganze Welt gesegelt.","Von fünf Schiffen und rund 240 Männern kehrten nur ein Schiff und 18 Mann zurück. Juan Sebastián Elcano führte die Fahrt zu Ende."],
+["Für die Menschen in Amerika war das schlimm. Viele wurden krank oder getötet.","Gegen Krankheiten wie Pocken hatten die Ureinwohner keine Abwehrkräfte. Die Kolonisierung führte auch zum transatlantischen Sklavenhandel."]],
+"geschichte-luther":[
+["Die Kirche hat Zettel verkauft. Man sollte dann weniger für seine Sünden bestraft werden.","Mit dem Ablasshandel finanzierte die Kirche unter anderem den Neubau des Petersdoms in Rom. Bekannt wurde der Prediger Johann Tetzel."],
+["Ein Mönch namens Martin Luther fand das falsch. Er hat 95 Sätze dagegen geschrieben.","Ob Luther die Thesen wirklich an die Tür der Schlosskirche nagelte, ist unter Historikern umstritten."],
+["Luther hat die Bibel auf Deutsch übersetzt. So konnten alle sie lesen.","Seine Übersetzung prägte die deutsche Schriftsprache stark. Das Neue Testament übersetzte er in nur elf Wochen."],
+["Mit dem Buchdruck konnten viele Menschen Luthers Texte lesen.","Flugschriften verbreiteten sich in hoher Auflage. Die Reformation gilt als eines der ersten großen Medienereignisse."],
+["Seitdem gibt es katholische und evangelische Christen.","Der Augsburger Religionsfriede 1555 legte fest, dass der Landesherr die Konfession bestimmt. Auch Calvin und Zwingli prägten die Reformation."]],
+"geschichte-renaissance":[
+["Die Menschen haben die alten Griechen und Römer wiederentdeckt.","Nach dem Fall Konstantinopels 1453 brachten Gelehrte viele antike Schriften nach Italien."],
+["In der Stadt Florenz gab es viele Künstler.","Die Medici waren Bankiers und regierten Florenz faktisch. Lorenzo de' Medici förderte unter anderem Michelangelo und Botticelli."],
+["Maler haben gelernt, Bilder echter aussehen zu lassen.","Filippo Brunelleschi entwickelte um 1420 die mathematische Zentralperspektive. Er baute auch die Kuppel des Doms von Florenz."],
+["Die Menschen haben angefangen, mehr selbst zu denken.","Der Humanist Erasmus von Rotterdam setzte sich für Bildung und Toleranz ein. Die Renaissance bereitete die moderne Wissenschaft vor."],
+["Leonardo da Vinci konnte ganz viele Sachen gleichzeitig gut.","Leonardo sezierte Leichen für anatomische Studien und entwarf Brücken, Waffen und Kanäle. Viele seiner Ideen wurden nie gebaut."]],
+"geschichte-revolution":[
+["In Frankreich waren viele Menschen arm. Der König lebte im Luxus.","Frankreich war hoch verschuldet, auch wegen der Unterstützung der amerikanischen Revolution. Missernten ließen den Brotpreis explodieren."],
+["Die Menschen haben ein Gefängnis gestürmt. Das war der Anfang der Revolution.","In der Bastille saßen nur noch sieben Gefangene. Sie war aber ein Symbol königlicher Willkür."],
+["Es wurde aufgeschrieben: Alle Menschen sind frei und haben gleiche Rechte.","Frauen blieben ausgeschlossen. Olympe de Gouges verfasste darum 1791 eine Erklärung der Rechte der Frau – sie wurde 1793 hingerichtet."],
+["Freiheit, Gleichheit, Brüderlichkeit – das wollten die Menschen.","Die Revolution schaffte Adelsprivilegien ab und führte das metrische System ein."],
+["Die Revolution wurde sehr brutal. Auch der König wurde getötet.","Robespierre führte die Schreckensherrschaft an und wurde 1794 selbst hingerichtet. Am Ende übernahm Napoleon die Macht."]],
+"geschichte-industrie":[
+["Maschinen haben angefangen, viel Arbeit zu machen.","Die Revolution begann in der Textilindustrie, etwa mit der Spinnmaschine „Spinning Jenny“. England hatte viel Kohle und Kapital."],
+["Die Dampfmaschine konnte Fabriken und Züge antreiben.","Watts Verbesserung um 1769 machte die Maschine viel effizienter. Die Einheit für Leistung, das Watt, ist nach ihm benannt."],
+["Die erste Eisenbahn in Deutschland fuhr von Nürnberg nach Fürth.","Die Lokomotive hieß „Adler“ und kam aus England. Die Strecke war etwa sechs Kilometer lang."],
+["Die Menschen mussten sehr lange arbeiten, auch Kinder.","Preußen schränkte Kinderarbeit 1839 erstmals ein. Die Städte wuchsen rasant, Wohnungen waren eng und oft ungesund."],
+["Die Arbeiter haben sich zusammengetan und für bessere Arbeit gekämpft.","Aus der Arbeiterbewegung entstand 1863 die Vorläuferpartei der SPD. Karl Marx und Friedrich Engels schrieben 1848 das „Kommunistische Manifest“."]],
+"geschichte-weimar":[
+["Nach dem Ersten Weltkrieg wurde Deutschland eine Demokratie.","Der Sozialdemokrat Philipp Scheidemann rief am 9. November 1918 die Republik aus. Erster Reichspräsident wurde Friedrich Ebert."],
+["Frauen durften zum ersten Mal wählen.","Bei der Wahl zur Nationalversammlung zogen 37 Frauen ins Parlament ein. Marie Juchacz hielt als erste Frau eine Rede."],
+["Das Geld war plötzlich nichts mehr wert. Ein Brot kostete Milliarden.","Ursachen waren Kriegsschulden, Reparationen und das Drucken von Geld. Im November 1923 kostete ein Dollar 4,2 Billionen Mark."],
+["Danach gab es eine Zeit mit viel Musik, Kino und Spaß.","Berlin wurde zur Kulturmetropole. Bekannte Werke dieser Zeit sind der Film „Metropolis“ und die „Dreigroschenoper“."],
+["Dann kam eine große Krise. Hitler kam an die Macht und die Demokratie war vorbei.","Die Republik hatte viele Feinde von links und rechts. Hindenburg ernannte Hitler am 30. Januar 1933 zum Reichskanzler."]],
+"geschichte-teilung":[
+["Nach dem Krieg wurde Deutschland in vier Teile aufgeteilt.","Auch Berlin wurde in vier Sektoren geteilt. Die Siegermächte beschlossen in Potsdam 1945 die Grundsätze für Deutschland."],
+["Flugzeuge haben Berlin mit Essen versorgt. Sie warfen auch Süßigkeiten ab.","Während der Luftbrücke landete zeitweise alle paar Minuten ein Flugzeug. Der Pilot Gail Halvorsen warf an kleinen Fallschirmen Süßigkeiten ab."],
+["1949 gab es zwei deutsche Länder: im Westen und im Osten.","Erster Bundeskanzler war Konrad Adenauer. In der DDR regierte die SED unter Walter Ulbricht."],
+["Im Westen ging es den Menschen schnell besser.","Eine Grundlage war die Währungsreform 1948 mit der D-Mark und die Marshallplan-Hilfe der USA. Ludwig Erhard gilt als Vater des Wirtschaftswunders."],
+["In der DDR durften die Menschen nicht frei reisen.","Am 17. Juni 1953 kam es zu einem Volksaufstand in der DDR, der von sowjetischen Panzern niedergeschlagen wurde."]],
+"geschichte-inka":[
+["Die Inka hatten ein großes Reich in den Bergen von Südamerika.","Die Hauptstadt war Cusco. Das Reich nannten sie Tawantinsuyu, „Land der vier Teile“."],
+["Hoch in den Bergen haben die Inka eine Stadt gebaut: Machu Picchu.","Machu Picchu wurde von den Spaniern nie gefunden. International bekannt wurde es 1911 durch den Amerikaner Hiram Bingham."],
+["Die Inka haben lange Straßen gebaut. Läufer brachten Nachrichten.","Das Straßennetz umfasste rund 40.000 Kilometer. Staffelläufer, die Chasquis, legten pro Tag große Strecken zurück."],
+["Die Inka haben mit Knoten an Schnüren gezählt.","Ob Quipus auch Sprache speichern konnten, ist bis heute nicht geklärt."],
+["Spanier kamen und haben das Reich erobert.","Pizarro nahm den Herrscher Atahualpa gefangen und ließ ihn trotz eines riesigen Lösegelds aus Gold hinrichten. Ein Bürgerkrieg hatte das Reich zuvor geschwächt."]],
+"geschichte-osmanen":[
+["Die Osmanen hatten ein großes Reich, das sehr lange bestand.","Benannt ist es nach seinem Gründer Osman I. Das Reich war ein Vielvölkerstaat mit Muslimen, Christen und Juden."],
+["Die Osmanen haben eine wichtige Stadt erobert. Heute heißt sie Istanbul.","Mehmed II. setzte riesige Kanonen ein. Mit dem Fall der Stadt endete das Byzantinische Reich."],
+["Süleyman war ein sehr mächtiger Herrscher.","Süleyman regierte von 1520 bis 1566. Bei den Osmanen hieß er „der Gesetzgeber“; sein Baumeister Sinan schuf berühmte Moscheen."],
+["Die Osmanen standen zweimal vor Wien, haben es aber nicht erobert.","1683 entsetzte ein Heer unter dem polnischen König Jan III. Sobieski die belagerte Stadt."],
+["Durch die Osmanen kam Kaffee nach Europa.","Das Osmanische Reich kämpfte im Ersten Weltkrieg an der Seite Deutschlands. Danach wurde es aufgeteilt; das Sultanat endete 1922."]],
+"geschichte-frauen":[
+["Früher durften Frauen vieles nicht, zum Beispiel wählen.","In Deutschland durften Frauen in Preußen erst ab 1908 regulär an Universitäten studieren."],
+["In England haben Frauen laut für ihr Wahlrecht protestiert.","Anführerin war Emmeline Pankhurst. Viele Suffragetten wurden inhaftiert und traten in den Hungerstreik."],
+["Heute dürfen Frauen in fast allen Ländern wählen.","Im Schweizer Kanton Appenzell Innerrhoden mussten Frauen bis 1990 warten – erst ein Gerichtsurteil erzwang ihr Stimmrecht."],
+["Im Grundgesetz steht: Männer und Frauen sind gleich viel wert.","Elisabeth Selbert war eine der vier „Mütter des Grundgesetzes“. Sie mobilisierte öffentlichen Druck, bis der Satz aufgenommen wurde."],
+["Frauen bekommen oft noch weniger Geld für ihre Arbeit als Männer.","In Deutschland lag der unbereinigte Gender Pay Gap zuletzt bei rund 16 bis 18 Prozent. Ein Teil erklärt sich durch Berufswahl und Teilzeit."]]
+});

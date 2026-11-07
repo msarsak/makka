@@ -11,13 +11,44 @@
   const load = (k, d) => { try { return { ...d, ...JSON.parse(localStorage.getItem(k) || "{}") }; } catch { return { ...d }; } };
   const save = (k, v) => { try { localStorage.setItem(k, JSON.stringify(v)); } catch {} };
 
-  let S = load("sk_settings", DEFAULTS);
-  let P = load("sk_progress", { xp: 0, done: {}, streak: 0, lastDay: "", todayXp: 0, todayDate: "", last: null, correct: 0, answered: 0 });
+  const NEW_PROGRESS = () => ({ xp: 0, done: {}, streak: 0, lastDay: "", todayXp: 0, todayDate: "", last: null, correct: 0, answered: 0 });
+
+  // ---------- Profile (pro Gerät, ohne E-Mail) ----------
+  const AGES = {
+    kind: { label: "Kind", emoji: "🧒", sub: "ca. 6–11 Jahre · ganz leicht erklärt, 3 Antworten im Quiz" },
+    jugend: { label: "Jugendlich", emoji: "🧑", sub: "ca. 12–17 Jahre · normal erklärt" },
+    erwachsen: { label: "Erwachsen", emoji: "🧔", sub: "ab 18 · normal erklärt + mehr Hintergrund" }
+  };
+  const AVATARS = ["🦸", "🦹", "🦸‍♀️", "🥷", "🧙", "🧑‍🚀", "🤖", "👽", "🐱", "🐶", "🦊", "🐼", "🦁", "🐸", "🦄", "🐲"];
+  const readJSON = (k, d) => { try { const v = JSON.parse(localStorage.getItem(k)); return v == null ? d : v; } catch { return d; } };
+  let profiles = readJSON("sk_profiles", []);
+  let activeId = readJSON("sk_active", null);
+  const saveProfiles = () => { save("sk_profiles", profiles); save("sk_active", activeId); };
+  const uid = () => "p" + Date.now().toString(36) + Math.random().toString(36).slice(2, 6);
+
+  // Alte Daten (vor dem Profil-System) in ein erstes Profil übernehmen
+  if (!profiles.length && localStorage.getItem("sk_settings")) {
+    const old = load("sk_settings", DEFAULTS), id = uid();
+    profiles = [{ id, name: old.name || "Held", avatar: "🦸", age: "jugend", created: Date.now() }];
+    save("sk_settings_" + id, old); save("sk_progress_" + id, load("sk_progress", NEW_PROGRESS()));
+    activeId = id; saveProfiles();
+  }
+  if (!profiles.find((p) => p.id === activeId)) activeId = profiles[0] ? profiles[0].id : null;
+
+  const prof = () => profiles.find((p) => p.id === activeId) || { name: "Held", avatar: "🦸", age: "jugend" };
+  let S, P;
+  function loadProfile() {
+    S = load("sk_settings_" + activeId, DEFAULTS);
+    P = load("sk_progress_" + activeId, NEW_PROGRESS());
+  }
+  const saveS = () => save("sk_settings_" + activeId, S);
+  const saveP = () => save("sk_progress_" + activeId, P);
+  loadProfile();
 
   const today = () => new Date().toISOString().slice(0, 10);
   function rollDay() {
     const t = today();
-    if (P.todayDate !== t) { P.todayDate = t; P.todayXp = 0; save("sk_progress", P); }
+    if (P.todayDate !== t) { P.todayDate = t; P.todayXp = 0; saveP(); }
   }
   rollDay();
 
@@ -35,6 +66,20 @@
   const rank = (lv) => RANKS[Math.min(RANKS.length - 1, Math.floor((lv - 1) / 2))];
   const ytUrl = (q) => "https://www.youtube.com/results?search_query=" + encodeURIComponent(q);
   const wikiUrl = (w) => "https://de.wikipedia.org/wiki/" + encodeURIComponent(w);
+  const age = () => (AGES[prof().age] ? prof().age : "jugend");
+  // Quizfrage mischen – für Kinder nur 3 Antwortmöglichkeiten
+  function prepQ(q) {
+    let idx = q.a.map((_, i) => i);
+    if (age() === "kind") idx = [q.c, ...shuffle(idx.filter((i) => i !== q.c)).slice(0, 2)];
+    const order = shuffle(idx);
+    return { ...q, a: order.map((i) => q.a[i]), c: order.indexOf(q.c) };
+  }
+  // Text einer Lernkarte passend zur Erklär-Stufe
+  function cardTexts(l, i) {
+    const c = l.cards[i], lv = (window.LEVELS && LEVELS[l.id] && LEVELS[l.id][i]) || null, a = age();
+    if (a === "kind" && lv && lv[0]) return { t: lv[0], more: null };
+    return { t: c.t, more: a === "erwachsen" && lv && lv[1] ? lv[1] : null };
+  }
 
   // ---------- Einstellungen anwenden ----------
   function applySettings() {
@@ -124,7 +169,7 @@
       P.streak = P.lastDay === y ? P.streak + 1 : 1;
       P.lastDay = t;
     }
-    save("sk_progress", P);
+    saveP();
     const pop = document.createElement("div");
     pop.className = "xp-pop"; pop.textContent = "+" + n + " XP";
     document.body.appendChild(pop);
@@ -177,6 +222,7 @@
     const lv = level(P.xp);
     const pct = Math.round(((P.xp - levelXp(lv)) / (levelXp(lv + 1) - levelXp(lv))) * 100);
     $("#hdr-stats").innerHTML =
+      `<a class="chip avatar-chip" href="#/profil" title="Profil wechseln">${prof().avatar}</a>` +
       `<span class="chip" title="Tage in Folge">🔥 ${P.streak}</span>` +
       `<span class="chip" title="Level">⭐ Lv ${lv}</span>` +
       `<span class="chip xpchip" title="XP"><b style="width:${pct}%"></b><em>${P.xp} XP</em></span>`;
@@ -205,7 +251,7 @@
   }
 
   function home() {
-    const name = S.name ? esc(S.name) : "Held";
+    const name = esc(prof().name || "Held");
     const fact = FACTS[Math.floor(Date.now() / 864e5) % FACTS.length];
     const goalPct = Math.min(100, Math.round((P.todayXp / S.goal) * 100));
     const last = P.last && findLesson(P.last);
@@ -217,6 +263,7 @@
         <div class="hero-text">
           <h1>Hey ${name}! <span class="wave">👋</span></h1>
           <p>Bereit, heute dein Gehirn aufzuladen?</p>
+          <a class="age-badge" href="#/profil">${AGES[age()].emoji} Erklär-Stufe: ${AGES[age()].label}</a>
           <div class="goal"><div class="goal-ring" style="--p:${goalPct}"><span>${goalPct}%</span></div>
             <div><b>Tagesziel</b><br>${P.todayXp} / ${S.goal} XP</div></div>
         </div>
@@ -278,7 +325,7 @@
     `);
     $("#fav").onclick = () => {
       S.favs = fav ? S.favs.filter((x) => x !== c.id) : [...S.favs, c.id];
-      save("sk_settings", S); beep("click"); category(id);
+      saveS(); beep("click"); category(id);
     };
   }
 
@@ -290,11 +337,8 @@
   function lesson(id) {
     const l = findLesson(id);
     if (!l) return go("#/");
-    P.last = l.id; save("sk_progress", P);
-    const quiz = l.quiz.map((q) => {
-      const order = shuffle(q.a.map((_, i) => i));
-      return { ...q, a: order.map((i) => q.a[i]), c: order.indexOf(q.c) };
-    });
+    P.last = l.id; saveP();
+    const quiz = l.quiz.map(prepQ);
     const total = l.cards.length + quiz.length;
     let step = -1, right = 0;
 
@@ -318,13 +362,15 @@
     }
 
     function card() {
-      const c = l.cards[step];
+      const c = l.cards[step], tx = cardTexts(l, step), a = age();
       frame(`
         <div class="card learn slide-in">
           ${pic(c.w, c.e, "large")}
           <div class="card-num">Karte ${step + 1} von ${l.cards.length}</div>
           <h2>${c.e} ${esc(c.h)}</h2>
-          <p class="card-text">${esc(c.t)}</p>
+          <div class="lvl-switch" role="group" aria-label="Erklär-Stufe">${Object.entries(AGES).map(([k, v]) => `<button class="lvl ${a === k ? "on" : ""}" data-age="${k}">${v.emoji} ${v.label}</button>`).join("")}</div>
+          <p class="card-text ${a === "kind" ? "kid" : ""}">${esc(tx.t)}</p>
+          ${tx.more ? `<div class="more-box pop-in"><b>🔎 Mehr Hintergrund</b><p>${esc(tx.more)}</p></div>` : ""}
           <div class="row">
             <button class="icon-btn" id="read" title="Vorlesen">🔊 Vorlesen</button>
             ${c.w ? `<a class="icon-btn" href="${wikiUrl(c.w)}" target="_blank" rel="noopener">📖 Mehr</a>` : ""}
@@ -334,8 +380,10 @@
             <button class="big-btn blue grow" id="next">${step === l.cards.length - 1 ? "Zum Quiz 🎯" : "Weiter →"}</button>
           </div>
         </div>`);
-      $("#read").onclick = () => speak(c.h + ". " + c.t);
-      if (S.autoRead) speak(c.h + ". " + c.t);
+      const say = c.h + ". " + tx.t + (tx.more ? " " + tx.more : "");
+      $("#read").onclick = () => speak(say);
+      if (S.autoRead) speak(say);
+      app.querySelectorAll(".lvl").forEach((b) => (b.onclick = () => { prof().age = b.dataset.age; saveProfiles(); beep("click"); card(); }));
       $("#next").onclick = () => { beep("click"); step++; render(); };
       const p = $("#prev"); if (p) p.onclick = () => { step--; render(); };
       swipe($(".card"), () => $("#next").click(), () => p && p.click());
@@ -356,7 +404,7 @@
         P.answered++;
         if (ok) { right++; P.correct++; b.classList.add("right"); beep("ok"); vibrate(30); burst(["POW!", "BÄM!", "WOW!", "ZACK!", "SUPER!"][Math.floor(Math.random() * 5)]); addXp(10); }
         else { b.classList.add("wrong", "shake"); beep("bad"); vibrate([60, 40, 60]); burst("UPS!", false); }
-        save("sk_progress", P);
+        saveP();
         $("#feedback").innerHTML = `<div class="fb ${ok ? "ok" : "no"} pop-in"><b>${ok ? "Richtig! 🎉" : "Nicht ganz 😅"}</b><p>${esc(q.x)}</p>
           <button class="big-btn ${ok ? "blue" : "red"}" id="next">${qi === quiz.length - 1 ? "Ergebnis 🏁" : "Weiter →"}</button></div>`;
         $("#next").onclick = () => { step++; render(); };
@@ -367,7 +415,7 @@
       const pct = Math.round((right / quiz.length) * 100);
       const prev = P.done[l.id];
       P.done[l.id] = Math.max(prev || 0, pct);
-      save("sk_progress", P);
+      saveP();
       if (prev == null) addXp(20);
       if (pct >= 50) confetti(pct === 100 ? 140 : 70);
       const idx = l.cat.lessons.findIndex((x) => x.id === l.id);
@@ -434,7 +482,7 @@
   function runQuiz(cats) {
     const pool = shuffle(allLessons().filter((l) => cats.includes(l.cat.id)).flatMap((l) => l.quiz.map((q) => ({ ...q, l }))))
       .slice(0, S.quizCount)
-      .map((q) => { const o = shuffle(q.a.map((_, i) => i)); return { ...q, a: o.map((i) => q.a[i]), c: o.indexOf(q.c) }; });
+      .map(prepQ);
     let i = 0, right = 0, combo = 0;
     function show() {
       if (i >= pool.length) {
@@ -461,7 +509,7 @@
         P.answered++;
         if (ok) { right++; combo++; P.correct++; b.classList.add("right"); beep("ok"); vibrate(30); burst(combo > 2 ? "COMBO x" + combo + "!" : "POW!"); addXp(10 + (combo > 2 ? 5 : 0)); }
         else { combo = 0; b.classList.add("wrong", "shake"); beep("bad"); vibrate([60, 40, 60]); burst("UPS!", false); }
-        save("sk_progress", P);
+        saveP();
         $("#feedback").innerHTML = `<div class="fb ${ok ? "ok" : "no"} pop-in"><b>${ok ? "Richtig! 🎉" : "Nicht ganz 😅"}</b><p>${esc(q.x)}</p><button class="big-btn ${ok ? "blue" : "red"}" id="next">Weiter →</button></div>`;
         $("#next").onclick = () => { i++; show(); };
       }));
@@ -498,7 +546,10 @@
     view(`
       <h1 class="page-title">⚙️ Einstellungen</h1>
       <div class="set-group"><h3>👤 Profil</h3>
-        <label class="set"><span><b>Dein Name</b></span><input type="text" data-k="name" maxlength="20" value="${esc(S.name)}" placeholder="Held"></label>
+        <a class="set" href="#/profil"><span><b>${prof().avatar} ${esc(prof().name)}</b><small>Auf diesem Gerät angemeldet · Profil bearbeiten oder wechseln</small></span><span class="go-small">›</span></a>
+        <div class="set col"><b>Erklär-Stufe</b><small>Wie sollen Lernkarten erklärt werden?</small>
+          <div class="age-pick">${Object.entries(AGES).map(([k, v]) => `<button class="age-btn ${age() === k ? "on" : ""}" data-age="${k}"><span>${v.emoji}</span><b>${v.label}</b><small>${v.sub}</small></button>`).join("")}</div>
+        </div>
         <div class="profile"><span>⭐ Level ${level(P.xp)} · ${rank(level(P.xp))}</span><span>🔥 ${P.streak} Tage</span><span>✅ ${Object.keys(P.done).length} Lektionen</span></div>
       </div>
       <div class="set-group"><h3>🎨 Aussehen</h3>
@@ -537,18 +588,117 @@
       el.addEventListener(el.type === "text" ? "input" : "change", () => {
         const k = el.dataset.k;
         S[k] = el.type === "checkbox" ? el.checked : typeof DEFAULTS[k] === "number" ? +el.value : el.value;
-        save("sk_settings", S); applySettings();
+        saveS(); applySettings();
         if (el.type === "checkbox") beep("click");
       });
     });
-    app.querySelectorAll(".theme-btn").forEach((b) => (b.onclick = () => { S.theme = b.dataset.theme; save("sk_settings", S); applySettings(); beep("click"); settings(); }));
-    app.querySelectorAll(".favbox").forEach((b) => (b.onchange = () => { S.favs = [...app.querySelectorAll(".favbox:checked")].map((x) => x.value); save("sk_settings", S); }));
+    app.querySelectorAll(".age-btn").forEach((b) => (b.onclick = () => { prof().age = b.dataset.age; saveProfiles(); beep("click"); toast(AGES[b.dataset.age].emoji + " Erklär-Stufe: " + AGES[b.dataset.age].label); settings(); }));
+    app.querySelectorAll(".theme-btn").forEach((b) => (b.onclick = () => { S.theme = b.dataset.theme; saveS(); applySettings(); beep("click"); settings(); }));
+    app.querySelectorAll(".favbox").forEach((b) => (b.onchange = () => { S.favs = [...app.querySelectorAll(".favbox:checked")].map((x) => x.value); saveS(); }));
     $("#reset").onclick = () => {
       if (!confirm("Wirklich alle XP und Lektionen löschen?")) return;
       P = { xp: 0, done: {}, streak: 0, lastDay: "", todayXp: 0, todayDate: today(), last: null, correct: 0, answered: 0 };
-      save("sk_progress", P); updateHeader(); toast("Fortschritt zurückgesetzt"); settings();
+      saveP(); updateHeader(); toast("Fortschritt zurückgesetzt"); settings();
     };
     if (deferredPrompt) { const ib = $("#install"); ib.hidden = false; ib.onclick = () => { deferredPrompt.prompt(); deferredPrompt = null; ib.hidden = true; }; }
+  }
+
+  // ---------- Profile ----------
+  function switchProfile(id) {
+    activeId = id; saveProfiles(); loadProfile(); rollDay(); applySettings(); updateHeader();
+  }
+  function profileCard(p) {
+    const pr = load("sk_progress_" + p.id, NEW_PROGRESS());
+    return `<button class="prof-card ${p.id === activeId ? "on" : ""}" data-id="${p.id}">
+      <span class="prof-av">${p.avatar}</span><b>${esc(p.name)}</b>
+      <small>${AGES[p.age] ? AGES[p.age].emoji + " " + AGES[p.age].label : ""}</small>
+      <small>⭐ Lv ${level(pr.xp)} · ${pr.xp} XP</small>${p.id === activeId ? `<em>aktiv</em>` : ""}</button>`;
+  }
+  function profilePage() {
+    const p = prof();
+    view(`
+      <h1 class="page-title">👥 Wer lernt gerade?</h1>
+      <p class="sub">Du bist auf diesem Gerät automatisch angemeldet – ohne E-Mail und ohne Passwort. Jedes Profil hat eigenen Fortschritt und eigene Einstellungen.</p>
+      <div class="prof-grid">${profiles.map(profileCard).join("")}
+        <button class="prof-card add" id="addp"><span class="prof-av">➕</span><b>Neues Profil</b><small>z. B. für Geschwister</small></button></div>
+      <div class="set-group"><h3>✏️ ${esc(p.name)} bearbeiten</h3>
+        <label class="set"><span><b>Name</b></span><input type="text" id="pname" maxlength="20" value="${esc(p.name)}"></label>
+        <div class="set col"><b>Avatar</b><div class="av-grid">${AVATARS.map((a) => `<button class="av ${a === p.avatar ? "on" : ""}" data-av="${a}">${a}</button>`).join("")}</div></div>
+        <div class="set col"><b>Erklär-Stufe</b>
+          <div class="age-pick">${Object.entries(AGES).map(([k, v]) => `<button class="age-btn ${age() === k ? "on" : ""}" data-age="${k}"><span>${v.emoji}</span><b>${v.label}</b><small>${v.sub}</small></button>`).join("")}</div></div>
+      </div>
+      <div class="set-group"><h3>💾 Fortschritt sichern</h3>
+        <p class="sub small">Deine Daten sind nur auf diesem Gerät gespeichert. Mit einem Sicherungs-Code kannst du dein Profil auf ein anderes Gerät mitnehmen.</p>
+        <button class="big-btn blue" id="exp">📋 Sicherungs-Code erstellen</button>
+        <textarea id="code" class="search code" rows="3" placeholder="Hier erscheint der Code – oder füge einen Code ein"></textarea>
+        <button class="big-btn ghost" id="imp">📥 Code als neues Profil laden</button>
+      </div>
+      ${profiles.length > 1 ? `<button class="big-btn ghost danger" id="delp">🗑️ Profil „${esc(p.name)}“ löschen</button>` : ""}
+    `);
+    app.querySelectorAll(".prof-card[data-id]").forEach((b) => (b.onclick = () => { if (b.dataset.id === activeId) return; switchProfile(b.dataset.id); beep("lvl"); toast("Hallo " + prof().name + "! " + prof().avatar); profilePage(); }));
+    $("#addp").onclick = () => profileModal(false);
+    $("#pname").addEventListener("input", (e) => { p.name = e.target.value.trim().slice(0, 20) || "Held"; saveProfiles(); });
+    $("#pname").addEventListener("change", () => profilePage());
+    app.querySelectorAll(".av").forEach((b) => (b.onclick = () => { p.avatar = b.dataset.av; saveProfiles(); updateHeader(); beep("click"); profilePage(); }));
+    app.querySelectorAll(".age-btn").forEach((b) => (b.onclick = () => { p.age = b.dataset.age; saveProfiles(); beep("click"); profilePage(); }));
+    $("#exp").onclick = () => {
+      const data = { v: 1, profile: p, settings: S, progress: P };
+      const code = btoa(unescape(encodeURIComponent(JSON.stringify(data))));
+      $("#code").value = code; $("#code").select();
+      if (navigator.clipboard) navigator.clipboard.writeText(code).then(() => toast("Code kopiert 📋"), () => {});
+    };
+    $("#imp").onclick = () => {
+      try {
+        const d = JSON.parse(decodeURIComponent(escape(atob($("#code").value.trim()))));
+        if (!d.profile || !d.progress) throw 0;
+        const id = uid();
+        profiles.push({ ...d.profile, id, created: Date.now() });
+        save("sk_settings_" + id, d.settings || DEFAULTS); save("sk_progress_" + id, d.progress);
+        switchProfile(id); toast("Profil geladen ✅"); confetti(60); profilePage();
+      } catch { toast("Der Code ist ungültig 🤔"); }
+    };
+    const del = $("#delp");
+    if (del) del.onclick = () => {
+      if (!confirm("Profil „" + p.name + "“ mit allem Fortschritt löschen?")) return;
+      try { localStorage.removeItem("sk_settings_" + p.id); localStorage.removeItem("sk_progress_" + p.id); } catch {}
+      profiles = profiles.filter((x) => x.id !== p.id);
+      switchProfile(profiles[0].id); toast("Profil gelöscht"); profilePage();
+    };
+  }
+
+  function profileModal(first) {
+    let av = AVATARS[Math.floor(Math.random() * 8)], ag = "jugend";
+    const m = document.createElement("div");
+    m.className = "modal";
+    const draw = () => {
+      m.innerHTML = `<div class="modal-box pop-in">
+        ${first ? `<div class="hero-mascot">🦸</div><h2>Willkommen bei<br><span class="logo-text">Skovalearnings</span></h2>
+        <p>Erstelle dein Profil. Du bleibst auf diesem Gerät automatisch angemeldet – ganz ohne E-Mail.</p>` : `<h2>Neues Profil</h2>`}
+        <input class="search" id="wname" maxlength="20" placeholder="Wie heißt du?" value="${esc(m.dataset.n || "")}">
+        <b>Wähle deinen Avatar</b>
+        <div class="av-grid">${AVATARS.map((a) => `<button class="av ${a === av ? "on" : ""}" data-av="${a}">${a}</button>`).join("")}</div>
+        <b>Wie soll erklärt werden?</b>
+        <div class="age-pick">${Object.entries(AGES).map(([k, v]) => `<button class="age-btn ${ag === k ? "on" : ""}" data-age="${k}"><span>${v.emoji}</span><b>${v.label}</b><small>${v.sub}</small></button>`).join("")}</div>
+        <button class="big-btn red" id="wgo">Los geht's! ⚡</button>
+        ${first ? "" : `<button class="big-btn ghost" id="wcancel">Abbrechen</button>`}</div>`;
+      const keep = () => (m.dataset.n = $("#wname", m).value);
+      m.querySelectorAll(".av").forEach((b) => (b.onclick = () => { keep(); av = b.dataset.av; beep("click"); draw(); }));
+      m.querySelectorAll(".age-btn").forEach((b) => (b.onclick = () => { keep(); ag = b.dataset.age; beep("click"); draw(); }));
+      $("#wgo", m).onclick = done;
+      $("#wname", m).addEventListener("keydown", (e) => e.key === "Enter" && done());
+      const c = $("#wcancel", m); if (c) c.onclick = () => m.remove();
+    };
+    const done = () => {
+      const id = uid(), name = ($("#wname", m).value.trim() || "Held").slice(0, 20);
+      profiles.push({ id, name, avatar: av, age: ag, created: Date.now() });
+      if (ag === "kind") save("sk_settings_" + id, { ...DEFAULTS, fontSize: "l" });
+      switchProfile(id);
+      m.remove(); beep("lvl"); confetti(80);
+      toast("Hallo " + name + "! " + av);
+      first ? route() : go("#/");
+    };
+    document.body.appendChild(m);
+    draw();
   }
 
   // ---------- Router ----------
@@ -563,6 +713,7 @@
     if (page === "quiz") return quizSetup();
     if (page === "videos") return videos();
     if (page === "einstellungen") return settings();
+    if (page === "profil") return profilePage();
     home();
   }
 
@@ -574,20 +725,8 @@
   updateHeader();
   route();
 
-  // Willkommen beim ersten Start
-  if (!localStorage.getItem("sk_welcome")) {
-    try { localStorage.setItem("sk_welcome", "1"); } catch {}
-    const m = document.createElement("div");
-    m.className = "modal";
-    m.innerHTML = `<div class="modal-box pop-in"><div class="hero-mascot">🦸</div><h2>Willkommen bei<br><span class="logo-text">Skovalearnings</span></h2>
-      <p>Lerne Politik, Geschichte, Länder, Weltraum und vieles mehr – einfach erklärt, mit Bildern, Quiz und Videos.</p>
-      <input class="search" id="wname" maxlength="20" placeholder="Wie heißt du?">
-      <button class="big-btn red" id="wgo">Los geht's! ⚡</button></div>`;
-    document.body.appendChild(m);
-    const done = () => { const n = $("#wname").value.trim(); if (n) { S.name = n.slice(0, 20); save("sk_settings", S); } m.remove(); beep("lvl"); confetti(80); route(); };
-    $("#wgo").onclick = done;
-    $("#wname").addEventListener("keydown", (e) => e.key === "Enter" && done());
-  }
+  // Beim ersten Start: Profil anlegen (pro Gerät, ohne E-Mail)
+  if (!profiles.length) profileModal(true);
 
   if ("serviceWorker" in navigator && location.protocol !== "file:") {
     navigator.serviceWorker.register("sw.js").catch(() => {});

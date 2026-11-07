@@ -1,0 +1,125 @@
+LV({
+"geld":[
+["Früher hat man Sachen getauscht. Zum Beispiel Hühner gegen Mehl.","Ökonomen nennen das Problem „doppelte Koinzidenz der Bedürfnisse“: Beide müssen gleichzeitig genau das wollen, was der andere hat."],
+["Dann hat man Geld erfunden: Münzen und Scheine.","Vorher dienten auch Muscheln, Salz oder Vieh als Zahlungsmittel. Das Wort „Salär“ für Gehalt geht auf das lateinische Wort für Salz zurück."],
+["Geld ist nur Papier. Aber alle glauben daran, dass es etwas wert ist.","Heutiges Geld ist nicht mehr durch Gold gedeckt (Fiatgeld). Der größte Teil existiert ohnehin nur als Buchgeld auf Konten."],
+["Wenn alles teurer wird, nennt man das Inflation.","Die Europäische Zentralbank strebt eine Inflationsrate von zwei Prozent an. 2022 stieg sie in Deutschland wegen der Energiekrise auf fast neun Prozent."]],
+"angebot":[
+["Der Preis hängt davon ab, wie viel es gibt und wie viele es haben wollen.","Der Preis, bei dem Angebot und Nachfrage gleich groß sind, heißt Gleichgewichtspreis. Das Modell geht unter anderem auf Alfred Marshall zurück."],
+["Wenn ganz viele etwas wollen, aber es gibt nur wenig, wird es teuer.","Beim „Dynamic Pricing“ passen Anbieter Preise laufend an die Nachfrage an, etwa bei Flugtickets oder Konzertkarten."],
+["Wenn es von etwas ganz viel gibt, wird es billig.","Bei saisonalen Produkten schwanken Preise deshalb stark. Lager und Importe gleichen das teilweise aus."]],
+"geld-bank":[
+["Eine Bank passt auf dein Geld auf.","In der EU sind Einlagen bis 100.000 Euro pro Person und Bank gesetzlich abgesichert, falls die Bank pleitegeht."],
+["Auf einem Konto ist dein Geld gespeichert.","Für Jugendliche gibt es meist kostenlose Girokonten. Bis zur Volljährigkeit müssen die Eltern zustimmen, und das Konto darf nicht überzogen werden."],
+["Mit einer Karte kann man bezahlen. Die Geheimzahl ist ein Geheimnis!","Bei Verlust sollte man die Karte sofort sperren lassen. In Deutschland geht das über den Sperr-Notruf 116 116."],
+["Mit einer Überweisung schickt man Geld an jemand anderen.","Mit der IBAN funktionieren Überweisungen im ganzen Euro-Raum. Echtzeitüberweisungen kommen innerhalb von Sekunden an."],
+["Die Bank verleiht Geld und verdient damit.","Den Unterschied zwischen Kredit- und Sparzinsen nennt man Zinsmarge. Banken müssen einen Teil als Eigenkapital vorhalten, um Verluste abzufedern."]],
+"geld-sparen":[
+["Wer spart, kann sich später etwas Großes kaufen.","Fachleute empfehlen einen Notgroschen von etwa drei Monatsausgaben auf einem leicht verfügbaren Konto."],
+["Teile dein Geld auf: zum Ausgeben, zum Sparen und zum Verschenken.","Eine bekannte Erwachsenen-Regel ist 50-30-20: 50 Prozent für Fixkosten, 30 Prozent für Wünsche, 20 Prozent zum Sparen."],
+["Für gespartes Geld gibt die Bank manchmal ein kleines Geschenk: Zinsen.","Zinsen auf Sparguthaben sind in Deutschland ab einem Freibetrag steuerpflichtig (Abgeltungsteuer)."],
+["Wenn man früh spart, wächst das Geld immer schneller.","Faustregel 72: Teilt man 72 durch den Zinssatz, erhält man ungefähr die Jahre, bis sich das Geld verdoppelt. Bei 6 Prozent sind es etwa 12 Jahre."],
+["Wenn alles teurer wird, ist dein gespartes Geld weniger wert.","Entscheidend ist der Realzins: Zinssatz minus Inflationsrate. Ist er negativ, verliert Erspartes an Kaufkraft."]],
+"geld-budget":[
+["Mit Taschengeld lernst du, mit Geld umzugehen.","Das Jugendamt veröffentlicht Empfehlungen für Taschengeld je nach Alter. Pädagogen raten, Taschengeld nicht als Strafe zu kürzen."],
+["Kinder dürfen mit ihrem Taschengeld kleine Sachen kaufen.","Der Paragraf steht in § 110 BGB. Größere Käufe oder Verträge wie Handyabos brauchen die Zustimmung der Eltern."],
+["Schreib auf, was du ausgibst. Dann weißt du, wo dein Geld hingeht.","Budget-Apps können Ausgaben automatisch kategorisieren. Viele unterschätzen kleine regelmäßige Ausgaben wie Abos."],
+["Brauche ich das wirklich? Oder will ich es nur jetzt sofort?","Händler nutzen Tricks wie künstliche Knappheit („nur noch 2 verfügbar“) und Countdowns, um spontane Käufe auszulösen."],
+["Kleine Käufe in Spielen können schnell ganz teuer werden.","Lootboxen ähneln Glücksspiel, weil man nicht weiß, was man bekommt. Manche Länder wie Belgien haben sie verboten."]],
+"geld-schulden":[
+["Wenn man Geld leiht, muss man es später zurückgeben.","Der effektive Jahreszins zeigt die Gesamtkosten eines Kredits inklusive Gebühren und macht Angebote vergleichbar."],
+["Viele Leute leihen sich Geld für ein Haus.","Hauskredite laufen oft 20 bis 30 Jahre. Die monatliche Rate besteht aus Zins und Tilgung."],
+["Wer zu viel leiht, kann es nicht mehr zurückzahlen. Das ist eine Falle.","In Deutschland gelten Millionen Erwachsene als überschuldet. Häufige Auslöser sind Arbeitslosigkeit, Trennung oder Krankheit."],
+["Auch beim Handy-Vertrag zahlt man oft lange ab.","Bei „Kauf jetzt, zahl später“-Angeboten im Online-Handel verlieren viele leicht den Überblick über offene Raten."],
+["Wer Schulden hat, kann sich Hilfe holen.","Als letzter Ausweg gibt es die Privatinsolvenz. Danach kann man nach in der Regel drei Jahren von restlichen Schulden befreit werden."]],
+"geld-aktien":[
+["Mit einer Aktie gehört dir ein kleines Stück von einer Firma.","Aktionäre können Dividenden erhalten, also einen Anteil am Gewinn. Auf der Hauptversammlung dürfen sie abstimmen."],
+["An der Börse kaufen und verkaufen Leute Aktien.","Die älteste Börse im heutigen Sinne entstand Anfang des 17. Jahrhunderts in Amsterdam. Die größte der Welt ist die New York Stock Exchange."],
+["Aktien können mehr wert werden oder weniger. Man kann auch verlieren.","Langfristig sind breit gestreute Aktienanlagen historisch meist gestiegen, kurzfristig sind starke Einbrüche aber möglich."],
+["Der DAX zeigt, wie es großen deutschen Firmen geht.","Der DAX startete 1988 mit 1.000 Punkten. Er wurde 2021 von 30 auf 40 Unternehmen erweitert."],
+["Lege nicht alles auf eine Firma. Verteile es lieber.","Indexfonds (ETFs) bilden einen ganzen Index nach und sind eine günstige Möglichkeit zu streuen."]],
+"geld-krypto":[
+["Es gibt Geld, das nur im Computer existiert. Zum Beispiel Bitcoin.","Neben Bitcoin gibt es Tausende weitere Kryptowährungen, etwa Ethereum. Sogenannte Stablecoins sind an Währungen wie den Dollar gekoppelt."],
+["Niemand weiß, wer Bitcoin erfunden hat.","Insgesamt kann es höchstens 21 Millionen Bitcoin geben. Die erste bekannte Bezahlung mit Bitcoin war 2010: zwei Pizzen für 10.000 Bitcoin."],
+["Alle Zahlungen stehen in einer langen Liste, die viele Computer prüfen.","Die Blockchain wird dezentral gespeichert. Einmal eingetragene Daten lassen sich praktisch nicht mehr ändern."],
+["Der Wert von Bitcoin geht oft stark rauf und runter.","Wer seine digitalen Schlüssel verliert, verliert sein Geld endgültig. Es gibt auch viele Betrugsmaschen mit Krypto-Investments."],
+["Bitcoin braucht ganz viel Strom.","Beim Mining lösen Computer Rechenaufgaben, um neue Blöcke zu erstellen (Proof of Work). Ethereum stellte 2022 auf ein stromsparendes Verfahren um."]],
+"geld-euro":[
+["Viele Länder in Europa bezahlen mit dem gleichen Geld, dem Euro.","Als Buchgeld startete der Euro schon 1999. Auch einige Nicht-EU-Staaten wie Montenegro und Kosovo nutzen ihn."],
+["Früher hatte Deutschland die D-Mark.","Der Umrechnungskurs betrug genau 1,95583 D-Mark für einen Euro. D-Mark-Bargeld kann man bei der Bundesbank bis heute umtauschen."],
+["Eine große Bank in Frankfurt passt auf den Euro auf.","Die EZB ist unabhängig von Regierungen. An ihrer Spitze steht ein Präsident oder eine Präsidentin mit achtjähriger Amtszeit."],
+["Die Bank kann Zinsen höher oder niedriger machen. Das ändert die Preise.","Nach Jahren mit Null- und Negativzinsen erhöhte die EZB die Zinsen 2022 und 2023 stark, um die hohe Inflation zu bremsen."],
+["Euro-Münzen sehen in jedem Land ein bisschen anders aus.","Die Euro-Scheine zeigen Fenster, Tore und Brücken aus verschiedenen Epochen – bewusst keine echten Bauwerke, um kein Land zu bevorzugen."]],
+"geld-arbeit":[
+["Wenn Erwachsene arbeiten, bekommen sie Geld.","In Deutschland sind über 46 Millionen Menschen erwerbstätig – so viele wie nie zuvor."],
+["Vom Lohn geht ein Teil weg für Steuern. Den Rest bekommt man.","Zu den Abzügen gehören Lohnsteuer und Sozialversicherungen für Rente, Krankheit, Pflege und Arbeitslosigkeit."],
+["Es gibt einen kleinsten Lohn, den jeder bekommen muss.","Über die Höhe entscheidet eine Mindestlohnkommission aus Gewerkschaften, Arbeitgebern und Wissenschaft. Für 2027 ist eine weitere Erhöhung beschlossen."],
+["Man kann einen Beruf in der Firma lernen oder studieren.","Es gibt rund 320 anerkannte Ausbildungsberufe. Das duale System gilt international als Vorbild."],
+["Viele Berufe ändern sich durch Computer.","Automatisierung ersetzt eher einzelne Tätigkeiten als ganze Berufe. Gefragt sind etwa Pflege, Handwerk und IT."]],
+"geld-firma":[
+["Eine Firma fängt mit einer guten Idee an.","Ein Businessplan beschreibt Idee, Zielgruppe, Konkurrenz und Finanzen. Er ist oft Voraussetzung für einen Kredit."],
+["Gewinn ist das Geld, das übrig bleibt.","Umsatz ist alles, was eingenommen wird. Erst nach Abzug von Material, Löhnen, Miete und Steuern bleibt Gewinn."],
+["Große Firmen haben oft ganz klein angefangen.","Apple wurde 1976 gegründet, Google 1998 von zwei Doktoranden der Stanford-Universität."],
+["Manche neuen Firmen schaffen es nicht. Das ist ein Risiko.","Bei einer GmbH haften die Gründer nur mit dem Firmenvermögen, nicht mit ihrem Privatvermögen. Das Stammkapital beträgt mindestens 25.000 Euro."],
+["Junge Firmen, die schnell wachsen, heißen Start-ups.","Start-ups finanzieren sich oft über Risikokapital von Investoren, die Firmenanteile erhalten."]],
+"geld-werbung":[
+["Werbung will, dass du etwas kaufst.","Weltweit werden jedes Jahr Hunderte Milliarden Euro für Werbung ausgegeben – inzwischen der größte Teil online."],
+["Werbung zeigt fröhliche Menschen und schöne Musik. Das soll dir gefallen.","Häufige Techniken sind Testimonials (Prominente), Wiederholung und das Verknüpfen von Produkten mit Gefühlen wie Freiheit oder Zugehörigkeit."],
+["Wenn Influencer Werbung machen, muss das dranstehen.","Fehlt die Kennzeichnung, drohen Abmahnungen. Auch kostenlos zugeschickte Produkte können kennzeichnungspflichtig sein."],
+["Im Internet sammeln Firmen Infos über dich.","Cookies und Tracking erstellen Profile über Interessen. Die Datenschutz-Grundverordnung (DSGVO) gibt dir Rechte, etwa auf Auskunft und Löschung."],
+["Im Supermarkt stehen Süßigkeiten genau da, wo Kinder warten.","Auch Musik, Duft (etwa frisches Brot) und lange Wege zu Grundnahrungsmitteln sollen zum Kaufen verleiten."]],
+"geld-handel":[
+["Viele Sachen kommen aus anderen Ländern.","Die Welthandelsorganisation (WTO) in Genf setzt Regeln für den internationalen Handel."],
+["Große Schiffe bringen Waren in Kisten über das Meer.","Der Standard-Container wurde in den 1950er-Jahren erfunden und senkte die Transportkosten drastisch. Rund 80 Prozent des Welthandels laufen über See."],
+["Deutschland verkauft viele Autos ins Ausland.","Die wichtigsten Handelspartner Deutschlands sind die USA, China und die Nachbarländer in der EU."],
+["Ein Handy wird in vielen Ländern zusammengebaut.","Die Corona-Pandemie zeigte, wie anfällig globale Lieferketten sind – etwa bei Chips und Medikamenten."],
+["Manche Länder machen Waren aus dem Ausland teurer.","Zölle schützen heimische Firmen, verteuern aber Produkte für Verbraucher. 2025 lösten neue US-Zölle weltweite Handelskonflikte aus."]],
+"geld-krisen":[
+["Mal geht es der Wirtschaft gut, mal schlecht.","Ökonomen sprechen von Konjunkturzyklen. Gemessen wird die Wirtschaftsleistung vor allem über das Bruttoinlandsprodukt."],
+["Wenn es schlecht läuft, verlieren manche Menschen ihre Arbeit.","Als Faustregel gilt: Schrumpft das BIP zwei Quartale hintereinander, spricht man von einer technischen Rezession."],
+["Vor fast 100 Jahren gab es eine riesige Krise auf der Welt.","Auslöser war der „Schwarze Donnerstag“ an der Wall Street im Oktober 1929. In Deutschland waren 1932 rund sechs Millionen Menschen arbeitslos."],
+["2008 hatten viele Banken große Probleme.","Die Pleite der US-Bank Lehman Brothers im September 2008 löste eine weltweite Krise aus. Viele Regeln für Banken wurden danach verschärft."],
+["In einer Krise hilft der Staat mit Geld.","Ein deutsches Instrument ist das Kurzarbeitergeld: Firmen reduzieren die Arbeitszeit, statt zu kündigen, und der Staat zahlt einen Teil des Lohns."]],
+"geld-sozialstaat":[
+["Wer krank oder alt ist, bekommt Hilfe von allen.","Das Sozialstaatsprinzip steht in Artikel 20 des Grundgesetzes. Sozialausgaben machen den größten Posten im Staatshaushalt aus."],
+["Ein Politiker namens Bismarck hat die ersten Versicherungen gemacht.","Krankenversicherung (1883), Unfallversicherung (1884) und Rentenversicherung (1889) waren weltweit Vorbilder. Bismarck wollte damit auch der Arbeiterbewegung Zulauf nehmen."],
+["Wer arbeitet, zahlt für die Rente der alten Menschen.","Das Umlageverfahren heißt „Generationenvertrag“. Weil die Bevölkerung altert, kommen immer weniger Beitragszahler auf einen Rentner."],
+["Wenn du krank bist, bezahlt die Krankenkasse den Arzt.","In Deutschland gibt es gesetzliche und private Krankenversicherungen. Die Pflegeversicherung kam 1995 als fünfte Säule hinzu."],
+["Eltern bekommen Geld für ihre Kinder.","Das Kindergeld wird in der Regel bis zum 18. Lebensjahr gezahlt, bei Ausbildung oder Studium bis höchstens zum 25."]],
+"geld-versicherung":[
+["Viele zahlen ein bisschen Geld. Wenn einer Pech hat, bekommt er Hilfe.","Die Idee ist alt: Schon im Mittelalter gab es Gilden und Kassen, die Mitglieder bei Unglück unterstützten. Seeversicherungen entstanden in Italien."],
+["Wenn du aus Versehen etwas kaputt machst, zahlt die Versicherung.","Die private Haftpflicht gilt als eine der wichtigsten Versicherungen, weil Schäden an Personen Millionen kosten können. Kinder sind meist über die Eltern mitversichert."],
+["Wenn zu Hause etwas kaputt geht oder geklaut wird, hilft eine Versicherung.","Die Hausratversicherung deckt meist Feuer, Leitungswasser, Sturm und Einbruch – aber nicht Hochwasser, dafür braucht man Zusatzschutz."],
+["Jedes Auto braucht eine Versicherung.","Die Kfz-Haftpflicht zahlt Schäden an anderen. Eigene Schäden deckt nur die freiwillige Teil- oder Vollkasko."],
+["Nicht jede Versicherung ist wichtig.","Verbraucherzentralen raten: Erst existenzbedrohende Risiken absichern, etwa Haftpflicht und Berufsunfähigkeit, statt kleine Dinge wie Handyversicherungen."]],
+"geld-bezahlen":[
+["Münzen und Scheine nennt man Bargeld.","Bargeld ist in Deutschland das einzige gesetzliche Zahlungsmittel. Trotzdem wird inzwischen mehr mit Karte als bar bezahlt."],
+["Mit einer Karte kann man bezahlen, ohne Geld dabeizuhaben.","Bei der Debitkarte wird sofort vom Konto abgebucht, bei der Kreditkarte meist gesammelt einmal im Monat."],
+["Man kann sogar mit dem Handy bezahlen.","Mobiles Bezahlen nutzt die Funktechnik NFC. Das Handy übermittelt dabei nicht die echte Kartennummer, sondern einen Ersatzcode (Token)."],
+["Im Internet kann man auch einkaufen und bezahlen.","Beim Online-Kauf hat man in der EU meist 14 Tage Widerrufsrecht und kann Waren ohne Grund zurückschicken."],
+["Betrüger wollen deine Geheimzahl. Gib sie niemals weiter!","Bei Phishing werden Webseiten von Banken täuschend echt nachgebaut. Im Zweifel die Bank über die offizielle Nummer anrufen."]],
+"geld-fairtrade":[
+["Viele Kleider werden von Menschen genäht, die sehr wenig Geld bekommen.","2013 stürzte in Bangladesch die Textilfabrik Rana Plaza ein, über 1.100 Menschen starben. Das führte zu mehr Druck auf Modekonzerne."],
+["Bei fairem Handel bekommen die Bauern einen gerechten Preis.","Das Fairtrade-Siegel garantiert Mindestpreise und eine Prämie für Gemeinschaftsprojekte. Es gibt auch andere Siegel mit unterschiedlichen Standards."],
+["Manche Kinder müssen auf Kakaofeldern arbeiten.","Die meisten Kakaobohnen kommen aus der Elfenbeinküste und Ghana. Ein deutsches Lieferkettengesetz verpflichtet große Firmen, Menschenrechte in ihren Lieferketten zu beachten."],
+["Billige Kleidung wird oft schnell weggeworfen.","Die Textilindustrie verursacht einen erheblichen Anteil der weltweiten Treibhausgase und braucht viel Wasser, etwa für den Baumwollanbau."],
+["Gebrauchte Sachen kaufen ist gut für die Umwelt.","Repair-Cafés helfen kostenlos beim Reparieren. Die EU stärkt mit einem „Recht auf Reparatur“ die Möglichkeit, Geräte länger zu nutzen."]],
+"geld-volkswirtschaft":[
+["Man kann messen, wie viel ein Land herstellt.","Das BIP misst keine Hausarbeit, kein Ehrenamt und keine Umweltschäden. Darum gibt es Alternativen wie den Index der menschlichen Entwicklung."],
+["Amerika und China sind die größten Wirtschaften der Welt.","Deutschland liegt beim BIP weltweit auf einem der vorderen Plätze. Pro Kopf liegen kleine Länder wie Luxemburg vorn."],
+["In manchen Ländern sind die Menschen sehr arm.","Als extrem arm gilt nach Weltbank-Definition, wer weniger als rund drei Dollar pro Tag zur Verfügung hat. Ihr Anteil an der Weltbevölkerung ist seit 1990 stark gesunken."],
+["Manche Menschen haben ganz viel Geld, andere ganz wenig.","Ungleichheit misst man oft mit dem Gini-Koeffizienten. In Deutschland ist das Vermögen deutlich ungleicher verteilt als das Einkommen."],
+["Reiche Länder helfen armen Ländern.","Die UNO hat 17 Ziele für nachhaltige Entwicklung bis 2030 beschlossen, etwa Armut und Hunger zu beenden."]],
+"geld-marken":[
+["Eine Marke ist ein Name oder Bild, an dem man ein Produkt erkennt.","Marken lassen sich beim Deutschen Patent- und Markenamt schützen. Zu den wertvollsten Marken der Welt gehören Technologiefirmen wie Apple."],
+["Markensachen sind oft teurer, auch wenn sie nicht besser sind.","In Blindtests können Verbraucher oft keinen Unterschied zwischen Marken- und No-Name-Produkten feststellen."],
+["Billige Sachen aus dem Supermarkt sind oft genauso gut.","Stiftung Warentest bewertet regelmäßig auch günstige Eigenmarken – nicht selten mit guten Ergebnissen."],
+["Manchmal kauft man etwas nur, weil alle es haben.","Psychologen nennen das sozialen Bewährtheitsdruck. Marketing nutzt ihn etwa mit Hinweisen wie „Bestseller“ oder „beliebt bei“."],
+["Für alles, was wir kaufen, braucht man Rohstoffe.","Der Erdüberlastungstag markiert jedes Jahr, ab wann die Menschheit mehr Ressourcen verbraucht hat, als die Erde in einem Jahr erneuern kann."]],
+"geld-steuerung":[
+["In einer Marktwirtschaft bestimmen Firmen und Kunden selbst, was es gibt.","Adam Smith beschrieb 1776 die „unsichtbare Hand“: Eigeninteresse kann über Märkte zum Nutzen aller beitragen."],
+["In der DDR hat der Staat alles geplant. Oft fehlten Sachen.","Auf einen Trabant musste man in der DDR oft über zehn Jahre warten. Planwirtschaft konnte schlecht auf Bedürfnisse reagieren."],
+["In Deutschland ist der Markt frei. Aber der Staat sorgt für Regeln.","Das Konzept prägten Ökonomen wie Alfred Müller-Armack und Ludwig Erhard nach dem Zweiten Weltkrieg."],
+["Wenn viele das Gleiche verkaufen, müssen sie gut und günstig sein.","Ohne Wettbewerb entstehen Monopole, die Preise erhöhen können. Besonders bei großen Digitalkonzernen wird darüber diskutiert."],
+["Eine Behörde passt auf, dass Firmen nicht schummeln.","Das Bundeskartellamt sitzt in Bonn. Es verhängte schon hohe Bußgelder, etwa gegen Preisabsprachen bei Lkw, Zucker oder Bier."]]
+});

@@ -1,0 +1,125 @@
+LV({
+"koerper":[
+["In dir stecken 206 Knochen. Sie halten dich zusammen wie ein Gerüst.","Mehr als die Hälfte der Knochen sitzt in Händen und Füßen. Der längste Knochen ist der Oberschenkelknochen."],
+["Dein Herz ist so groß wie deine Faust. Es pumpt immer, auch wenn du schläfst.","Pro Tag pumpt das Herz etwa 7.000 Liter Blut. Der Herzschlag wird von einem eigenen Taktgeber, dem Sinusknoten, gesteuert."],
+["Deine Haut ist wie ein Schutzanzug für deinen Körper.","Die Haut wiegt bei Erwachsenen mehrere Kilogramm und erneuert ihre obere Schicht etwa alle vier Wochen."],
+["Dein Gehirn ist der Chef. Es denkt, fühlt und bewegt dich.","Obwohl es nur etwa zwei Prozent des Körpergewichts ausmacht, verbraucht das Gehirn rund ein Fünftel der Energie."]],
+"erdrekorde":[
+["Der höchste Berg der Welt ist der Mount Everest. Oben gibt es kaum Luft zum Atmen.","Erstbesteiger waren 1953 Edmund Hillary und Tenzing Norgay. Die Höhe wurde 2020 von China und Nepal gemeinsam auf 8.848,86 m vermessen."],
+["Der Pazifik ist das größte Meer. Er ist riesig!","Im Pazifik liegt auch der tiefste Punkt der Erde: das Challengertief im Marianengraben, rund 11.000 Meter tief."],
+["Der Nil in Afrika ist einer der längsten Flüsse der Welt.","Die Länge von Flüssen ist schwer zu messen, weil Quelle und Mündung unterschiedlich definiert werden – darum der Streit zwischen Nil und Amazonas."],
+["Die Sahara ist eine riesige Sandwüste. Dort ist es sehr heiß.","Nur etwa ein Viertel der Sahara besteht aus Sanddünen; der Rest sind Stein- und Geröllwüsten. Vor rund 6.000 Jahren war sie teilweise grün."]],
+"erfindungen":[
+["Das Rad gibt es schon ganz lange. Ohne Rad gäbe es keine Autos.","Die ältesten bekannten Räder stammen aus Mesopotamien und Osteuropa. Ein Holzrad aus den slowenischen Sümpfen ist über 5.000 Jahre alt."],
+["Gutenberg hat eine Maschine erfunden, mit der man schnell Bücher machen kann.","Sein berühmtestes Werk ist die Gutenberg-Bibel von etwa 1455. Bewegliche Lettern gab es schon früher in China und Korea."],
+["Die Glühbirne macht Licht mit Strom. Vorher gab es nur Kerzen.","Vor Edison arbeiteten bereits andere Erfinder an Glühlampen, etwa Joseph Swan. Heute haben LEDs die Glühbirne weitgehend ersetzt, weil sie viel weniger Strom brauchen."],
+["Ein Smartphone ist Telefon, Kamera und Computer in einem.","Weltweit gibt es heute mehrere Milliarden Smartphone-Nutzer. Die Entwicklung baut auf Mikrochips auf, deren Leistung sich jahrzehntelang etwa alle zwei Jahre verdoppelte."]],
+"wissen-farben":[
+["Das Licht der Sonne sieht weiß aus. Aber eigentlich stecken alle Farben darin.","Isaac Newton zeigte 1666 mit Prismen, dass weißes Licht aus Spektralfarben besteht und sich wieder zusammensetzen lässt."],
+["Wenn die Sonne in Regentropfen scheint, entsteht ein Regenbogen.","Ein Regenbogen erscheint immer im Winkel von etwa 42 Grad zum Gegenpunkt der Sonne. Manchmal sieht man einen zweiten, schwächeren Bogen mit umgekehrter Farbreihenfolge."],
+["Im Regenbogen gibt es sieben Farben. Rot ist immer außen.","Eigentlich ist das Spektrum fließend. Die Zahl sieben legte Newton fest – vermutlich auch in Anlehnung an die sieben Töne der Tonleiter."],
+["Der Himmel ist blau, weil die Luft das blaue Licht überall verteilt.","Beim Sonnenuntergang muss das Licht einen längeren Weg durch die Luft nehmen; Blau wird weggestreut, und Rot- und Orangetöne bleiben übrig."],
+["Aus wenigen Farben kann man fast alle anderen mischen.","Farbmischung mit Licht ist additiv (Rot, Grün, Blau ergeben Weiß), mit Farbstoffen subtraktiv (Cyan, Magenta, Gelb ergeben fast Schwarz). Drucker nutzen darum zusätzlich Schwarz (CMYK)."]],
+"wissen-zeit":[
+["Ein Jahr ist so lange, wie die Erde braucht, um einmal um die Sonne zu fliegen.","Genau sind es etwa 365,2422 Tage. Unser Kalender ist der gregorianische, eingeführt 1582 von Papst Gregor XIII."],
+["Fast alle vier Jahre hat der Februar einen Tag mehr.","Durch 100 teilbare Jahre sind keine Schaltjahre, außer sie sind durch 400 teilbar. Darum war 2000 ein Schaltjahr, 1900 aber nicht."],
+["Die Namen der Monate kommen von den alten Römern.","September bis Dezember bedeuten eigentlich siebter bis zehnter Monat – das römische Jahr begann ursprünglich im März."],
+["Eine Woche hat sieben Tage. Das ist schon sehr lange so.","Die Sieben geht wohl auf die sieben mit bloßem Auge sichtbaren Himmelskörper zurück: Sonne, Mond und fünf Planeten – daher auch Sonntag und Montag."],
+["Wenn bei uns Tag ist, ist es woanders Nacht. Darum gibt es verschiedene Uhrzeiten.","Zeitzonen wurden Ende des 19. Jahrhunderts eingeführt, als Eisenbahnen genaue Fahrpläne brauchten. Vorher hatte jede Stadt ihre eigene Ortszeit."]],
+"wissen-sinne":[
+["Du hast fünf Sinne: Sehen, Hören, Riechen, Schmecken und Fühlen.","Tatsächlich hat der Mensch mehr Sinne, etwa für Gleichgewicht, Temperatur, Schmerz und die Lage der eigenen Glieder (Propriozeption)."],
+["Deine Augen sehen alles verkehrt herum. Dein Gehirn dreht das Bild um.","Die Netzhaut enthält Zapfen für Farben und Stäbchen für das Sehen im Dunkeln. Am blinden Fleck gibt es keine Sinneszellen – das Gehirn füllt die Lücke auf."],
+["In deinem Ohr sitzt auch das Gleichgewicht. Darum wird dir beim Drehen schwindelig.","Im Innenohr bewegen sich Flüssigkeiten in drei Bogengängen. Nach dem Drehen strömen sie noch weiter und melden Bewegung, obwohl man stillsteht."],
+["Wenn du dir die Nase zuhältst, schmeckst du viel weniger.","Die Zunge erkennt nur süß, sauer, salzig, bitter und umami. Alles Feinere – etwa Erdbeere oder Vanille – kommt über den Geruchssinn."],
+["Ein Hund kann viel besser riechen als du.","Hunde haben je nach Rasse bis zu 300 Millionen Riechzellen, Menschen etwa 5 bis 6 Millionen. Darum werden sie als Spür- und Rettungshunde eingesetzt."]],
+"wissen-ernaehrung":[
+["Essen gibt dir Kraft. Wie Benzin für ein Auto.","Energie wird in Kilokalorien gemessen. Kohlenhydrate und Eiweiß liefern etwa 4 kcal pro Gramm, Fett etwa 9 kcal."],
+["Trinke viel Wasser. Dein Körper braucht es.","Ein Teil der Flüssigkeit kommt auch aus dem Essen, etwa aus Obst und Gemüse. Bei Hitze und Sport steigt der Bedarf deutlich."],
+["Obst und Gemüse machen dich stark und gesund.","Neben Vitaminen liefern sie Ballaststoffe, die die Verdauung unterstützen und lange satt machen."],
+["Zu viele Süßigkeiten sind nicht gut für deine Zähne.","Die Weltgesundheitsorganisation empfiehlt, weniger als zehn Prozent der täglichen Energie aus freiem Zucker aufzunehmen – besser noch unter fünf Prozent."],
+["Seeleute wurden früher krank, weil sie kein Obst hatten.","Der schottische Arzt James Lind zeigte 1747 in einem der ersten kontrollierten Versuche, dass Zitrusfrüchte gegen Skorbut helfen."]],
+"wissen-musik":[
+["Mozart war ein Wunderkind. Schon als kleiner Junge hat er Musik erfunden.","Mozart schrieb über 600 Werke, darunter die Oper „Die Zauberflöte“. Er starb 1791 mit nur 35 Jahren in Wien."],
+["Beethoven konnte irgendwann nichts mehr hören. Trotzdem hat er tolle Musik gemacht.","Die Melodie „Ode an die Freude“ aus seiner 9. Sinfonie ist heute die Hymne der Europäischen Union."],
+["In einem Orchester spielen ganz viele Leute zusammen. Der Dirigent zeigt, wie es geht.","Ein großes Sinfonieorchester hat oft 80 bis 100 Musiker. Die Instrumente stimmen sich vor dem Konzert auf den Ton A der Oboe ein."],
+["Musik kann man aufschreiben. Dafür gibt es Noten.","Die heutige Notenschrift geht auf den Mönch Guido von Arezzo zurück, der um das Jahr 1000 das Liniensystem entwickelte. Das „H“ heißt im Englischen „B“."],
+["Pop, Rock und Hip-Hop sind neuere Musikarten.","Hip-Hop entstand in den 1970er-Jahren in der Bronx in New York. Die Musikindustrie verdient heute den Großteil ihres Geldes mit Streaming."]],
+"wissen-kunst":[
+["Die Mona Lisa ist das berühmteste Bild der Welt. Sie lächelt ein bisschen.","Das Bild ist nur etwa 77 × 53 cm groß. 1911 wurde es aus dem Louvre gestohlen und erst zwei Jahre später wiedergefunden."],
+["Leonardo da Vinci konnte malen und erfinden. Er hat sogar Flugmaschinen gezeichnet.","Seine Notizbücher schrieb er oft in Spiegelschrift. Weitere berühmte Werke sind „Das Abendmahl“ und die Zeichnung des „Vitruvianischen Menschen“."],
+["Michelangelo hat eine riesige Decke in einer Kirche bemalt.","Die Arbeit an der Decke dauerte von 1508 bis 1512. Berühmt ist die Szene „Die Erschaffung Adams“. Michelangelo schuf auch die Marmorstatue des David."],
+["Van Gogh hat Sonnenblumen und einen Sternenhimmel gemalt.","Van Gogh malte in nur rund zehn Jahren etwa 900 Gemälde. Er litt an psychischen Krisen und starb 1890 mit 37 Jahren."],
+["Picasso hat Menschen aus eckigen Formen gemalt.","Sein Gemälde „Guernica“ (1937) zeigt die Bombardierung einer spanischen Stadt und gilt als eines der bekanntesten Antikriegsbilder."]],
+"wissen-weltwunder":[
+["Vor langer Zeit haben Leute eine Liste der sieben tollsten Bauwerke gemacht.","Die Liste geht unter anderem auf den Dichter Antipatros von Sidon zurück. Dazu gehörten etwa die Zeusstatue von Olympia und das Mausoleum von Halikarnassos."],
+["Von den alten Weltwundern gibt es nur noch die große Pyramide.","Die Cheops-Pyramide war ursprünglich etwa 146 Meter hoch. Der Leuchtturm von Alexandria stand noch bis ins Mittelalter, ehe Erdbeben ihn zerstörten."],
+["Viele Menschen haben im Internet sieben neue Weltwunder gewählt.","Die Wahl wurde von einer privaten Stiftung organisiert und ist nicht offiziell. Die Cheops-Pyramide erhielt einen Ehrentitel außerhalb der Wertung."],
+["Die Chinesische Mauer ist sehr lang. Das Taj Mahal ist ein weißes Schloss in Indien.","Das Taj Mahal entstand im 17. Jahrhundert. Die Chinesische Mauer ist kein einzelnes Bauwerk, sondern ein System aus Mauern verschiedener Dynastien."],
+["Es gibt noch mehr Wunder, zum Beispiel eine Stadt in den Bergen in Peru.","Petra in Jordanien ist eine Felsenstadt der Nabatäer. Chichén Itzá war eine bedeutende Maya-Stadt mit der Pyramide „El Castillo“."]],
+"wissen-sprachen":[
+["Auf der Welt gibt es ganz viele Sprachen – etwa 7.000!","Fast die Hälfte der Weltbevölkerung spricht eine von nur rund 20 großen Sprachen. Papua-Neuguinea allein hat über 800 Sprachen."],
+["Die meisten Menschen sprechen Chinesisch oder Englisch.","Englisch ist die wichtigste Verkehrssprache in Wissenschaft, Luftfahrt und Internet. Spanisch und Hindi gehören ebenfalls zu den meistgesprochenen Sprachen."],
+["Deutsch spricht man in Deutschland, Österreich und der Schweiz.","Deutsch ist die meistgesprochene Muttersprache in der EU. Es gibt viele Dialekte, etwa Bairisch, Schwäbisch oder Plattdeutsch."],
+["Nicht alle schreiben mit unseren Buchstaben. Es gibt ganz andere Schriften.","Das lateinische Alphabet ist das weltweit am meisten genutzte Schriftsystem. Chinesisch nutzt Logogramme, die für Wörter oder Silben stehen."],
+["Manche Sprachen spricht bald niemand mehr.","Die UNESCO schätzt, dass ein großer Teil der heutigen Sprachen bis Ende des Jahrhunderts verschwinden könnte. Mit jeder Sprache geht auch Wissen über Kultur und Natur verloren."]],
+"wissen-olympia":[
+["Die Olympischen Spiele gab es schon im alten Griechenland.","Die antiken Spiele waren ein religiöses Fest zu Ehren des Zeus. Teilnehmen durften nur freie griechische Männer; sie traten nackt an."],
+["Seit über 100 Jahren gibt es die Spiele wieder.","Initiator war der Franzose Pierre de Coubertin, der 1894 das Internationale Olympische Komitee gründete."],
+["Die fünf bunten Ringe stehen für die Erdteile.","Die Farben Blau, Gelb, Schwarz, Grün und Rot zusammen mit dem weißen Hintergrund sollten alle Nationalflaggen der Welt abbilden können."],
+["Es gibt Sommer- und Winterspiele. Im Winter fährt man Ski.","Die ersten Winterspiele fanden 1924 in Chamonix statt. Seit 1994 werden Sommer- und Winterspiele im Wechsel alle zwei Jahre ausgetragen."],
+["Bei den Paralympics machen Sportler mit Behinderung mit.","Die Paralympics gehen auf Wettkämpfe für verletzte Weltkriegsveteranen in Stoke Mandeville (England) zurück. Seit 1988 finden sie am selben Ort wie Olympia statt."]],
+"wissen-fussball":[
+["Die erste Fußball-Weltmeisterschaft war vor fast 100 Jahren.","An der ersten WM nahmen nur 13 Mannschaften teil, viele europäische Teams scheuten die lange Schiffsreise nach Südamerika."],
+["Brasilien hat am öftesten gewonnen – fünfmal.","Brasilien gewann 1958, 1962, 1970, 1994 und 2002. Es ist das einzige Land, das an jeder WM teilgenommen hat."],
+["Deutschland war viermal Weltmeister.","Der Sieg 1954 in Bern wurde als „Wunder von Bern“ bekannt. 2014 gewann Deutschland in Brasilien, unter anderem nach einem 7:1 im Halbfinale gegen den Gastgeber."],
+["Jede Mannschaft hat elf Spieler. Einer ist der Torwart.","Die Regeln verwaltet das International Football Association Board. Neuere Regeln betreffen etwa den Videobeweis (VAR)."],
+["Die WM 2026 ist in Amerika. So viele Teams wie noch nie spielen mit.","Mit 48 Teams werden 104 Spiele ausgetragen. Das Finale findet im Großraum New York statt."]],
+"wissen-forscher":[
+["Einstein war ein sehr schlauer Forscher. Er hat viel über Licht und Zeit herausgefunden.","Seinen Nobelpreis bekam Einstein nicht für die Relativitätstheorie, sondern für die Erklärung des photoelektrischen Effekts (Preis von 1921)."],
+["Marie Curie hat zwei große Preise gewonnen. Sie war eine tolle Forscherin.","Curie entdeckte die Elemente Polonium und Radium. Sie war die erste Professorin an der Pariser Sorbonne."],
+["Darwin hat gesehen, dass Tiere sich mit der Zeit verändern.","Sein Buch „Über die Entstehung der Arten“ erschien 1859. Unabhängig von ihm kam Alfred Russel Wallace zu ähnlichen Ergebnissen."],
+["Galilei hat mit einem Fernrohr in den Himmel geschaut.","Er entdeckte 1610 die vier großen Jupitermonde. 1633 musste er seine Lehre vor der Inquisition widerrufen; die Kirche rehabilitierte ihn erst 1992."],
+["Der Nobelpreis ist der wichtigste Preis für Forscher.","Preise gibt es für Physik, Chemie, Medizin, Literatur und Frieden; der Wirtschaftspreis kam 1968 als Stiftung der schwedischen Reichsbank hinzu."]],
+"wissen-religionen":[
+["Auf der Welt gibt es fünf große Religionen.","Neben den fünf großen gibt es viele weitere, etwa Sikhismus, Daoismus oder Naturreligionen. Viele Menschen sind auch konfessionslos."],
+["Christen glauben an Jesus. Sie lesen die Bibel.","Die größten Konfessionen sind die katholische, die evangelische und die orthodoxe Kirche. Wichtige Feste sind Weihnachten und Ostern."],
+["Muslime glauben an Allah. Sie lesen den Koran.","Zu den fünf Säulen des Islam gehören das Glaubensbekenntnis, das Gebet, das Fasten im Ramadan, die Abgabe für Bedürftige und die Pilgerfahrt nach Mekka."],
+["Juden feiern jede Woche einen Ruhetag. Er heißt Sabbat.","Der Sabbat beginnt am Freitagabend und endet am Samstagabend. Wichtige Feste sind Pessach, Jom Kippur und Chanukka."],
+["Der Hinduismus kommt aus Indien. Buddha hat gelehrt, wie man glücklich wird.","Viele Hindus glauben an Wiedergeburt und Karma. Der Buddhismus entstand vor rund 2.500 Jahren und ist besonders in Ostasien verbreitet."]],
+"wissen-wetter":[
+["Die Sonne macht Wasser warm. Es steigt auf und wird zu Wolken. Dann regnet es.","Der Wasserkreislauf wird von der Sonnenenergie angetrieben. Ein Wassermolekül bleibt im Schnitt nur etwa neun Tage in der Atmosphäre."],
+["Wolken sind aus ganz kleinen Wassertropfen gemacht.","Wolken werden nach Höhe und Form eingeteilt, etwa Cumulus (Haufenwolken), Stratus (Schichtwolken) und Cirrus (Federwolken)."],
+["Ein Blitz ist ganz viel Strom. Der Donner ist der laute Knall danach.","Ein Blitz kann Temperaturen von rund 30.000 °C erreichen. Die Luft dehnt sich schlagartig aus – das hören wir als Donner."],
+["Zähle nach dem Blitz bis zum Donner. Dann weißt du, wie weit weg das Gewitter ist.","Die Regel funktioniert, weil Licht fast sofort ankommt, Schall aber nur etwa einen Kilometer in drei Sekunden zurücklegt."],
+["Wetterforscher sagen vorher, wie das Wetter wird.","Der Deutsche Wetterdienst betreibt Wettermodelle auf Supercomputern. Die Atmosphäre ist chaotisch, darum werden Vorhersagen über etwa zehn Tage hinaus unzuverlässig."]],
+"wissen-schlaf":[
+["Beim Schlafen ruht sich dein Körper aus. Und dein Gehirn räumt auf.","Im Tiefschlaf werden Erinnerungen gefestigt, und das Gehirn spült Abfallstoffe aus. Auch Wachstumshormone werden vor allem nachts ausgeschüttet."],
+["Kinder brauchen viel Schlaf, ungefähr 10 Stunden.","Schlafmangel beeinträchtigt Konzentration, Laune und Immunsystem. Jugendliche haben biologisch oft einen späteren Schlafrhythmus."],
+["Im Schlaf träumst du. Dabei bewegen sich deine Augen ganz schnell.","Ein Schlafzyklus dauert etwa 90 Minuten und wiederholt sich mehrmals pro Nacht. REM steht für „Rapid Eye Movement“."],
+["Leg das Handy vor dem Schlafen weg. Dann schläfst du besser ein.","Blaues Bildschirmlicht kann die Ausschüttung des Schlafhormons Melatonin verzögern. Spannende Inhalte halten das Gehirn zusätzlich wach."],
+["Delfine schlafen immer nur mit einer Hälfte vom Gehirn.","Dieser „unihemisphärische Schlaf“ kommt auch bei manchen Vögeln vor, die so während langer Flüge ruhen können."]],
+"wissen-goetter":[
+["Die alten Griechen glaubten, dass ihre Götter auf einem Berg wohnen.","Der Olymp ist mit rund 2.900 Metern der höchste Berg Griechenlands. Zu den zwölf olympischen Göttern zählten unter anderem Hera, Apollon und Aphrodite."],
+["Zeus war der König der Götter. Er konnte Blitze werfen.","Bei den Römern hieß Zeus Jupiter. Nach ihm ist der größte Planet benannt."],
+["Poseidon war der Gott vom Meer. Hades war der Gott der Unterwelt.","Bei den Römern hießen sie Neptun und Pluto – auch diese Namen tragen Himmelskörper in unserem Sonnensystem."],
+["Athene war die Göttin der Klugheit. Ihr Tier war die Eule.","Ihr Tempel auf der Akropolis in Athen ist der Parthenon. Bei den Römern hieß sie Minerva."],
+["Herkules war ein Held mit riesigen Kräften.","Zu seinen zwölf Arbeiten gehörte es, den Nemeischen Löwen zu besiegen und den Höllenhund Kerberos aus der Unterwelt zu holen."]],
+"wissen-maerchen":[
+["Zwei Brüder haben ganz viele Märchen gesammelt. Sie hießen Grimm.","Die Brüder Grimm waren auch Sprachforscher und begannen das „Deutsche Wörterbuch“. Ihre Märchensammlung gehört zum UNESCO-Weltdokumentenerbe."],
+["Rotkäppchen und Hänsel und Gretel sind Märchen der Brüder Grimm.","Die frühen Fassungen waren oft düsterer. In späteren Auflagen glätteten die Grimms manche Stellen für ein kindliches Publikum."],
+["Andersen hat „Die kleine Meerjungfrau“ geschrieben.","Im Original endet die Geschichte traurig: Die Meerjungfrau bekommt den Prinzen nicht. In Kopenhagen erinnert eine bekannte Statue an sie."],
+["Goethe ist ein sehr berühmter deutscher Dichter.","Goethe lebte von 1749 bis 1832, die längste Zeit in Weimar. Zusammen mit Schiller prägte er die Weimarer Klassik."],
+["Harry Potter ist eine der beliebtesten Buchreihen der Welt.","Der erste Band erschien 1997. Die Reihe umfasst sieben Bände und wurde in acht Filmen verfilmt."]],
+"wissen-erstehilfe":[
+["Wenn etwas Schlimmes passiert, ruf 112 an. Das kostet nichts.","Die 112 funktioniert in allen EU-Ländern, auch ohne SIM-Karte. Die Leitstelle kann telefonisch bis zum Eintreffen des Rettungsdienstes anleiten."],
+["Am Telefon sagst du: Wo bist du? Was ist passiert?","Wichtig ist, nicht selbst aufzulegen, sondern zu warten, bis die Leitstelle das Gespräch beendet."],
+["Bleib ruhig und pass auf dich auf. Dann hol Hilfe.","Unterlassene Hilfeleistung ist strafbar. Wer im Rahmen seiner Möglichkeiten hilft, muss rechtlich keine Fehler fürchten."],
+["Wenn jemand schläft und nicht aufwacht, aber atmet, legt man ihn auf die Seite.","Atmet die Person nicht normal, muss sofort mit der Herzdruckmassage begonnen werden: etwa 100 bis 120 Mal pro Minute in der Brustmitte drücken."],
+["Kleine Wunden spülen und ein Pflaster drauf.","Bei starken Blutungen hilft ein Druckverband. Erste-Hilfe-Kurse frischen dieses Wissen auf und sind für den Führerschein Pflicht."]],
+"wissen-zahlen":[
+["Die Null hat man in Indien erfunden.","Der indische Mathematiker Brahmagupta beschrieb im 7. Jahrhundert Rechenregeln mit der Null. Über arabische Gelehrte kam sie nach Europa."],
+["Die Römer hatten andere Zahlen. Sie schrieben mit Buchstaben, zum Beispiel X für 10.","Römische Zahlen eignen sich schlecht zum Rechnen. Erst das indisch-arabische Stellenwertsystem machte schriftliches Rechnen einfach."],
+["Pi ist eine besondere Zahl bei Kreisen. Sie ist ungefähr 3,14.","Pi ist eine irrationale Zahl. Computer haben inzwischen Billionen Nachkommastellen berechnet. Am 14. März (3/14) ist Pi-Tag."],
+["Der Meter ist ein Maß, das überall gleich ist.","Der Meter wurde 1793 in Frankreich eingeführt. Heute ist er über die Lichtgeschwindigkeit definiert."],
+["Zahlen hören nie auf. Man kann immer eins dazuzählen.","Mathematiker unterscheiden sogar verschiedene Größen von Unendlich. Georg Cantor bewies, dass es mehr reelle Zahlen als natürliche Zahlen gibt."]]
+});

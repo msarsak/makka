@@ -1,0 +1,126 @@
+LV({
+"tierrekorde":[
+["Der Blauwal ist das größte Tier, das es je gab. Er ist länger als ein Bus!","Ein neugeborenes Blauwalkalb wiegt schon rund zwei Tonnen. Durch den Walfang im 20. Jahrhundert wurde der Blauwal fast ausgerottet."],
+["Der Gepard rennt so schnell wie ein Auto.","Der Gepard beschleunigt in etwa drei Sekunden auf rund 100 km/h. Er hält die Höchstgeschwindigkeit aber nur einige hundert Meter durch."],
+["Der Wanderfalke ist das schnellste Tier der Welt.","In Deutschland war der Wanderfalke durch das Pestizid DDT fast verschwunden. Nach dem DDT-Verbot hat sich der Bestand erholt; er brütet sogar an Kirchtürmen."],
+["Koalas schlafen fast den ganzen Tag.","Eukalyptus ist für die meisten Tiere giftig. Koalas haben spezielle Darmbakterien, um ihn zu verdauen."]],
+"klima":[
+["Die Erde wird immer wärmer. Das ist nicht gut für Tiere und Menschen.","Die globale Temperatur liegt bereits rund 1,3 Grad über dem vorindustriellen Niveau. 2024 war das bisher wärmste gemessene Jahr."],
+["Manche Gase halten die Wärme fest wie eine Decke.","Der Treibhauseffekt selbst ist natürlich und macht die Erde bewohnbar – ohne ihn wäre es im Schnitt etwa −18 °C. Problematisch ist die Verstärkung durch den Menschen."],
+["Das Eis schmilzt und das Meer wird höher.","Der Meeresspiegel steigt auch, weil sich wärmeres Wasser ausdehnt. Kleine Inselstaaten im Pazifik sind besonders bedroht."],
+["Strom aus Sonne und Wind hilft der Erde.","Das Pariser Abkommen soll die Erwärmung auf deutlich unter 2 Grad, möglichst 1,5 Grad begrenzen. Dafür müssten die Emissionen schnell sinken."]],
+"natur-regenwald":[
+["Im Regenwald leben ganz viele Tiere und Pflanzen.","Viele Arten im Regenwald sind noch gar nicht entdeckt. Viele Medikamente gehen auf Pflanzenstoffe aus Regenwäldern zurück."],
+["Im Regenwald regnet es fast jeden Tag. Es ist warm und feucht.","Ein großer Teil des Regens im Amazonas stammt aus der Verdunstung der Bäume selbst – der Wald erzeugt seinen eigenen Regen."],
+["Der Regenwald hat Stockwerke, wie ein Hochhaus.","Riesenbäume ragen bis zu 60 Meter hoch. Am Boden kommt nur etwa ein bis zwei Prozent des Sonnenlichts an."],
+["Der Regenwald hilft, dass es auf der Erde nicht zu warm wird.","Forscher warnen vor einem Kipppunkt: Wird zu viel abgeholzt, könnte der Amazonas in Teilen zur Savanne werden."],
+["Leider werden viele Bäume gefällt.","Die Böden im Regenwald sind oft nährstoffarm. Nach der Rodung werden sie schnell unfruchtbar."]],
+"natur-korallen":[
+["Korallen sehen aus wie Steine. Aber es sind kleine Tiere.","Korallen sind mit Quallen verwandt. Einzelne Korallenpolypen bilden Kolonien, die über Jahrtausende riesige Riffe aufbauen."],
+["In den Korallen wohnen winzige Pflanzen. Sie machen die Korallen bunt.","Die Algen betreiben Fotosynthese und liefern den Korallen einen großen Teil ihrer Nahrung. Darum wachsen Riffe nur in lichtdurchflutetem Wasser."],
+["In Riffen leben ganz viele bunte Fische.","Riffe werden auch „Regenwälder der Meere“ genannt. Viele Fische nutzen sie als Kinderstube."],
+["Wenn das Wasser zu warm ist, werden Korallen weiß und krank.","Weltweite Massenbleichen haben in den letzten Jahrzehnten zugenommen. Bei 2 Grad Erwärmung könnten die meisten tropischen Riffe verschwinden."],
+["Korallenriffe schützen die Küsten vor großen Wellen.","Riffe sichern auch den Lebensunterhalt von Hunderten Millionen Menschen durch Fischerei und Tourismus."]],
+"natur-bienen":[
+["In einem Bienenstock wohnen ganz viele Bienen. Es gibt nur eine Königin.","Arbeiterinnen leben im Sommer nur etwa sechs Wochen, die Königin mehrere Jahre. Die männlichen Bienen heißen Drohnen."],
+["Bienen tanzen, um anderen den Weg zu Blumen zu zeigen.","Der Österreicher Karl von Frisch entschlüsselte den Schwänzeltanz und erhielt dafür 1973 den Nobelpreis."],
+["Bienen machen Honig aus dem Saft von Blumen.","Für ein Kilogramm Honig müssen Bienen Nektar aus mehreren Millionen Blüten sammeln."],
+["Bienen bringen Blütenstaub von Blume zu Blume. So wachsen Früchte.","Ein großer Teil der wichtigsten Nahrungspflanzen ist zumindest teilweise auf Bestäubung durch Tiere angewiesen."],
+["Es gibt auch wilde Bienen. Viele brauchen unsere Hilfe.","Die meisten Wildbienen leben allein, nicht im Volk, und viele nisten im Boden. Pestizide und fehlende Blühflächen bedrohen sie."]],
+"natur-ameisen":[
+["Ameisen sind super stark. Sie können schwere Sachen tragen.","Ameisen gibt es seit über 100 Millionen Jahren. Weltweit leben Schätzungen zufolge rund 20 Billiarden Ameisen."],
+["Ameisen leben in großen Gruppen. Jede hat eine Aufgabe.","Fast alle Arbeiterinnen sind Weibchen. Manche Ameisenköniginnen können über 20 Jahre alt werden."],
+["Ameisen legen Duftspuren. So finden die anderen den Weg.","Ameisen nutzen Duftstoffe auch, um Alarm zu schlagen oder Nestgenossinnen zu erkennen."],
+["Manche Ameisen züchten Pilze als Essen.","Blattschneiderameisen betreiben seit Millionen Jahren eine Art Landwirtschaft – lange vor den Menschen."],
+["Rote Waldameisen halten den Wald gesund.","Ein großes Waldameisenvolk kann an einem Tag zehntausende Insekten erbeuten. Ihre Hügel sind gesetzlich geschützt."]],
+"natur-haie":[
+["Haie gibt es schon ganz lange, sogar länger als Dinosaurier.","Es gibt über 500 Haiarten. Der Grönlandhai kann vermutlich über 250 Jahre alt werden."],
+["Haie haben keine Knochen. Ihr Skelett ist weich und biegsam.","Haie verlieren ständig Zähne und bekommen neue nach – im Laufe ihres Lebens Tausende."],
+["Der größte Fisch ist der Walhai. Er ist ganz friedlich.","Walhaie filtern Plankton und kleine Fische aus dem Wasser. Taucher können mit ihnen schwimmen."],
+["Haie können super riechen.","Mit den Lorenzinischen Ampullen am Kopf spüren Haie schwache elektrische Felder, etwa den Herzschlag versteckter Beute."],
+["Haie sind für Menschen nicht so gefährlich, wie viele denken.","Viele Haiarten sind bedroht, unter anderem durch Beifang und das „Finning“, bei dem Flossen für Haifischflossensuppe abgeschnitten werden."]],
+"natur-wale":[
+["Wale und Delfine sind keine Fische. Sie atmen Luft wie wir.","Wale stammen von Landtieren ab, die vor rund 50 Millionen Jahren ins Wasser zurückkehrten. Ihre nächsten heutigen Verwandten sind Flusspferde."],
+["Buckelwale singen lange Lieder.","Die Gesänge werden fast nur von Männchen gesungen und verändern sich jedes Jahr. Neue Lieder verbreiten sich über ganze Ozeane."],
+["Delfine machen Klickgeräusche. So finden sie Fische.","Auch Fledermäuse nutzen Echoortung. Delfine können damit sogar die Form von Gegenständen hinter Sand erkennen."],
+["Delfine haben eigene Namen. Sie pfeifen sich gegenseitig.","Delfine erkennen sich im Spiegel – eine Fähigkeit, die nur wenige Tierarten haben."],
+["Blauwale fressen winzig kleine Krebse. Davon aber ganz viel.","Krill kommt in riesigen Schwärmen vor allem im Südpolarmeer vor. Er ist auch Nahrung für Pinguine und Robben."]],
+"natur-zugvoegel":[
+["Im Herbst fliegen viele Vögel in warme Länder.","Rund die Hälfte der Brutvogelarten in Deutschland ziehen im Winter weg. Manche, wie Amseln, bleiben hier."],
+["Störche fliegen bis nach Afrika.","Störche nutzen warme Aufwinde zum Segeln und fliegen deshalb über Land – entweder über Gibraltar oder über den Bosporus."],
+["Ein kleiner Vogel fliegt jedes Jahr vom Nordpol zum Südpol und zurück.","Mit Sendern wurde gemessen, dass Küstenseeschwalben pro Jahr rund 70.000 Kilometer zurücklegen."],
+["Zugvögel haben einen eingebauten Kompass.","Vermutlich nehmen Vögel das Magnetfeld über spezielle Eiweiße in den Augen wahr."],
+["Gänse fliegen in V-Form. So sparen sie Kraft.","Die Vögel wechseln sich an der anstrengenden Spitze ab. Messungen bei Ibissen haben den Energiespareffekt bestätigt."]],
+"natur-reptilien":[
+["Krokodile gibt es schon seit der Zeit der Dinosaurier.","Krokodile sind näher mit Vögeln verwandt als mit Eidechsen. Beide gehören zu den Archosauriern."],
+["Krokodile können sehr fest zubeißen.","Die Muskeln zum Öffnen des Mauls sind dagegen schwach. Bei Krokodileiern bestimmt die Bruttemperatur, ob Männchen oder Weibchen schlüpfen."],
+["Schlangen riechen mit ihrer Zunge.","Die Zunge bringt Duftstoffe zum Jacobsonschen Organ im Gaumen. Manche Schlangen spüren zusätzlich Wärme mit Grubenorganen."],
+["Schlangen ziehen ihre alte Haut aus wie einen Pulli.","Schlangen häuten sich mehrmals im Jahr. Vor der Häutung werden ihre Augen trüb, weil auch die Augenschuppe erneuert wird."],
+["Reptilien legen sich in die Sonne, um warm zu werden.","Wechselwarme Tiere brauchen viel weniger Nahrung als gleich große Säugetiere, da sie keine Energie für die Körperwärme aufwenden."]],
+"natur-katzen":[
+["Löwen leben in Familien. Die Weibchen gehen jagen.","Ein Rudel besteht meist aus mehreren verwandten Weibchen, ihren Jungen und wenigen Männchen. Das Brüllen ist bis zu acht Kilometer weit zu hören."],
+["Der Tiger ist die größte Katze der Welt. Jeder hat andere Streifen.","Die Streifen sind auch auf der Haut darunter zu sehen. In freier Wildbahn leben nur noch einige tausend Tiger."],
+["Tiger schwimmen gern.","Im Mangrovenwald der Sundarbans zwischen Indien und Bangladesch schwimmen Tiger sogar zwischen Inseln."],
+["Leoparden tragen ihr Essen auf Bäume.","Leoparden sind sehr anpassungsfähig und leben in Afrika und Asien. Ein schwarzer Leopard wird oft „Schwarzer Panther“ genannt."],
+["Viele große Katzen sind in Gefahr.","Projekte wie die Ausweisung von Tigerreservaten in Indien haben die Bestände dort wieder wachsen lassen."]],
+"natur-elefanten":[
+["Elefanten sind die größten Tiere an Land. Sie sind sehr schwer.","Elefanten fressen täglich bis zu 150 Kilogramm Pflanzen und verbringen dafür bis zu 18 Stunden."],
+["Mit dem Rüssel kann ein Elefant trinken, riechen und greifen.","Ein Elefant kann bis zu acht Liter Wasser in seinen Rüssel saugen. Der Rüssel kann sehr kraftvoll, aber auch fein wie eine Hand greifen."],
+["Afrikanische Elefanten haben große Ohren. Asiatische haben kleinere.","Die großen Ohren dienen als Kühler: Durch Wedeln gibt das Blut in den Ohren Wärme ab."],
+["Elefanten können sich sehr gut erinnern.","Die Herde wird von einer erfahrenen Leitkuh geführt, die weiß, wo es auch in Dürrezeiten Wasser gibt."],
+["Ein Elefantenbaby ist fast zwei Jahre im Bauch der Mama.","Wegen des Elfenbeins werden Elefanten gewildert. Der internationale Elfenbeinhandel ist seit 1989 weitgehend verboten."]],
+"natur-affen":[
+["Menschenaffen sind unsere Verwandten.","Bonobos leben friedlicher als Schimpansen; in ihren Gruppen haben oft die Weibchen das Sagen."],
+["Schimpansen benutzen Werkzeuge, zum Beispiel Stöcke.","Verschiedene Schimpansengruppen haben eigene Techniken, die sie an ihre Jungen weitergeben – eine Art Kultur."],
+["Jane Goodall hat herausgefunden, wie schlau Schimpansen sind.","Goodall begann 1960 im heutigen Gombe-Nationalpark in Tansania. Sie gab den Tieren Namen statt Nummern – damals ungewöhnlich."],
+["Gorillas sind sehr stark, aber meistens ganz friedlich.","Ältere Männchen haben ein silbergraues Fell auf dem Rücken und heißen Silberrücken. Sie führen die Gruppe."],
+["Orang-Utans wohnen in Bäumen. Ihr Wald wird leider gefällt.","Orang-Utan bedeutet auf Malaiisch „Waldmensch“. Sie verbringen fast ihr ganzes Leben in den Baumkronen."]],
+"natur-wald":[
+["Bäume machen frische Luft zum Atmen.","Der meiste Sauerstoff der Erde stammt übrigens aus den Meeren – von winzigen Algen (Phytoplankton)."],
+["An den Ringen im Baumstumpf kannst du sehen, wie alt ein Baum ist.","Breite Ringe zeigen gute Jahre, schmale Ringe Dürre oder Kälte. So kann man mit der Jahresringforschung das Klima der Vergangenheit erkunden."],
+["Unter der Erde sind Bäume mit Pilzen verbunden.","Bei der Mykorrhiza versorgen Pilze die Bäume mit Wasser und Mineralien und bekommen dafür Zucker."],
+["In Deutschland gibt es viel Wald.","Die Fichte wurde oft in Monokulturen gepflanzt, weil sie schnell wächst. Ohne Menschen wäre Deutschland überwiegend von Buchenwald bedeckt."],
+["Dem Wald geht es nicht gut. Es ist zu heiß und zu trocken.","Seit 2018 sind durch Dürre und Borkenkäfer große Fichtenflächen abgestorben, besonders im Harz und im Sauerland."]],
+"natur-pflanzen":[
+["Pflanzen machen sich aus Sonnenlicht ihr Essen selbst.","Bei der Fotosynthese entsteht Sauerstoff als Nebenprodukt. Ohne sie gäbe es kein Leben, wie wir es kennen."],
+["Blätter sind grün, weil ein grüner Farbstoff darin ist.","Chlorophyll absorbiert vor allem rotes und blaues Licht. Grünes Licht wird reflektiert – darum sehen wir Blätter grün."],
+["Im Herbst werden die Blätter gelb und rot.","Die gelben Farbstoffe (Carotinoide) sind das ganze Jahr in den Blättern, nur vom Grün überdeckt. Rote Farbstoffe bilden manche Bäume im Herbst neu."],
+["Es gibt Pflanzen, die Fliegen fangen!","Die Venusfliegenfalle klappt erst zu, wenn ein Härchen zweimal berührt wird – so vermeidet sie Fehlalarme durch Regentropfen."],
+["Es gibt Bäume, die höher als ein Hochhaus sind.","Der höchste bekannte Baum, „Hyperion“, ist rund 116 Meter hoch. Die ältesten Bäume, Grannenkiefern, sind fast 5.000 Jahre alt."]],
+"natur-pilze":[
+["Pilze sind keine Pflanzen und keine Tiere. Sie sind etwas ganz Eigenes.","Genetisch sind Pilze näher mit Tieren verwandt als mit Pflanzen. Ihre Zellwände bestehen aus Chitin, wie Insektenpanzer."],
+["Was du siehst, ist nur ein kleiner Teil vom Pilz. Der Rest ist unter der Erde.","Das unterirdische Geflecht kann Jahrzehnte oder Jahrhunderte alt werden. Die Fruchtkörper dienen nur der Verbreitung von Sporen."],
+["Ein Pilz in Amerika ist riesengroß.","Der Hallimasch im Malheur National Forest in Oregon bedeckt rund neun Quadratkilometer und ist vermutlich Tausende Jahre alt."],
+["Manche Pilze sind sehr giftig. Iss nie Pilze, die du selbst gefunden hast!","Der Grüne Knollenblätterpilz verursacht die meisten tödlichen Pilzvergiftungen. Die Symptome treten erst Stunden später auf, wenn die Leber schon geschädigt ist."],
+["Ohne Pilze gäbe es kein lockeres Brot.","Hefe vergärt Zucker zu Kohlendioxid und Alkohol – das lässt Teig aufgehen und macht aus Traubensaft Wein."]],
+"natur-wueste":[
+["In der Wüste ist es am Tag heiß und in der Nacht kalt.","Wüsten bedecken etwa ein Drittel der Landfläche. Eine Wüste wird über wenig Niederschlag definiert, nicht über Hitze."],
+["Im Höcker vom Kamel ist kein Wasser, sondern Fett.","Kamele können in wenigen Minuten über 100 Liter trinken. Ihre ovalen roten Blutkörperchen verkraften diese plötzliche Wassermenge."],
+["Der Wüstenfuchs hat ganz große Ohren.","Der Fennek ist der kleinste Fuchs der Welt. Seine dicht behaarten Fußsohlen schützen vor heißem Sand."],
+["Kakteen speichern Wasser in ihrem dicken Körper.","Kakteen öffnen ihre Spaltöffnungen nur nachts, um wenig Wasser zu verlieren. Ein großer Saguaro-Kaktus kann Hunderte Liter Wasser speichern."],
+["In einer Wüste in Chile regnet es fast nie.","Die Atacama ist so trocken, dass die NASA dort Geräte für die Suche nach Leben auf dem Mars testet. Dort stehen auch große Sternwarten."]],
+"natur-polar":[
+["Eisbären leben am Nordpol, Pinguine am Südpol. Sie treffen sich nie.","Der Nordpol liegt auf schwimmendem Meereis, der Südpol auf einem Kontinent. Pinguine gibt es nur auf der Südhalbkugel."],
+["Eisbären haben eigentlich schwarze Haut.","Eisbären sind die größten Landraubtiere. Sie können tagelang schwimmen und riechen Robben über große Entfernungen."],
+["Bei den Kaiserpinguinen passt der Papa auf das Ei auf.","Die Väter verlieren in dieser Zeit fast die Hälfte ihres Gewichts. Kaiserpinguine können über 500 Meter tief tauchen."],
+["Pinguine kuscheln sich zusammen, damit ihnen nicht kalt ist.","Im Inneren der Gruppe kann es über 30 °C warm werden, selbst wenn draußen −40 °C herrschen."],
+["Das Eis schmilzt. Das ist schlecht für die Eisbären.","Die Fläche des arktischen Meereises im Sommer ist seit Ende der 1970er-Jahre um rund 40 Prozent geschrumpft."]],
+"natur-nahrungskette":[
+["In der Natur frisst einer den anderen. Das ist die Nahrungskette.","Weil viele Tiere mehrere Nahrungsquellen haben, sprechen Forscher eher von einem Nahrungsnetz."],
+["Pflanzen stehen ganz am Anfang, weil sie Sonnenlicht nutzen.","Mit jeder Stufe der Kette geht etwa 90 Prozent der Energie verloren. Darum gibt es viel weniger Raubtiere als Pflanzenfresser."],
+["Der Hase frisst Gras, der Fuchs frisst den Hasen.","Am Ende der Kette stehen Spitzenprädatoren wie Wölfe, Orcas oder Adler, die kaum natürliche Feinde haben."],
+["Würmer und Pilze machen aus toten Pflanzen neue Erde.","In einer Handvoll Gartenerde leben mehr Lebewesen, als es Menschen auf der Erde gibt."],
+["Wenn ein Tier fehlt, kommt alles durcheinander.","Die Wölfe im Yellowstone hielten Hirsche in Bewegung, sodass sich Weiden und Pappeln an den Flüssen erholten. Dieser Effekt heißt trophische Kaskade."]],
+"natur-plastik":[
+["Plastik geht ganz, ganz lange nicht kaputt.","Seit den 1950er-Jahren wurden über acht Milliarden Tonnen Kunststoff produziert. Nur ein kleiner Teil davon wurde recycelt."],
+["Im Meer gibt es riesige Müllstrudel.","Der Müllstrudel besteht vor allem aus kleinen Plastikteilen und Fischernetzen – keine feste Insel, sondern eine „Plastiksuppe“."],
+["Schildkröten denken manchmal, eine Plastiktüte ist eine Qualle.","Seevögel füttern ihre Küken versehentlich mit Plastikteilen. Fischernetze, sogenannte Geisternetze, fangen weiter Tiere."],
+["Plastik zerfällt in ganz kleine Krümel. Die sind jetzt überall.","Mikroplastik entsteht auch durch Reifenabrieb und synthetische Kleidung beim Waschen. Forscher untersuchen, wie es sich auf die Gesundheit auswirkt."],
+["Du kannst helfen: Stoffbeutel statt Plastiktüte!","Die EU hat Einwegplastik wie Strohhalme und Wattestäbchen aus Kunststoff 2021 verboten. Seit 2024 bleiben Deckel an Getränkeflaschen befestigt."]],
+"natur-artenschutz":[
+["Manche Tiere gibt es nicht mehr. Der Dodo ist ausgestorben.","Der Dodo hatte keine natürlichen Feinde und keine Scheu. Seeleute und eingeschleppte Tiere wie Ratten und Schweine rotteten ihn aus."],
+["In einem Buch steht, welche Tiere in Gefahr sind.","Die Rote Liste wird von der Weltnaturschutzunion IUCN herausgegeben. Besonders bedroht sind Amphibien wie Frösche."],
+["Tiere sind in Gefahr, wenn ihr Zuhause kaputt geht.","Forscher sprechen vom sechsten Massenaussterben, weil Arten derzeit viel schneller verschwinden als natürlich üblich."],
+["Wölfe und Biber sind nach Deutschland zurückgekommen.","Der Wolf wanderte um das Jahr 2000 aus Polen nach Sachsen ein. Heute leben in Deutschland rund 200 Rudel."],
+["In Nationalparks darf die Natur wild wachsen.","Der erste deutsche Nationalpark war 1970 der Bayerische Wald. Das Wattenmeer ist UNESCO-Weltnaturerbe."]]
+});
