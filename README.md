@@ -64,6 +64,18 @@ npm run check-key
 | **TURBO** | Erzwingt das starke Modell (Opus) für schwere Aufgaben |
 | 🔊 | Sounds an/aus |
 | **NEU** | Neues Gespräch starten |
+| 🎙 oder **Klick auf den Kern** | Einmal sprechen (Klick während er spricht = Stopp) |
+| **„Hey Hephaestion“ / „Hey Heph“** | Wake-Word: ruft ihn, wenn WAKE-WORD auf **AN** steht |
+| **Esc** | Stoppt alles: Antwort, Vorlesen, Zuhören |
+
+### 🎙 Sprache (ab Phase 2)
+- Funktioniert in **Edge** und **Chrome**, nicht in Firefox. Edge hat die schönsten deutschen Stimmen (z. B. „Conrad“).
+- Beim ersten Mal fragt der Browser, ob er das **Mikrofon** benutzen darf → **Zulassen**.
+- Du kannst alles in einem Satz sagen: *„Hey Heph, wie wird das Wetter?“* – oder erst *„Hey Heph“*, warten bis der Kern rot wird, dann sprechen.
+- Panel **SPRACHE**: Wake-Word an/aus, **VORLESEN** (*bei Sprache* = nur wenn du sprichst, *immer*, *aus*), Stimme wählen und testen.
+- Während er spricht, hört er nicht zu (sonst würde er sich selbst hören). Zum Unterbrechen: auf den Kern klicken oder Esc.
+- Die Spracherkennung läuft über den Browser-Dienst (Microsoft/Google) und braucht Internet.
+- Am Handy geht das Mikrofon erst mit einer sicheren Verbindung (https). Das richten wir in Phase 6 mit Tailscale ein.
 
 **Gehirn-Automatik:** Für normale Fragen nimmt er das schnelle, sehr günstige Modell (**Haiku**).
 Bei Wörtern wie „analysiere“, „ausführlich“, „Konzept“, „Code“ oder bei langen Texten wechselt er
@@ -83,7 +95,7 @@ automatisch auf das starke Modell (**Opus**). Welches Modell gerade arbeitet, si
 ## 🗺 Ausbaustufen
 
 - [x] **Phase 1:** HUD-Design, Energie-Kern, Sci-Fi-Sounds, Text-Chat mit Claude
-- [ ] **Phase 2:** Sprache rein und raus + Wake-Word „Hey Hephaestion“ / „Hey Heph“
+- [x] **Phase 2:** Sprache rein und raus + Wake-Word „Hey Hephaestion“ / „Hey Heph“
 - [ ] **Phase 3:** Gedächtnis mit deinem Obsidian-Vault
 - [ ] **Phase 4:** 3D-Erde, Flüge zu Orten, Street View
 - [ ] **Phase 5:** Kamera und Handgesten
@@ -104,6 +116,13 @@ src/         Web-App (das HUD)
   sound.js     Sci-Fi-Sounds (Web Audio API, ohne Audiodateien)
   hud.js       Uhr, Wetter, Systemanzeigen
   chat.js      Chat-Verbindung und Anzeige
+  voice.js     Spracherkennung, Wake-Word, Vorlesen, Mikrofon-Pegel
+  voice-utils.js  Wake-Word-Erkennung, Satz-Zerlegung, Stimmenwahl
 ```
+
+## 🔄 Neue Version holen
+1. Neue ZIP herunterladen und entpacken (wie beim ersten Mal).
+2. Deine **`.env`** aus dem alten Ordner in den neuen kopieren (sonst ist der API-Key weg).
+3. Im neuen Ordner `start.bat` starten.
 
 Befehle: `npm run dev` (Entwicklung), `npm start` (fertige Version auf Port 3000), `npm test` (Tests).

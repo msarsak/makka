@@ -277,6 +277,33 @@ button, textarea { font: inherit; color: inherit; }
 .send:disabled { opacity: .45; cursor: wait; transform: none; }
 :focus-visible { outline: 1px solid var(--gold); outline-offset: 2px; }
 
+
+/* ---------- Sprache ---------- */
+.vc-row { display: flex; justify-content: space-between; align-items: center; font-size: 13px; color: var(--muted); letter-spacing: .08em; padding: 4px 0; }
+.toggle {
+  cursor: pointer; min-width: 104px; padding: 4px 10px; background: rgba(31, 111, 255, .1);
+  border: 1px solid var(--line); color: var(--muted); font-family: var(--font-hud); font-size: 9.5px; letter-spacing: .18em; transition: all .2s;
+}
+.toggle[aria-pressed="true"], .toggle[data-mode="always"] { color: #fff; border-color: var(--gold); background: rgba(255, 201, 77, .16); box-shadow: var(--glow-gold); }
+.toggle[data-mode="off"] { color: var(--muted); }
+.vc-voice { gap: 8px; margin-top: 4px; }
+.vc-voice select {
+  flex: 1; min-width: 0; background: rgba(5, 14, 36, .9); color: var(--text); border: 1px solid var(--line);
+  padding: 5px 6px; font: inherit; font-size: 13px; outline: 0;
+}
+.vc-voice select:focus { border-color: var(--gold); }
+.vc-hint { margin: 8px 0 0; font-size: 12px; color: var(--muted); line-height: 1.4; }
+.vc-hint b { color: var(--gold); font-weight: 600; }
+#vcStatus.live { color: #3dffa8; } #vcStatus.listen { color: var(--red); text-shadow: var(--glow-red); }
+.mic.active { border-color: var(--red); background: rgba(255, 42, 69, .28); box-shadow: var(--glow-red); animation: micPulse 1s ease-in-out infinite; }
+.mic.active svg { stroke: #fff; }
+.mic.speaking svg { stroke: var(--gold); }
+@keyframes micPulse { 50% { box-shadow: 0 0 22px rgba(255, 42, 69, .9); } }
+.core { cursor: pointer; outline: none; }
+.core:focus-visible .orb { filter: drop-shadow(0 0 6px var(--gold)); }
+.core-sub.interim { color: #fff; letter-spacing: .06em; font-size: 14px; text-transform: none; }
+@media (max-height: 980px) { .panel-modules { display: none; } }
+
 /* ---------- Tablet / Handy ---------- */
 @media (max-width: 1100px) {
   .app { grid-template-columns: 240px 1fr; grid-template-areas: "top top" "left core" "right right" "input input"; grid-template-rows: auto minmax(260px, 1fr) minmax(200px, 34vh) auto; }
@@ -316,6 +343,7 @@ button, textarea { font: inherit; color: inherit; }
   .composer { gap: 6px; padding: 6px; }
   .composer textarea { font-size: 16px; }
   .turbo { padding: 0 8px; font-size: 9px; }
+  .panel-voice { display: none; }
 }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }

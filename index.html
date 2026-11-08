@@ -20,7 +20,7 @@
     <div class="boot-inner">
       <div class="boot-ring"></div>
       <h1 class="boot-title">HEPHAESTION</h1>
-      <p class="boot-sub">PERSÖNLICHES ASSISTENZSYSTEM · MARK I</p>
+      <p class="boot-sub">PERSÖNLICHES ASSISTENZSYSTEM · MARK II</p>
       <button id="bootBtn" class="boot-btn" type="button">SYSTEM AKTIVIEREN</button>
       <p class="boot-hint">Klicken oder Enter drücken</p>
     </div>
@@ -68,12 +68,29 @@
         <div class="bars" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
       </section>
 
-      <section class="panel panel-modules" id="panelModules" style="--d:3">
-        <h2 class="panel-title"><span>MODULE</span><i>MARK I</i></h2>
+      <section class="panel panel-voice" id="panelVoice" style="--d:3">
+        <h2 class="panel-title"><span>SPRACHE</span><i id="vcStatus">--</i></h2>
+        <div class="vc-row">
+          <span>WAKE-WORD</span>
+          <button id="wakeBtn" class="toggle" type="button" aria-pressed="false">AUS</button>
+        </div>
+        <div class="vc-row">
+          <span>VORLESEN</span>
+          <button id="speakModeBtn" class="toggle" type="button" data-mode="voice">BEI SPRACHE</button>
+        </div>
+        <div class="vc-row vc-voice">
+          <select id="voiceSelect" aria-label="Stimme"><option>Lade Stimmen…</option></select>
+          <button id="voiceTest" class="mini-btn" type="button">TEST</button>
+        </div>
+        <p class="vc-hint">Sag <b>„Hey Hephaestion“</b> oder <b>„Hey Heph“</b> – oder tippe auf den Kern.</p>
+      </section>
+
+      <section class="panel panel-modules" id="panelModules" style="--d:4">
+        <h2 class="panel-title"><span>MODULE</span><i>MARK II</i></h2>
         <ul class="modules">
           <li class="on">HUD · KERN · AUDIO</li>
           <li class="on">KOMMUNIKATION · CLAUDE</li>
-          <li>SPRACHE · WAKE-WORD</li>
+          <li class="on">SPRACHE · WAKE-WORD</li>
           <li>GEDÄCHTNIS · OBSIDIAN</li>
           <li>ERDE · STREET VIEW</li>
           <li>GESTEN · KAMERA</li>
@@ -84,7 +101,7 @@
 
     <!-- Mitte: Energie-Kern -->
     <main class="core-wrap">
-      <div class="core" id="core">
+      <div class="core" id="core" role="button" tabindex="0" aria-label="Sprechen oder Vorlesen stoppen">
         <div class="rings" aria-hidden="true">
           <svg class="r r1" viewBox="0 0 400 400"><circle cx="200" cy="200" r="196" /></svg>
           <svg class="r r2" viewBox="0 0 400 400"><circle cx="200" cy="200" r="186" /></svg>
@@ -119,6 +136,9 @@
           <svg viewBox="0 0 24 24"><path d="M4 9v6h4l5 4V5L8 9H4z" /><path class="wave" d="M16 8.5a5 5 0 0 1 0 7M18.5 6a8.5 8.5 0 0 1 0 12" /></svg>
         </button>
         <textarea id="input" rows="1" placeholder="Nachricht an Hephaestion…" aria-label="Nachricht"></textarea>
+        <button id="micBtn" class="icon-btn mic" type="button" title="Sprechen" aria-label="Sprechen">
+          <svg viewBox="0 0 24 24"><rect x="9" y="3" width="6" height="11" rx="3" /><path d="M5.5 11a6.5 6.5 0 0 0 13 0M12 17.5V21M8.5 21h7" /></svg>
+        </button>
         <button id="turboBtn" class="turbo" type="button" aria-pressed="false" title="Starkes Modell erzwingen">TURBO</button>
         <button id="sendBtn" class="send" type="submit" aria-label="Senden">
           <svg viewBox="0 0 24 24"><path d="M3 11.5 21 3l-8.5 18-2-7.5L3 11.5z" /></svg>

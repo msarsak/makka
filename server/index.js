@@ -21,7 +21,7 @@ app.get('/api/health', (_req, res) => {
   res.json({
     ok: true,
     name: 'Hephaestion',
-    phase: 1,
+    phase: 2,
     mode: hasKey() ? 'live' : 'demo',
     models: { fast: process.env.MODEL_FAST || 'claude-haiku-5-5', smart: process.env.MODEL_SMART || 'claude-opus-5-5' },
     uptimeSec: Math.round((Date.now() - startedAt) / 1000),

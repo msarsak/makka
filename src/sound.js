@@ -101,3 +101,5 @@ export const sfx = {
     tone({ type: 'square', f0: 140, start: 0.18, dur: 0.25, vol: 0.05, filter: { f: 700 } });
   },
 };
+
+export function getAudioContext() { initAudio(); return ctx; }
