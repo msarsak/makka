@@ -1,0 +1,10 @@
+# Geheimnisse – NIEMALS hochladen
+.env
+.env.*
+!.env.example
+
+node_modules/
+dist/
+*.log
+.DS_Store
+test-results/

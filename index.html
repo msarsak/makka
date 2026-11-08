@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#02040b" />
+  <title>Hephaestion</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <div class="bg-grid" aria-hidden="true"></div>
+  <div class="bg-vignette" aria-hidden="true"></div>
+  <div class="bg-scan" aria-hidden="true"></div>
+
+  <!-- Boot-Bildschirm: Klick nötig, damit der Browser Sound erlaubt -->
+  <div id="boot" class="boot">
+    <div class="boot-inner">
+      <div class="boot-ring"></div>
+      <h1 class="boot-title">HEPHAESTION</h1>
+      <p class="boot-sub">PERSÖNLICHES ASSISTENZSYSTEM · MARK I</p>
+      <button id="bootBtn" class="boot-btn" type="button">SYSTEM AKTIVIEREN</button>
+      <p class="boot-hint">Klicken oder Enter drücken</p>
+    </div>
+  </div>
+
+  <div id="app" class="app" data-state="idle">
+    <!-- Kopfzeile -->
+    <header class="topbar">
+      <div class="brand">
+        <span class="brand-mark"></span>
+        <div>
+          <div class="brand-name">HEPHAESTION</div>
+          <div class="brand-sub"><span class="dot"></span><span id="sysLine">SYSTEM ONLINE</span></div>
+        </div>
+      </div>
+      <div class="clock">
+        <div id="clockTime" class="clock-time">--:--<span class="sec">--</span></div>
+        <div id="clockDate" class="clock-date">---</div>
+      </div>
+    </header>
+
+    <!-- Linke Seite: Datenanzeigen -->
+    <aside class="side side-left">
+      <section class="panel" id="panelWeather" style="--d:1">
+        <h2 class="panel-title"><span>WETTER</span><i id="wxPlace">--</i></h2>
+        <div class="wx">
+          <div class="wx-temp"><span id="wxTemp">--</span><sup>°C</sup></div>
+          <div class="wx-meta">
+            <div id="wxText">Lade Wetterdaten…</div>
+            <div class="wx-row"><span>MIN/MAX</span><b id="wxMinMax">--</b></div>
+            <div class="wx-row"><span>GEFÜHLT</span><b id="wxFeels">--</b></div>
+            <div class="wx-row"><span>WIND</span><b id="wxWind">--</b></div>
+            <div class="wx-row"><span>FEUCHTE</span><b id="wxHum">--</b></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel" id="panelSystem" style="--d:2">
+        <h2 class="panel-title"><span>SYSTEM</span><i>DIAGNOSE</i></h2>
+        <div class="stat"><span>MODUS</span><b id="stMode">--</b></div>
+        <div class="stat"><span>GEHIRN</span><b id="stModel">--</b></div>
+        <div class="stat"><span>ANTWORTZEIT</span><b id="stLatency">--</b></div>
+        <div class="stat"><span>FRAMERATE</span><b id="stFps">--</b></div>
+        <div class="stat"><span>LAUFZEIT</span><b id="stUptime">--</b></div>
+        <div class="bars" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+      </section>
+
+      <section class="panel panel-modules" id="panelModules" style="--d:3">
+        <h2 class="panel-title"><span>MODULE</span><i>MARK I</i></h2>
+        <ul class="modules">
+          <li class="on">HUD · KERN · AUDIO</li>
+          <li class="on">KOMMUNIKATION · CLAUDE</li>
+          <li>SPRACHE · WAKE-WORD</li>
+          <li>GEDÄCHTNIS · OBSIDIAN</li>
+          <li>ERDE · STREET VIEW</li>
+          <li>GESTEN · KAMERA</li>
+          <li>WERKZEUGE · N8N · PWA</li>
+        </ul>
+      </section>
+    </aside>
+
+    <!-- Mitte: Energie-Kern -->
+    <main class="core-wrap">
+      <div class="core" id="core">
+        <div class="rings" aria-hidden="true">
+          <svg class="r r1" viewBox="0 0 400 400"><circle cx="200" cy="200" r="196" /></svg>
+          <svg class="r r2" viewBox="0 0 400 400"><circle cx="200" cy="200" r="186" /></svg>
+          <svg class="r r3" viewBox="0 0 400 400"><circle cx="200" cy="200" r="172" /></svg>
+          <svg class="r r4" viewBox="0 0 400 400"><circle cx="200" cy="200" r="160" /></svg>
+          <svg class="r r5" viewBox="0 0 400 400"><circle cx="200" cy="200" r="150" /><g class="ticks" id="ticks"></g></svg>
+          <svg class="r r6" viewBox="0 0 400 400">
+            <defs><linearGradient id="gGold" x1="0" x2="1"><stop offset="0" stop-color="var(--gold)" /><stop offset="1" stop-color="var(--red)" /></linearGradient></defs>
+            <path d="M200 18 A182 182 0 0 1 382 200" /><path d="M200 382 A182 182 0 0 1 18 200" />
+          </svg>
+        </div>
+        <canvas id="orb" class="orb"></canvas>
+        <div class="core-label">
+          <div id="coreState" class="core-state">BEREIT</div>
+          <div id="coreSub" class="core-sub">WIE KANN ICH HELFEN, BOSS?</div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Rechte Seite: Chat -->
+    <aside class="side side-right">
+      <section class="panel panel-chat" id="panelChat" style="--d:2">
+        <h2 class="panel-title"><span>KOMMUNIKATION</span><button id="clearBtn" class="mini-btn" type="button" title="Neues Gespräch">NEU</button></h2>
+        <div id="log" class="log" aria-live="polite"></div>
+      </section>
+    </aside>
+
+    <!-- Eingabe -->
+    <footer class="inputbar">
+      <form id="form" class="composer" autocomplete="off">
+        <button id="muteBtn" class="icon-btn" type="button" title="Ton an/aus" aria-label="Ton an/aus">
+          <svg viewBox="0 0 24 24"><path d="M4 9v6h4l5 4V5L8 9H4z" /><path class="wave" d="M16 8.5a5 5 0 0 1 0 7M18.5 6a8.5 8.5 0 0 1 0 12" /></svg>
+        </button>
+        <textarea id="input" rows="1" placeholder="Nachricht an Hephaestion…" aria-label="Nachricht"></textarea>
+        <button id="turboBtn" class="turbo" type="button" aria-pressed="false" title="Starkes Modell erzwingen">TURBO</button>
+        <button id="sendBtn" class="send" type="submit" aria-label="Senden">
+          <svg viewBox="0 0 24 24"><path d="M3 11.5 21 3l-8.5 18-2-7.5L3 11.5z" /></svg>
+        </button>
+      </form>
+    </footer>
+  </div>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
