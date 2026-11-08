@@ -6,6 +6,12 @@
   <meta name="theme-color" content="#02040b" />
   <title>Hephaestion</title>
   <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="manifest" href="/manifest.webmanifest" />
+  <link rel="apple-touch-icon" href="/icons/icon-192.png" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Hephaestion" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -20,7 +26,7 @@
     <div class="boot-inner">
       <div class="boot-ring"></div>
       <h1 class="boot-title">HEPHAESTION</h1>
-      <p class="boot-sub">PERSÖNLICHES ASSISTENZSYSTEM · MARK V</p>
+      <p class="boot-sub">PERSÖNLICHES ASSISTENZSYSTEM · MARK VI</p>
       <button id="bootBtn" class="boot-btn" type="button">SYSTEM AKTIVIEREN</button>
       <p class="boot-hint">Klicken oder Enter drücken</p>
     </div>
@@ -87,7 +93,7 @@
       </section>
 
       <section class="panel panel-modules" id="panelModules" style="--d:4">
-        <h2 class="panel-title"><span>MODULE</span><i>MARK V</i></h2>
+        <h2 class="panel-title"><span>MODULE</span><i>MARK VI</i></h2>
         <ul class="modules">
           <li class="on">HUD · KERN · AUDIO</li>
           <li class="on">KOMMUNIKATION · CLAUDE</li>
@@ -95,7 +101,7 @@
           <li class="on">GEDÄCHTNIS · OBSIDIAN</li>
           <li class="on">ERDE · STREET VIEW</li>
           <li class="on">GESTEN · KAMERA</li>
-          <li>WERKZEUGE · N8N · PWA</li>
+          <li class="on">WERKZEUGE · N8N · PWA</li>
         </ul>
       </section>
     </aside>
@@ -126,7 +132,7 @@
     <!-- Rechte Seite: Chat -->
     <aside class="side side-right">
       <section class="panel panel-chat" id="panelChat" style="--d:2">
-        <h2 class="panel-title"><span>KOMMUNIKATION</span><button id="clearBtn" class="mini-btn" type="button" title="Neues Gespräch">NEU</button></h2>
+        <h2 class="panel-title"><span>KOMMUNIKATION</span><span class="title-btns"><button id="toolsBtn" class="mini-btn" type="button" title="n8n-Workflows verwalten">N8N</button><button id="clearBtn" class="mini-btn" type="button" title="Neues Gespräch">NEU</button></span></h2>
         <div id="log" class="log" aria-live="polite"></div>
       </section>
     </aside>

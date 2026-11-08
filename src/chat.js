@@ -36,13 +36,13 @@ export function renderEmpty(log) {
 }
 
 /** Sendet die Unterhaltung und ruft Callbacks während des Streams auf. */
-export async function sendChat({ messages, turbo, hud, signal, onMeta, onDelta, onTool, onSaved, onAction, onDone, onError }) {
+export async function sendChat({ messages, turbo, hud, image, signal, onMeta, onDelta, onTool, onSaved, onAction, onDone, onError }) {
   let res;
   try {
     res = await fetch('/api/chat', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ messages, turbo, hud, timeZone: Intl.DateTimeFormat().resolvedOptions().timeZone }),
+      body: JSON.stringify({ messages, turbo, hud, image, timeZone: Intl.DateTimeFormat().resolvedOptions().timeZone }),
       signal,
     });
   } catch (e) {
@@ -78,7 +78,14 @@ export async function sendChat({ messages, turbo, hud, signal, onMeta, onDelta, 
   if (!finished && !signal?.aborted) onError?.('Verbindung unterbrochen.');
 }
 
-/** Kleine Gedächtnis-Meldung im Chat ("Gemerkt: …") */
+/** Kleine Systemmeldung im Chat, z. B. "🧠 GEMERKT …" */
+export function renderNote(log, label, text) {
+  const el = document.createElement('div');
+  el.className = 'memnote';
+  el.innerHTML = `<span>${escapeHtml(label)}</span> ${escapeHtml(text)}`;
+  log.appendChild(el);
+  log.scrollTop = log.scrollHeight;
+}
 export function renderMemoryNote(log, text) {
   const el = document.createElement('div');
   el.className = 'memnote';

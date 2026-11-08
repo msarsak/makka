@@ -9,7 +9,8 @@
     "build": "vite build",
     "start": "vite build && node server/index.js",
     "check-key": "node server/check-key.js",
-    "test": "node --test test/*.test.js"
+    "test": "node --test test/*.test.js",
+    "handy": "vite build && node server/index.js"
   },
   "engines": {
     "node": ">=20"

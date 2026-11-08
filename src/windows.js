@@ -6,7 +6,7 @@ const registry = new Map(); // Element → Fenster (für Handgesten)
 export const windowFor = (el) => registry.get(el?.closest?.('.hudwin'));
 const layer = () => document.getElementById('windows');
 
-export function createHudWindow({ id, title, className = '', onClose }) {
+export function createHudWindow({ id, title, className = '', onClose, destroyOnClose = false }) {
   const el = document.createElement('section');
   el.className = `hudwin ${className}`;
   el.id = id;
@@ -60,7 +60,11 @@ export function createHudWindow({ id, title, className = '', onClose }) {
       el.classList.remove('opening');
       el.classList.add('closing');
       sfx.deactivate();
-      setTimeout(() => { if (!open) el.hidden = true; }, 380);
+      setTimeout(() => {
+        if (open) return;
+        el.hidden = true;
+        if (destroyOnClose) { registry.delete(el); el.remove(); } // Einmal-Fenster ganz entfernen
+      }, 380);
       onClose?.();
     },
     moveTo(dx, dy) {

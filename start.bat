@@ -29,9 +29,9 @@ if not exist "node_modules" (
   if errorlevel 1 ( echo   [FEHLER] Installation fehlgeschlagen. & pause & exit /b 1 )
 )
 
-echo   Browser oeffnet gleich: http://localhost:5173
+echo   Browser oeffnet gleich: http://127.0.0.1:5173
 echo   Zum Beenden dieses Fenster schliessen.
 echo.
-start "" cmd /c "timeout /t 4 >nul & start http://localhost:5173"
+start "" cmd /c "timeout /t 4 >nul & start http://127.0.0.1:5173"
 call npm run dev
 pause

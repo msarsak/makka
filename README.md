@@ -121,6 +121,29 @@ Google verlangt beim ersten Mal eine Kreditkarte zur Identifizierung. Die Maps E
 - **Offene Hand ca. 1 Sekunde halten** (im Zeichenmodus) = alles löschen
 - Tipp: Hand ca. 40–70 cm vor der Kamera, gutes Licht.
 
+### 👁 Sehen (ab Phase 6)
+- Sag oder schreib „**Was siehst du?**“, „**Schau mal**“, „**Was halte ich hier?**“ – er macht ein Foto mit der Kamera und beschreibt es. (Oder im Kamerafenster auf **👁** klicken.)
+- Das Foto geht nur bei dieser einen Frage an Claude und wird nicht gespeichert.
+
+### 🔎 Recherche & Panels (ab Phase 6)
+- „**Was gibt's Neues zu …?**“, „**Recherchier mal …**“ – er sucht im Netz (Websuche von Anthropic, ca. 1 Cent pro Suche) und auf **Reddit**. Die Quellen erscheinen als klickbare Liste im HUD.
+- „**Mach mir eine Seite über …**“, „**Zeig mir News über …**“ – öffnet ein HUD-Fenster mit Überschriften, Listen und Links.
+
+### ⚙ n8n-Workflows (ab Phase 6)
+1. In n8n einen Workflow mit **Webhook**-Knoten bauen (Methode **POST**), Workflow **aktivieren**, die **Production URL** kopieren.
+2. Im HUD oben bei KOMMUNIKATION auf **N8N** klicken → Name, Webhook-URL und kurze Beschreibung eintragen → **HINZUFÜGEN** → mit **TEST** prüfen.
+3. Dann einfach sagen: „**Starte meinen Workflow Rechnung erstellen**“.
+- **Sicherheitsregel:** Ist „Vor dem Start um Freigabe bitten“ an (Standard), erscheint ein Fenster **FREIGABE** – der Workflow läuft erst nach Klick auf **AUSFÜHREN**.
+- Hephaestion schickt an den Webhook: `{ "source": "hephaestion", "workflow": "...", "data": {...} }`.
+
+### 📱 Handy-App (ab Phase 6)
+Hephaestion ist nur auf deinem Laptop erreichbar (nicht im WLAN). Fürs Handy nutzt du **Tailscale** – ein privates, verschlüsseltes Netz nur für deine Geräte:
+1. **Laptop:** https://tailscale.com/download installieren und anmelden (z. B. mit Google).
+2. **Handy:** App **Tailscale** installieren und mit **demselben Konto** anmelden.
+3. Auf dem Laptop **`handy.bat`** doppelklicken. Beim ersten Mal zeigt Tailscale evtl. einen Link, um **HTTPS** zu erlauben → öffnen, bestätigen, `handy.bat` nochmal starten.
+4. Die angezeigte Adresse (`https://dein-laptop.….ts.net`) am Handy öffnen → Browser-Menü → **„Zum Startbildschirm hinzufügen“**. Fertig – Hephaestion ist eine App, mit Mikrofon und Kamera.
+- Der Laptop muss an sein und `handy.bat` laufen. Freigabe beenden: `tailscale serve reset`.
+
 ## 🔄 Updates mit einem Klick
 Doppelklick auf **`update.bat`** (vorher Hephaestion schließen). Er holt die neueste Version von GitHub – deine `.env`, dein Gedächtnis und das Handmodell bleiben erhalten.
 
@@ -146,7 +169,8 @@ automatisch auf das starke Modell (**Opus**). Welches Modell gerade arbeitet, si
 - [x] **Phase 3:** Gedächtnis mit deinem Obsidian-Vault
 - [x] **Phase 4:** 3D-Erde, Flüge zu Orten, Street View
 - [x] **Phase 5:** Kamera und Handgesten
-- [ ] **Phase 6:** n8n, Recherche, Handy-App (PWA)
+- [x] **Phase 6:** n8n, Recherche, Panels, Sehen, Handy-App (PWA)
+- [ ] **Später:** E-Mail & Kalender (OAuth), TikTok/Instagram-Trends (Apify), ElevenLabs-Stimme, Whisper-Spracherkennung
 
 ---
 
@@ -162,6 +186,8 @@ server/      Node-Server: hält den API-Key, spricht mit Claude, Wetter
   learn.js     Lernt nach jeder Antwort automatisch dazu
   geo.js       Orte finden (OpenStreetMap) und Street View (Google)
   vision.js    Liefert die Handerkennung aus, lädt das Modell einmalig
+  research.js  Reddit-Suche
+  n8n.js       n8n-Workflows: speichern, Freigaben, Webhooks aufrufen
 src/         Web-App (das HUD)
   orb.js       Energie-Kern (Canvas, 60 FPS)
   sound.js     Sci-Fi-Sounds (Web Audio API, ohne Audiodateien)
@@ -174,6 +200,8 @@ src/         Web-App (das HUD)
   hands.js     Webcam + Handerkennung (MediaPipe, lokal)
   gestures.js  Gesten-Logik: Cursor, Greifen, Tippen, Zoom, Formerkennung
   gesture-ui.js  Gesten im HUD: Cursor, Kamerafenster, Zeichnungen
+  panels.js    Panels, Quellen, n8n-Freigabe/-Verwaltung, Kamera-Schnappschuss
+public/      App-Dateien (Manifest, Service Worker, Icons, Erd-Textur)
 ```
 
 ## 🔄 Neue Version holen

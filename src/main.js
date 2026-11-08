@@ -3,12 +3,13 @@ import './styles.css';
 import { createOrb } from './orb.js';
 import { initAudio, sfx, isMuted, setMuted } from './sound.js';
 import { buildTicks, startClock, startWeather, loadHealth, loadMemory, setModelInfo, setLatency, setFps } from './hud.js';
-import { loadHistory, saveHistory, renderMessage, renderEmpty, sendChat, format, renderMemoryNote, learn } from './chat.js';
+import { loadHistory, saveHistory, renderMessage, renderEmpty, sendChat, format, renderMemoryNote, renderNote, learn } from './chat.js';
 import { createVoice } from './voice.js';
 import { SentenceBuffer } from './voice-utils.js';
 import { createHudWindow } from './windows.js';
 import { getHome } from './hud.js';
 import { createGestureUI } from './gesture-ui.js';
+import { createPanels, captureFrame, LOOK_RE } from './panels.js';
 
 const $ = (id) => document.getElementById(id);
 const app = $('app');
@@ -219,10 +220,19 @@ const camBtn = $('camBtn');
 const gestures = createGestureUI({
   getEarth: () => (hud.earthOpen ? earth : null),
   onActiveChange: (on) => camBtn.classList.toggle('active', on),
+  onLook: () => ask('Was siehst du?', { viaVoice: false, look: true }),
 });
+
+// ---------- Panels, Recherche-Quellen, n8n ----------
+const panels = createPanels({ note: (t) => renderNote(log, 'SYSTEM', t) });
+$('toolsBtn').addEventListener('click', () => { if (!booted) boot(); panels.showTools(); });
 camBtn.addEventListener('click', () => { if (!booted) boot(); gestures.active ? gestures.stop() : gestures.start(); });
 
 function handleAction(a) {
+  if (a.type === 'panel') { panels.showPanel(a); return; }
+  if (a.type === 'sources') { panels.showSources(a); return; }
+  if (a.type === 'confirm') { panels.confirm(a); return; }
+  if (a.type === 'n8n_done') { renderNote(log, '⚙ N8N', `Workflow „${a.workflow}“ ausgeführt.`); return; }
   if (a.type === 'camera') {
     if (a.action === 'off') gestures.stop();
     else if (a.action === 'clear') gestures.clear();
@@ -305,7 +315,7 @@ $('form').addEventListener('submit', (e) => {
 });
 
 // ---------- Frage an Hephaestion ----------
-async function ask(text, { viaVoice }) {
+async function ask(text, { viaVoice, look = false }) {
   if (busy) return;
   if (!booted) boot();
   voice.stopSpeaking();
@@ -315,9 +325,22 @@ async function ask(text, { viaVoice }) {
   sfx.send();
 
   history.push({ role: 'user', content: text });
-  renderMessage(log, { role: 'user', content: text, meta: viaVoice ? '🎙' : '' });
+  const userEl = renderMessage(log, { role: 'user', content: text, meta: viaVoice ? '🎙' : '' });
   saveHistory(history);
   setState('thinking');
+
+  // "Was siehst du?" → Foto von der Kamera mitschicken
+  let image = null;
+  if (look || LOOK_RE.test(text)) {
+    setState('thinking', 'SCHAUE DURCH DIE KAMERA …');
+    try {
+      image = await captureFrame(gestures.video);
+      userEl.insertAdjacentHTML('beforeend', `<img class="snap" src="${image}" alt="Kamerabild">`);
+      log.scrollTop = log.scrollHeight;
+    } catch {
+      renderNote(log, '⚠ KAMERA', 'Kein Kamerabild möglich – Kamera erlauben oder anschließen.');
+    }
+  }
 
   const speak = voice.supported.tts && (speakMode === 'always' || (speakMode === 'voice' && viaVoice));
   const sentences = new SentenceBuffer();
@@ -340,6 +363,7 @@ async function ask(text, { viaVoice }) {
     messages: history,
     turbo,
     hud,
+    image,
     signal: controller.signal,
     onAction: handleAction,
     onMeta: ({ model, tier }) => {
@@ -417,5 +441,10 @@ setState('idle');
 loadHealth().then(() => loadMemory());
 startWeather();
 
+// ---------- Handy-App (PWA): offline-fähige Hülle ----------
+if ('serviceWorker' in navigator && import.meta.env.PROD) {
+  addEventListener('load', () => navigator.serviceWorker.register('/sw.js').catch(() => {}));
+}
+
 // Für spätere Phasen (Gesten) und zum Ausprobieren in der Browser-Konsole
-window.hephaestion = { orb, sfx, setState, voice, ask, handleAction, hud, gestures, getEarth: () => earth };
+window.hephaestion = { orb, sfx, setState, voice, ask, handleAction, hud, gestures, panels, getEarth: () => earth };

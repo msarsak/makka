@@ -10,21 +10,24 @@ import { getWeather } from './weather.js';
 import { memoryStats, ensureVault, vaultRoot } from './memory.js';
 import { learnFromConversation } from './learn.js';
 import { visionRoutes } from './vision.js';
+import { listWorkflows, saveWorkflow, deleteWorkflow, takeConfirmation, runWebhook } from './n8n.js';
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 const dist = path.join(here, '..', 'dist');
 const PORT = Number(process.env.PORT) || 3000;
+// Nur auf diesem Laptop erreichbar. Das Handy kommt sicher über Tailscale (handy.bat).
+const HOST = process.env.HOST || '127.0.0.1';
 const startedAt = Date.now();
 
 const app = express();
 app.disable('x-powered-by');
-app.use(express.json({ limit: '1mb' }));
+app.use(express.json({ limit: '4mb' })); // Kamerabilder
 
 app.get('/api/health', (_req, res) => {
   res.json({
     ok: true,
     name: 'Hephaestion',
-    phase: 5,
+    phase: 6,
     mode: hasKey() ? 'live' : 'demo',
     models: { fast: process.env.MODEL_FAST || 'claude-haiku-5-5', smart: process.env.MODEL_SMART || 'claude-opus-5-5' },
     uptimeSec: Math.round((Date.now() - startedAt) / 1000),
@@ -32,6 +35,25 @@ app.get('/api/health', (_req, res) => {
 });
 
 visionRoutes(app);
+
+// ---------- n8n-Workflows ----------
+app.get('/api/n8n', async (_req, res) => res.json(await listWorkflows()));
+app.post('/api/n8n', async (req, res) => {
+  try { res.json(await saveWorkflow(req.body || {})); } catch (e) { res.status(400).json({ error: e.message }); }
+});
+app.delete('/api/n8n/:id', async (req, res) => { await deleteWorkflow(req.params.id); res.json({ ok: true }); });
+app.post('/api/n8n/test/:id', async (req, res) => {
+  const wf = (await listWorkflows()).find((w) => w.id === req.params.id);
+  if (!wf) return res.status(404).json({ error: 'Nicht gefunden' });
+  try { res.json({ ok: true, result: await runWebhook(wf, { test: true }) }); } catch (e) { res.status(502).json({ error: e.message }); }
+});
+// Freigabe durch den Boss (Klick auf AUSFÜHREN im HUD)
+app.post('/api/n8n/confirm/:id', async (req, res) => {
+  const p = takeConfirmation(req.params.id);
+  if (!p) return res.status(410).json({ error: 'Freigabe abgelaufen – bitte nochmal fragen.' });
+  if (req.body?.approve !== true) return res.json({ ok: true, cancelled: true });
+  try { res.json({ ok: true, result: await runWebhook(p.wf, p.data) }); } catch (e) { res.status(502).json({ error: e.message }); }
+});
 
 app.get('/api/memory', async (_req, res) => res.json(await memoryStats()));
 
@@ -55,6 +77,12 @@ app.get('/api/weather', async (req, res) => {
   }
 });
 
+function parseImage(dataUrl) {
+  const m = /^data:(image\/(?:jpeg|png|webp));base64,([A-Za-z0-9+/=]+)$/.exec(String(dataUrl || ''));
+  if (!m || m[2].length > 3_000_000) return null;
+  return { mediaType: m[1], data: m[2] };
+}
+
 function sanitizeHud(h) {
   const loc = h?.location;
   return {
@@ -68,6 +96,7 @@ function sanitizeHud(h) {
 // Chat als Live-Stream (Server-Sent Events)
 app.post('/api/chat', async (req, res) => {
   const { messages, turbo, timeZone, hud } = req.body || {};
+  const image = parseImage(req.body?.image);
   const lastUser = [...(messages || [])].reverse().find((m) => m?.role === 'user');
   const route = chooseModel(lastUser?.content, { turbo: Boolean(turbo) });
 
@@ -95,6 +124,7 @@ app.post('/api/chat', async (req, res) => {
       onSaved: (f) => send('saved', f),
       onAction: (a) => send('action', a),
       hud: sanitizeHud(hud),
+      image,
     });
     send('done', { ...result, ms: Date.now() - t0 });
   } catch (err) {
@@ -114,7 +144,7 @@ if (fs.existsSync(dist)) {
 
 ensureVault().catch((e) => console.error('[gedächtnis] Vault nicht nutzbar:', e.message));
 
-app.listen(PORT, () => {
+app.listen(PORT, HOST, () => {
   console.log(`\n  ⚡ HEPHAESTION online  →  http://localhost:${PORT}`);
   console.log(`  Modus: ${hasKey() ? 'LIVE (Claude API)' : 'DEMO (kein API-Key in .env)'}`);
   console.log(`  Gedächtnis: ${vaultRoot()}\n`);

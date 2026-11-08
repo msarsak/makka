@@ -17,3 +17,6 @@ test-results/
 
 # Test-Screenshots
 shots/
+
+# Eigene n8n-Workflows (Webhook-URLs)
+workflows.json

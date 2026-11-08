@@ -353,6 +353,51 @@ button, textarea { font: inherit; color: inherit; }
 .g-hover { outline: 2px solid var(--gold) !important; outline-offset: 2px; box-shadow: var(--glow-gold) !important; }
 body.gesture-draw .app { cursor: crosshair; }
 
+/* ---------- Phase 6: Panels, Quellen, Freigabe, Werkzeuge ---------- */
+.title-btns { display: flex; gap: 6px; }
+.win-panel { left: 6%; top: 4%; width: 78%; height: 84%; }
+.win-sources { right: 0; top: 6%; width: 46%; max-height: 70%; }
+.win-confirm { left: 50%; top: 30%; width: min(380px, 90%); margin-left: min(-190px, -45%); z-index: 50; }
+.win-tools { left: 4%; top: 4%; width: 82%; max-height: 90%; }
+.win-panel .hudwin-body, .win-sources .hudwin-body, .win-tools .hudwin-body { overflow-y: auto; }
+.panel-doc { padding: 14px 20px 22px; font-size: 15.5px; line-height: 1.5; }
+.panel-doc h2, .panel-doc h3, .panel-doc h4 { font-family: var(--font-hud); letter-spacing: .14em; color: var(--blue-bright); margin: 16px 0 8px; font-size: 14px; }
+.panel-doc h2 { color: var(--gold); font-size: 16px; }
+.panel-doc p { margin: 6px 0; }
+.panel-doc ul, .panel-doc ol { margin: 6px 0 10px; padding-left: 22px; }
+.panel-doc li { margin: 3px 0; }
+.panel-doc li::marker { color: var(--gold); }
+.panel-doc a, .sources a { color: var(--blue-bright); text-decoration: none; border-bottom: 1px dotted var(--blue-bright); }
+.panel-doc a:hover, .sources a:hover { color: var(--gold); border-color: var(--gold); }
+.panel-doc strong { color: var(--gold); }
+.panel-doc code { background: rgba(92, 194, 255, .12); padding: 0 4px; }
+.sources { margin: 0; padding: 10px 16px 14px 34px; font-size: 14px; }
+.sources li { margin: 6px 0; }
+.sources li::marker { color: var(--gold); font-family: var(--font-hud); font-size: 11px; }
+.sources span { display: block; font-size: 12px; color: var(--muted); }
+.confirm-box { padding: 14px 18px 16px; font-size: 14.5px; }
+.confirm-box h3 { margin: 4px 0 8px; font-family: var(--font-hud); font-size: 15px; letter-spacing: .12em; color: var(--gold); }
+.confirm-box pre { max-height: 140px; overflow: auto; font-size: 12px; background: rgba(0, 0, 0, .35); padding: 8px; border: 1px solid var(--line); }
+.confirm-actions { display: flex; gap: 10px; margin-top: 12px; }
+.confirm-actions button { flex: 1; cursor: pointer; padding: 10px; font-family: var(--font-hud); font-size: 11px; letter-spacing: .2em; color: #fff; border: 1px solid var(--line); background: rgba(31, 111, 255, .12); }
+.confirm-yes { border-color: var(--gold) !important; background: rgba(255, 201, 77, .2) !important; box-shadow: var(--glow-gold); }
+.confirm-no:hover { border-color: var(--red); box-shadow: var(--glow-red); }
+.muted { color: var(--muted); }
+.tools { padding: 12px 16px 16px; font-size: 14px; }
+.tools b { color: var(--gold); font-weight: 600; }
+.wf-list { list-style: none; margin: 10px 0 14px; padding: 0; }
+.wf-list li { display: flex; align-items: center; gap: 8px; padding: 8px 0; border-bottom: 1px dashed rgba(92, 194, 255, .15); }
+.wf-list li > div { flex: 1; min-width: 0; overflow-wrap: anywhere; }
+.tag { font-family: var(--font-hud); font-size: 8.5px; letter-spacing: .18em; color: var(--gold); border: 1px solid rgba(255, 201, 77, .5); padding: 1px 5px; margin-left: 6px; }
+.tag.free { color: var(--blue-bright); border-color: var(--line); }
+.mini-btn.danger { color: var(--red); }
+.wf-form { display: grid; gap: 8px; }
+.wf-form input[type="text"], .wf-form input:not([type]) { background: rgba(5, 14, 36, .9); border: 1px solid var(--line); color: var(--text); padding: 8px 10px; font: inherit; outline: 0; }
+.wf-form input:focus { border-color: var(--gold); }
+.wf-form label { font-size: 13px; color: var(--muted); display: flex; gap: 8px; align-items: center; }
+.wf-form .toggle { justify-self: start; padding: 8px 16px; }
+.snap { display: block; max-width: 180px; margin-top: 6px; border: 1px solid var(--line); transform: scaleX(-1); }
+
 /* ---------- Gedächtnis ---------- */
 .memnote {
   align-self: center; max-width: 92%; font-size: 13px; color: var(--text); padding: 5px 12px;
@@ -433,6 +478,8 @@ body.gesture-draw .app { cursor: crosshair; }
   .earth-hint { display: none; }
   .win-cam { left: auto; right: 8px; top: auto; bottom: 90px; width: 52vw; height: auto; }
   .cam-help { display: none; }
+  .win-panel, .win-sources, .win-tools { left: 8px; right: 8px; width: auto; top: max(8px, env(safe-area-inset-top)); height: auto; max-height: 75dvh; }
+  .win-confirm { left: 8px; right: 8px; width: auto; margin-left: 0; top: 30dvh; }
 }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }

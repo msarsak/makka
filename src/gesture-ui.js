@@ -10,7 +10,7 @@ const CLICKABLE = 'button, a, select, [role="button"], .mini-btn, .toggle';
 
 function cssVar(name, fb) { return getComputedStyle(document.documentElement).getPropertyValue(name).trim() || fb; }
 
-export function createGestureUI({ getEarth, onModeChange, onActiveChange } = {}) {
+export function createGestureUI({ getEarth, onModeChange, onActiveChange, onLook } = {}) {
   // ---------- Ebenen ----------
   const canvas = document.createElement('canvas');
   canvas.id = 'gestureLayer';
@@ -53,6 +53,7 @@ export function createGestureUI({ getEarth, onModeChange, onActiveChange } = {})
       <button type="button" class="toggle" data-mode="navigate">NAVIGIEREN</button>
       <button type="button" class="toggle" data-mode="draw">ZEICHNEN</button>
       <button type="button" class="mini-btn" data-act="clear">LÖSCHEN</button>
+      <button type="button" class="mini-btn" data-act="look" title="Hephaestion schaut durch die Kamera">👁</button>
     </div>
     <p class="cam-help"></p>`;
   const stage = win.body.querySelector('.cam-mirror');
@@ -62,6 +63,7 @@ export function createGestureUI({ getEarth, onModeChange, onActiveChange } = {})
   const helpEl = win.body.querySelector('.cam-help');
   win.body.querySelectorAll('[data-mode]').forEach((b) => b.addEventListener('click', () => api.setMode(b.dataset.mode)));
   win.body.querySelector('[data-act="clear"]').addEventListener('click', () => api.clear());
+  win.body.querySelector('[data-act="look"]').addEventListener('click', () => onLook?.());
 
   const HELP = {
     navigate: '☝ Zeigefinger = Cursor · 🤏 kurz greifen = Klick · greifen + ziehen = Fenster verschieben / Erde drehen · 🤏🤏 zwei Hände = Zoom',
@@ -226,6 +228,7 @@ export function createGestureUI({ getEarth, onModeChange, onActiveChange } = {})
     get active() { return active; },
     get mode() { return mode; },
     get shapes() { return shapes; },
+    get video() { return session?.video || null; },
     feed(frame, t) { simulatedUntil = performance.now() + 1500; feed(frame, t); }, // zum Testen ohne echte Hände
     async start() {
       if (active) { win.open(); return; }

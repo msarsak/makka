@@ -3,6 +3,8 @@ import Anthropic from '@anthropic-ai/sdk';
 import { buildSystemPrompt } from './persona.js';
 import { CATEGORIES, loadCoreMemory, searchVault, readNote, saveFact } from './memory.js';
 import { geocode, streetView } from './geo.js';
+import { searchReddit } from './research.js';
+import { listWorkflows, findWorkflow, runWebhook, requestConfirmation } from './n8n.js';
 
 const MAX_HISTORY = 30; // so viele Nachrichten schickt er maximal mit (spart Kosten)
 // Modelle, die den serverseitigen Fallback bei Ablehnungen kennen
@@ -74,6 +76,15 @@ export const TOOLS = [
     },
   },
 ];
+// ---------- Websuche (läuft bei Anthropic; kostet ca. 1 Cent pro Suche) ----------
+function webTools(model) {
+  const modern = /opus|sonnet|fable/i.test(model); // neuere Versionen mit dynamischer Filterung
+  return [
+    { type: modern ? 'web_search_20260209' : 'web_search_20250305', name: 'web_search', max_uses: 5 },
+    ...(modern ? [{ type: 'web_fetch_20260209', name: 'web_fetch', max_uses: 3 }] : []),
+  ];
+}
+
 // ---------- Werkzeuge: HUD / Erde ----------
 TOOLS.push(
   {
@@ -100,6 +111,44 @@ TOOLS.push(
     input_schema: { type: 'object', properties: { place: { type: 'string' } } },
   },
   {
+    name: 'reddit_search',
+    description: 'Durchsucht Reddit nach Beiträgen (Meinungen, Erfahrungen, Trends). Liefert Titel, Subreddit, Punkte, Kommentare, Link.',
+    input_schema: {
+      type: 'object',
+      properties: {
+        query: { type: 'string' },
+        subreddit: { type: 'string', description: 'Optional, z. B. "n8n"' },
+        sort: { type: 'string', enum: ['relevance', 'hot', 'top', 'new', 'comments'] },
+        time: { type: 'string', enum: ['day', 'week', 'month', 'year', 'all'] },
+      },
+      required: ['query'],
+    },
+  },
+  {
+    name: 'show_panel',
+    description: 'Öffnet ein animiertes HUD-Fenster mit Inhalt, z. B. "Mach mir eine Seite über …", "Zeig mir News über …", Listen, Pläne, Zusammenfassungen. Inhalt in einfachem Markdown (Überschriften ##, Listen -, **fett**, Links [Text](URL)). Im Chat dann nur kurz kommentieren.',
+    input_schema: {
+      type: 'object',
+      properties: {
+        title: { type: 'string', description: 'Kurzer Titel, z. B. "NEWS · KI"' },
+        content: { type: 'string', description: 'Markdown-Inhalt' },
+      },
+      required: ['title', 'content'],
+    },
+  },
+  {
+    name: 'n8n_run',
+    description: 'Startet einen n8n-Workflow des Boss per Webhook (Liste siehe "n8n-Workflows" im Kontext). Workflows mit Freigabe-Pflicht laufen erst, wenn der Boss im HUD auf AUSFÜHREN klickt – sag ihm das kurz.',
+    input_schema: {
+      type: 'object',
+      properties: {
+        workflow: { type: 'string', description: 'Name oder ID des Workflows' },
+        data: { type: 'object', description: 'Optionale Daten für den Workflow' },
+      },
+      required: ['workflow'],
+    },
+  },
+  {
     name: 'camera_control',
     description: 'Steuert Kamera und Handgesten im HUD. on = Kamera an (Navigieren mit den Händen), draw = Zeichenmodus (Formen in die Luft zeichnen), navigate = zurück zum Navigieren, clear = Zeichnungen löschen, off = Kamera aus.',
     input_schema: { type: 'object', properties: { action: { type: 'string', enum: ['on', 'off', 'draw', 'navigate', 'clear'] } }, required: ['action'] },
@@ -113,6 +162,7 @@ TOOLS.push(
 const TOOL_LABEL = {
   memory_search: 'DURCHSUCHE GEDÄCHTNIS', memory_read: 'LESE NOTIZ', memory_save: 'SPEICHERE ERINNERUNG',
   earth_show: 'ÖFFNE ERDE', earth_fly_to: 'BERECHNE FLUGROUTE', street_view: 'LADE STREET VIEW', panel_close: 'SCHLIESSE FENSTER', camera_control: 'STEUERE KAMERA',
+  reddit_search: 'DURCHSUCHE REDDIT', show_panel: 'BAUE PANEL', n8n_run: 'STARTE WORKFLOW', web_search: 'DURCHSUCHE DAS NETZ', web_fetch: 'LESE WEBSEITE',
 };
 
 async function runTool(block, onSaved, hud = {}, onAction) {
@@ -140,6 +190,35 @@ async function runTool(block, onSaved, hud = {}, onAction) {
       return sv.ok
         ? (sv.mode === 'embed' ? `Street View geöffnet bei ${loc.name}.` : `Kein Google-Maps-Key eingerichtet – es gibt nur einen Link zu Google Maps im HUD. ${sv.note}`)
         : sv.note;
+    }
+    if (block.name === 'reddit_search') {
+      if (typeof inp.query !== 'string') throw new Error('query fehlt');
+      try {
+        const posts = await searchReddit(inp);
+        onAction?.({ type: 'sources', title: `REDDIT · ${inp.query}`.toUpperCase(), items: posts.map((p) => ({ title: p.title, url: p.url, meta: `${p.subreddit} · ▲${p.score} · ${p.comments} Kommentare` })) });
+        return posts.length ? JSON.stringify(posts) : 'Keine Reddit-Beiträge gefunden.';
+      } catch (e) {
+        return { error: true, text: `${e.message}. Nutze stattdessen die Websuche mit "site:reddit.com ${inp.query}".` };
+      }
+    }
+    if (block.name === 'show_panel') {
+      if (typeof inp.title !== 'string' || typeof inp.content !== 'string') throw new Error('title/content fehlt');
+      onAction?.({ type: 'panel', title: inp.title.slice(0, 80), content: inp.content.slice(0, 20000) });
+      return 'Panel wird angezeigt.';
+    }
+    if (block.name === 'n8n_run') {
+      const list = await listWorkflows();
+      const wf = findWorkflow(list, inp.workflow);
+      if (!wf) return { error: true, text: `Workflow "${inp.workflow}" nicht gefunden. Vorhanden: ${list.map((w) => w.name).join(', ') || 'keine – der Boss kann sie im HUD unter WERKZEUGE eintragen'}.` };
+      const data = inp.data && typeof inp.data === 'object' ? inp.data : {};
+      if (wf.confirm) {
+        const id = requestConfirmation(wf, data);
+        onAction?.({ type: 'confirm', id, workflow: wf.name, description: wf.description, data });
+        return `Wartet auf Freigabe: Der Boss muss im HUD auf AUSFÜHREN klicken. Workflow "${wf.name}" wurde noch NICHT gestartet.`;
+      }
+      const out = await runWebhook(wf, data);
+      onAction?.({ type: 'n8n_done', workflow: wf.name, ok: true });
+      return `Workflow "${wf.name}" ausgeführt. Antwort: ${out}`;
     }
     if (block.name === 'camera_control') {
       const action = ['on', 'off', 'draw', 'navigate', 'clear'].includes(inp.action) ? inp.action : 'on';
@@ -175,7 +254,7 @@ async function runTool(block, onSaved, hud = {}, onAction) {
  * Streamt eine Antwort (mit Gedächtnis-Werkzeugen).
  * Callbacks: onText(text), onTool({name,label}), onSaved(fact). Liefert {stopReason, usage, model}.
  */
-export async function streamReply({ messages, route, timeZone, signal, onText, onTool, onSaved, onAction, hud = {} }) {
+export async function streamReply({ messages, route, timeZone, signal, onText, onTool, onSaved, onAction, hud = {}, image = null }) {
   const history = sanitizeHistory(messages);
   if (!history.length) throw new Error('Keine Nachricht erhalten.');
   if (!hasKey()) return mockReply({ history, onText, signal });
@@ -190,6 +269,16 @@ export async function streamReply({ messages, route, timeZone, signal, onText, o
   const loc = hud.location && Number.isFinite(hud.location.lat)
     ? `${String(hud.location.name).slice(0, 80)} (${hud.location.lat.toFixed(3)}, ${hud.location.lng.toFixed(3)})` : 'keiner';
   system.push({ type: 'text', text: `# HUD-Zustand\nErde geöffnet: ${hud.earthOpen ? 'ja' : 'nein'} · Aktueller Ort auf der Erde: ${loc} · Street View offen: ${hud.streetOpen ? 'ja' : 'nein'}` });
+  const workflows = await listWorkflows();
+  system.push({ type: 'text', text: workflows.length
+    ? `# n8n-Workflows des Boss\n${workflows.map((w) => `- ${w.name}${w.description ? ': ' + w.description : ''}${w.confirm ? ' (braucht Freigabe)' : ''}`).join('\n')}`
+    : '# n8n-Workflows\nNoch keine eingetragen. Der Boss kann sie im HUD über den Knopf WERKZEUGE hinzufügen (Name + Webhook-URL).' });
+
+  // Kamerabild nur an die aktuelle Frage hängen (nicht im Verlauf speichern)
+  if (image) {
+    const last = history[history.length - 1];
+    last.content = [{ type: 'image', source: { type: 'base64', media_type: image.mediaType, data: image.data } }, { type: 'text', text: last.content }];
+  }
 
   const base = {
     model: route.model,
@@ -197,14 +286,15 @@ export async function streamReply({ messages, route, timeZone, signal, onText, o
     system,
     thinking: { type: 'adaptive' },
     output_config: { effort: route.effort },
-    tools: TOOLS,
+    tools: [...TOOLS, ...webTools(route.model)],
   };
+  let withWeb = true;
   let useFallback = FALLBACK_MODELS.has(route.model);
   const convo = [...history];
   let final = null;
 
   for (let step = 0; step < 6; step++) {
-    const params = { ...base, messages: convo };
+    const params = { ...base, messages: convo, tools: withWeb ? base.tools : TOOLS };
     let stream;
     const open = () => (useFallback
       ? getClient().beta.messages.stream({ ...params, betas: ['server-side-fallback-2026-07-01'], fallbacks: 'default' }, { signal })
@@ -220,9 +310,26 @@ export async function streamReply({ messages, route, timeZone, signal, onText, o
       if (useFallback && step === 0 && err instanceof Anthropic.BadRequestError && /fallback|beta/i.test(err.message)) {
         useFallback = false; step--; continue;
       }
+      // Websuche für dieses Modell/Konto nicht verfügbar: ohne Websuche weiter
+      if (withWeb && err instanceof Anthropic.BadRequestError && /web_search|web_fetch|tool/i.test(err.message)) {
+        console.warn('[websuche] nicht verfügbar:', err.message);
+        withWeb = false; step--; continue;
+      }
       throw err;
     }
 
+    // Quellen der Websuche im HUD anzeigen
+    const found = [];
+    for (const b of final.content) {
+      if (b.type === 'server_tool_use') onTool?.({ name: b.name, label: TOOL_LABEL[b.name] || b.name });
+      if (b.type === 'web_search_tool_result' && Array.isArray(b.content)) {
+        for (const r of b.content) if (r.type === 'web_search_result') found.push({ title: r.title, url: r.url, meta: r.page_age || new URL(r.url).hostname });
+      }
+    }
+    if (found.length) onAction?.({ type: 'sources', title: 'QUELLEN · WEB', items: found.slice(0, 12) });
+
+    // Server-Werkzeug (Websuche) braucht eine Pause: einfach weitermachen
+    if (final.stop_reason === 'pause_turn') { convo.push({ role: 'assistant', content: final.content }); continue; }
     if (final.stop_reason !== 'tool_use') break;
     const uses = final.content.filter((b) => b.type === 'tool_use');
     if (!uses.length) break;
