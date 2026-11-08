@@ -103,3 +103,14 @@ export function setModelInfo(model, tier) {
 }
 export function setLatency(ms) { $('stLatency').textContent = ms != null ? `${(ms / 1000).toFixed(1)} s` : '--'; }
 export function setFps(fps) { $('stFps').textContent = `${fps} FPS`; }
+
+export async function loadMemory() {
+  try {
+    const m = await (await fetch('/api/memory')).json();
+    const el = document.getElementById('stMemory');
+    el.textContent = m.ok ? `${m.facts} FAKTEN` : 'FEHLER';
+    el.title = m.ok ? `Vault: ${m.vault} (${m.notes} Notizen)` : m.error;
+    el.className = m.ok ? '' : 'smart';
+    return m;
+  } catch { return null; }
+}

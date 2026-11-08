@@ -278,6 +278,13 @@ button, textarea { font: inherit; color: inherit; }
 :focus-visible { outline: 1px solid var(--gold); outline-offset: 2px; }
 
 
+/* ---------- Gedächtnis ---------- */
+.memnote {
+  align-self: center; max-width: 92%; font-size: 13px; color: var(--text); padding: 5px 12px;
+  border: 1px dashed rgba(255, 201, 77, .45); background: rgba(255, 201, 77, .07); animation: msgIn .5s var(--ease) both;
+}
+.memnote span { font-family: var(--font-hud); font-size: 9px; letter-spacing: .25em; color: var(--gold); margin-right: 6px; }
+
 /* ---------- Sprache ---------- */
 .vc-row { display: flex; justify-content: space-between; align-items: center; font-size: 13px; color: var(--muted); letter-spacing: .08em; padding: 4px 0; }
 .toggle {

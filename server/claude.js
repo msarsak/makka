@@ -1,6 +1,7 @@
 // Verbindung zur Claude API (Anthropic). Der Key kommt NUR aus der .env.
 import Anthropic from '@anthropic-ai/sdk';
 import { buildSystemPrompt } from './persona.js';
+import { CATEGORIES, loadCoreMemory, searchVault, readNote, saveFact } from './memory.js';
 
 const MAX_HISTORY = 30; // so viele Nachrichten schickt er maximal mit (spart Kosten)
 // Modelle, die den serverseitigen Fallback bei Ablehnungen kennen
@@ -46,52 +47,121 @@ export function friendlyError(err) {
   return 'Ein unerwarteter Fehler in meinen Schaltkreisen: ' + (err?.message || String(err));
 }
 
+// ---------- Werkzeuge: Gedächtnis ----------
+export const TOOLS = [
+  {
+    name: 'memory_search',
+    description: 'Durchsucht den Obsidian-Vault (das Gedächtnis) des Boss nach Stichwörtern. Nutze das, wenn der Boss nach etwas fragt, das in seinen Notizen stehen könnte (Projekte, Pläne, Personen, frühere Ideen), und es nicht schon in deinem Gedächtnis-Kontext steht. Liefert Pfade und kurze Ausschnitte.',
+    input_schema: { type: 'object', properties: { query: { type: 'string', description: 'Suchbegriffe, z. B. "Urlaub Italien"' } }, required: ['query'] },
+  },
+  {
+    name: 'memory_read',
+    description: 'Liest eine Notiz aus dem Vault komplett. Pfad so angeben, wie memory_search ihn liefert.',
+    input_schema: { type: 'object', properties: { path: { type: 'string' } }, required: ['path'] },
+  },
+  {
+    name: 'memory_save',
+    description: 'Speichert sofort einen Fakt über den Boss im Gedächtnis. Nutze das, wenn der Boss ausdrücklich sagt, dass du dir etwas merken sollst. (Alles andere lernst du nach dem Gespräch automatisch.) Speichere niemals Passwörter, PINs, Bankdaten oder API-Keys.',
+    input_schema: {
+      type: 'object',
+      properties: {
+        category: { type: 'string', enum: Object.keys(CATEGORIES) },
+        text: { type: 'string', description: 'Ein kurzer, eigenständiger Fakt in der dritten Person, z. B. "Mag keinen Koriander."' },
+        project: { type: 'string', description: 'Nur bei category=projekte: Name des Projekts' },
+      },
+      required: ['category', 'text'],
+    },
+  },
+];
+const TOOL_LABEL = { memory_search: 'DURCHSUCHE GEDÄCHTNIS', memory_read: 'LESE NOTIZ', memory_save: 'SPEICHERE ERINNERUNG' };
+
+async function runTool(block, onSaved) {
+  const inp = block.input && typeof block.input === 'object' ? block.input : {};
+  try {
+    if (block.name === 'memory_search') {
+      if (typeof inp.query !== 'string') throw new Error('query fehlt');
+      const hits = await searchVault(inp.query);
+      return hits.length ? JSON.stringify(hits) : 'Keine Treffer im Vault.';
+    }
+    if (block.name === 'memory_read') {
+      if (typeof inp.path !== 'string') throw new Error('path fehlt');
+      return await readNote(inp.path);
+    }
+    if (block.name === 'memory_save') {
+      if (typeof inp.text !== 'string' || typeof inp.category !== 'string') throw new Error('category/text fehlt');
+      const saved = await saveFact({ category: inp.category, text: inp.text, project: typeof inp.project === 'string' ? inp.project : '' });
+      if (saved) onSaved?.(saved);
+      return saved ? `Gespeichert in ${saved.note}` : 'War schon gespeichert.';
+    }
+    throw new Error('Unbekanntes Werkzeug');
+  } catch (e) {
+    return { error: true, text: 'Fehler: ' + e.message };
+  }
+}
+
 /**
- * Streamt eine Antwort. Callbacks: onText(text), liefert am Ende {stopReason, usage, model}.
+ * Streamt eine Antwort (mit Gedächtnis-Werkzeugen).
+ * Callbacks: onText(text), onTool({name,label}), onSaved(fact). Liefert {stopReason, usage, model}.
  */
-export async function streamReply({ messages, route, timeZone, signal, onText }) {
+export async function streamReply({ messages, route, timeZone, signal, onText, onTool, onSaved }) {
   const history = sanitizeHistory(messages);
   if (!history.length) throw new Error('Keine Nachricht erhalten.');
   if (!hasKey()) return mockReply({ history, onText, signal });
 
+  let memory = '';
+  try { memory = await loadCoreMemory(); } catch (e) { console.warn('[gedächtnis]', e.message); }
+  const system = [{ type: 'text', text: buildSystemPrompt({ timeZone }) }];
+  system.push({ type: 'text', text: memory
+    ? `# Dein Gedächtnis (aus dem Obsidian-Vault des Boss)\nNutze dieses Wissen natürlich und unaufdringlich – wie ein Butler, der seinen Boss kennt. Sag nicht ständig "laut meinen Notizen".\n\n${memory}`
+    : '# Dein Gedächtnis\nNoch leer – du lernst den Boss gerade erst kennen.' });
+
   const base = {
     model: route.model,
     max_tokens: route.tier === 'smart' ? 16000 : 4000,
-    system: buildSystemPrompt({ timeZone }),
+    system,
     thinking: { type: 'adaptive' },
     output_config: { effort: route.effort },
-    messages: history,
+    tools: TOOLS,
   };
+  let useFallback = FALLBACK_MODELS.has(route.model);
+  const convo = [...history];
+  let final = null;
 
-  const run = async (useFallback) => {
-    const stream = useFallback
-      ? getClient().beta.messages.stream(
-          { ...base, betas: ['server-side-fallback-2026-07-01'], fallbacks: 'default' },
-          { signal })
-      : getClient().messages.stream(base, { signal });
-    let sent = 0;
-    for await (const event of stream) {
-      if (event.type === 'content_block_delta' && event.delta.type === 'text_delta') {
-        sent += event.delta.text.length;
-        onText(event.delta.text);
+  for (let step = 0; step < 6; step++) {
+    const params = { ...base, messages: convo };
+    let stream;
+    const open = () => (useFallback
+      ? getClient().beta.messages.stream({ ...params, betas: ['server-side-fallback-2026-07-01'], fallbacks: 'default' }, { signal })
+      : getClient().messages.stream(params, { signal }));
+    try {
+      stream = open();
+      for await (const event of stream) {
+        if (event.type === 'content_block_delta' && event.delta.type === 'text_delta') onText(event.delta.text);
       }
+      final = await stream.finalMessage();
+    } catch (err) {
+      // Falls dein Konto den Fallback-Beta noch nicht hat: ohne erneut versuchen
+      if (useFallback && step === 0 && err instanceof Anthropic.BadRequestError && /fallback|beta/i.test(err.message)) {
+        useFallback = false; step--; continue;
+      }
+      throw err;
     }
-    const final = await stream.finalMessage();
-    return { final, sent };
-  };
 
-  let result;
-  const wantFallback = FALLBACK_MODELS.has(route.model);
-  try {
-    result = await run(wantFallback);
-  } catch (err) {
-    // Falls dein Konto den Fallback-Beta noch nicht hat: ohne erneut versuchen
-    if (wantFallback && err instanceof Anthropic.BadRequestError && /fallback|beta/i.test(err.message)) {
-      result = await run(false);
-    } else throw err;
+    if (final.stop_reason !== 'tool_use') break;
+    const uses = final.content.filter((b) => b.type === 'tool_use');
+    if (!uses.length) break;
+    convo.push({ role: 'assistant', content: final.content });
+    const results = [];
+    for (const u of uses) {
+      onTool?.({ name: u.name, label: TOOL_LABEL[u.name] || u.name });
+      const r = await runTool(u, onSaved);
+      results.push(typeof r === 'string'
+        ? { type: 'tool_result', tool_use_id: u.id, content: r }
+        : { type: 'tool_result', tool_use_id: u.id, content: r.text, is_error: true });
+    }
+    convo.push({ role: 'user', content: results });
   }
 
-  const { final } = result;
   if (final.stop_reason === 'refusal') {
     onText('\n[Diese Anfrage hat der Sicherheitsfilter von Claude abgelehnt, Boss.]');
   } else if (final.stop_reason === 'max_tokens') {

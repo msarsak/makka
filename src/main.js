@@ -2,8 +2,8 @@
 import './styles.css';
 import { createOrb } from './orb.js';
 import { initAudio, sfx, isMuted, setMuted } from './sound.js';
-import { buildTicks, startClock, startWeather, loadHealth, setModelInfo, setLatency, setFps } from './hud.js';
-import { loadHistory, saveHistory, renderMessage, renderEmpty, sendChat, format } from './chat.js';
+import { buildTicks, startClock, startWeather, loadHealth, loadMemory, setModelInfo, setLatency, setFps } from './hud.js';
+import { loadHistory, saveHistory, renderMessage, renderEmpty, sendChat, format, renderMemoryNote, learn } from './chat.js';
 import { createVoice } from './voice.js';
 import { SentenceBuffer } from './voice-utils.js';
 
@@ -243,8 +243,17 @@ async function ask(text, { viaVoice }) {
       setModelInfo(model, tier);
       whoEl.insertAdjacentHTML('beforeend', `<em>${tier === 'smart' ? 'TIEF' : 'SCHNELL'}</em>`);
     },
+    onTool: ({ label }) => {
+      setState('thinking', label + ' …');
+      orb.pulse(0.3);
+      sfx.panel();
+    },
+    onSaved: (f) => { renderMemoryNote(log, f.text); loadMemory(); },
     onDelta: (chunk) => {
-      if (!started) { started = true; setState('speaking'); sfx.reply(); setLatency(performance.now() - t0); }
+      if (!started || app.dataset.state === 'thinking') {
+        if (!started) { sfx.reply(); setLatency(performance.now() - t0); }
+        started = true; setState('speaking');
+      }
       reply += chunk;
       if (speak) for (const s of sentences.push(chunk)) voice.say(s);
       else {
@@ -258,6 +267,12 @@ async function ask(text, { viaVoice }) {
       paint();
       history.push({ role: 'assistant', content: reply });
       saveHistory(history);
+      // Im Hintergrund dazulernen – ohne die Unterhaltung aufzuhalten
+      learn(history).then((saved) => {
+        if (!saved.length) return;
+        saved.forEach((f) => renderMemoryNote(log, f.text));
+        loadMemory();
+      });
     },
     onError: (msg) => {
       if (reply) history.push({ role: 'assistant', content: reply });
@@ -296,7 +311,7 @@ syncSpeakMode();
 voice.setWake(false); // zeigt den Status an, startet aber noch nichts
 setWakeUi(false);
 setState('idle');
-loadHealth();
+loadHealth().then(() => loadMemory());
 startWeather();
 
 // Für spätere Phasen (Gesten) und zum Ausprobieren in der Browser-Konsole

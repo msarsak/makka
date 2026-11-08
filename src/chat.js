@@ -36,7 +36,7 @@ export function renderEmpty(log) {
 }
 
 /** Sendet die Unterhaltung und ruft Callbacks während des Streams auf. */
-export async function sendChat({ messages, turbo, signal, onMeta, onDelta, onDone, onError }) {
+export async function sendChat({ messages, turbo, signal, onMeta, onDelta, onTool, onSaved, onDone, onError }) {
   let res;
   try {
     res = await fetch('/api/chat', {
@@ -68,9 +68,31 @@ export async function sendChat({ messages, turbo, signal, onMeta, onDelta, onDon
       const data = JSON.parse(dataLine);
       if (ev === 'meta') onMeta?.(data);
       else if (ev === 'delta') onDelta?.(data.text);
+      else if (ev === 'tool') onTool?.(data);
+      else if (ev === 'saved') onSaved?.(data);
       else if (ev === 'done') { finished = true; onDone?.(data); }
       else if (ev === 'error') { finished = true; onError?.(data.message); }
     }
   }
   if (!finished && !signal?.aborted) onError?.('Verbindung unterbrochen.');
+}
+
+/** Kleine Gedächtnis-Meldung im Chat ("Gemerkt: …") */
+export function renderMemoryNote(log, text) {
+  const el = document.createElement('div');
+  el.className = 'memnote';
+  el.innerHTML = `<span>🧠 GEMERKT</span> ${escapeHtml(text)}`;
+  log.appendChild(el);
+  log.scrollTop = log.scrollHeight;
+}
+
+/** Nach einer Antwort im Hintergrund dazulernen lassen */
+export async function learn(messages) {
+  try {
+    const r = await fetch('/api/memory/learn', {
+      method: 'POST', headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ messages: messages.slice(-6) }),
+    });
+    return (await r.json()).saved || [];
+  } catch { return []; }
 }

@@ -77,6 +77,22 @@ npm run check-key
 - Die Spracherkennung läuft über den Browser-Dienst (Microsoft/Google) und braucht Internet.
 - Am Handy geht das Mikrofon erst mit einer sicheren Verbindung (https). Das richten wir in Phase 6 mit Tailscale ein.
 
+### 🧠 Gedächtnis (ab Phase 3)
+- Trag in der `.env` den Pfad zu deinem Obsidian-Vault ein (ohne Anführungszeichen):
+  ```
+  OBSIDIAN_VAULT=C:\Users\DeinName\Documents\Obsidian\MeinVault
+  ```
+  Leer gelassen, legt er im Projektordner einen eigenen Vault `vault` an. Den kannst du in Obsidian mit „Ordner als Vault öffnen“ öffnen.
+- Er schreibt **nur** in den Unterordner **`Hephaestion/`** und löscht nie etwas:
+  - `Boss/` – Über mich, Vorlieben, Projekte, Ziele, Wie der Boss redet, Menschen
+  - `Projekte/` – eine Notiz pro Projekt, verlinkt von „Projekte“
+  - `Tagebuch/` – was er an welchem Tag gelernt hat (mit Links)
+- **Vor jedem Gespräch** liest er diese Notizen. Eigene Notizen, die er immer lesen soll: `OBSIDIAN_CORE_NOTES=Über mich.md,Projekte/Mein Business.md`
+- **Nach jeder Antwort** lernt er still dazu. Neues erscheint im Chat als „🧠 GEMERKT“.
+- „**Merk dir, dass …**“ speichert sofort. „**Was steht in meinen Notizen über …**“ durchsucht den ganzen Vault.
+- Du kannst alles in Obsidian selbst bearbeiten oder löschen – er liest beim nächsten Gespräch den neuen Stand.
+- Passwörter, PINs, Bankdaten oder Keys speichert er nie.
+
 **Gehirn-Automatik:** Für normale Fragen nimmt er das schnelle, sehr günstige Modell (**Haiku**).
 Bei Wörtern wie „analysiere“, „ausführlich“, „Konzept“, „Code“ oder bei langen Texten wechselt er
 automatisch auf das starke Modell (**Opus**). Welches Modell gerade arbeitet, siehst du im Panel **SYSTEM**.
@@ -96,7 +112,7 @@ automatisch auf das starke Modell (**Opus**). Welches Modell gerade arbeitet, si
 
 - [x] **Phase 1:** HUD-Design, Energie-Kern, Sci-Fi-Sounds, Text-Chat mit Claude
 - [x] **Phase 2:** Sprache rein und raus + Wake-Word „Hey Hephaestion“ / „Hey Heph“
-- [ ] **Phase 3:** Gedächtnis mit deinem Obsidian-Vault
+- [x] **Phase 3:** Gedächtnis mit deinem Obsidian-Vault
 - [ ] **Phase 4:** 3D-Erde, Flüge zu Orten, Street View
 - [ ] **Phase 5:** Kamera und Handgesten
 - [ ] **Phase 6:** n8n, Recherche, Handy-App (PWA)
@@ -111,6 +127,8 @@ server/      Node-Server: hält den API-Key, spricht mit Claude, Wetter
   claude.js    Claude-Anbindung mit Live-Streaming und Demo-Modus
   persona.js   Persönlichkeit (System-Prompt)
   router.js    Auswahl: schnelles oder starkes Modell
+  memory.js    Obsidian-Gedächtnis: lesen, suchen, sicher speichern
+  learn.js     Lernt nach jeder Antwort automatisch dazu
 src/         Web-App (das HUD)
   orb.js       Energie-Kern (Canvas, 60 FPS)
   sound.js     Sci-Fi-Sounds (Web Audio API, ohne Audiodateien)

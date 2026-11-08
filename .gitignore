@@ -3,6 +3,9 @@
 .env.*
 !.env.example
 
+# Persönliches Gedächtnis – NIEMALS hochladen
+vault/
+
 node_modules/
 dist/
 *.log
