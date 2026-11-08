@@ -29,6 +29,9 @@ git clone https://github.com/msarsak/makka.git
 ```
 
 ### 3. API-Key eintragen
+**Am einfachsten:** Doppelklick auf **`einrichten.bat`** – er fragt dich nach allen Keys und trägt sie richtig ein. Jederzeit wiederholbar.
+
+Oder von Hand:
 1. Im Projektordner die Datei **`.env.example`** kopieren und die Kopie in **`.env`** umbenennen.
    (Beim ersten Start macht `start.bat` das automatisch.)
 2. `.env` mit dem Editor öffnen und deinen Key eintragen:

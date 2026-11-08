@@ -18,9 +18,9 @@ if errorlevel 1 (
 )
 
 if not exist ".env" (
-  copy ".env.example" ".env" >nul
-  echo   [INFO] Datei .env wurde angelegt. Trage dort deinen API-Key ein.
+  echo   Erster Start: Ich frage kurz deine Einstellungen ab.
   echo.
+  node scripts\setup.js
 )
 
 if not exist "node_modules" (
