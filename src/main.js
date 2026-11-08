@@ -8,6 +8,7 @@ import { createVoice } from './voice.js';
 import { SentenceBuffer } from './voice-utils.js';
 import { createHudWindow } from './windows.js';
 import { getHome } from './hud.js';
+import { createGestureUI } from './gesture-ui.js';
 
 const $ = (id) => document.getElementById(id);
 const app = $('app');
@@ -213,7 +214,24 @@ function openStreet(sv) {
   hud.streetOpen = true;
 }
 
+// ---------- Kamera & Handgesten ----------
+const camBtn = $('camBtn');
+const gestures = createGestureUI({
+  getEarth: () => (hud.earthOpen ? earth : null),
+  onActiveChange: (on) => camBtn.classList.toggle('active', on),
+});
+camBtn.addEventListener('click', () => { if (!booted) boot(); gestures.active ? gestures.stop() : gestures.start(); });
+
 function handleAction(a) {
+  if (a.type === 'camera') {
+    if (a.action === 'off') gestures.stop();
+    else if (a.action === 'clear') gestures.clear();
+    else {
+      gestures.start();
+      if (a.action === 'draw' || a.action === 'navigate') gestures.setMode(a.action);
+    }
+    return;
+  }
   if (a.type === 'earth') openEarth().catch(() => {});
   else if (a.type === 'fly') flyTo(a);
   else if (a.type === 'streetview') openStreet(a);
@@ -400,4 +418,4 @@ loadHealth().then(() => loadMemory());
 startWeather();
 
 // Für spätere Phasen (Gesten) und zum Ausprobieren in der Browser-Konsole
-window.hephaestion = { orb, sfx, setState, voice, ask, handleAction, hud };
+window.hephaestion = { orb, sfx, setState, voice, ask, handleAction, hud, gestures, getEarth: () => earth };

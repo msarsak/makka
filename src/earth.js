@@ -129,6 +129,19 @@ export async function createEarth(container, { onPick } = {}) {
       setTimeout(() => applyZoom(alt), ms * 0.65);
     },
     setHome(lat, lng) { home = { lat, lng }; refreshLayers(); },
+    // Für Handgesten: Pixel-Bewegung → Drehung, Faktor → Zoom
+    rotateBy(dx, dy) {
+      const pov = g.pointOfView();
+      const k = 0.18 * pov.altitude;
+      controls.autoRotate = false;
+      g.pointOfView({ lat: Math.max(-85, Math.min(85, pov.lat + dy * k)), lng: pov.lng - dx * k, altitude: pov.altitude }, 0);
+    },
+    zoomBy(f) {
+      const pov = g.pointOfView();
+      const altitude = Math.max(0.12, Math.min(4, pov.altitude / f));
+      g.pointOfView({ ...pov, altitude }, 0);
+      applyZoom(altitude);
+    },
     get location() { return target; },
     pause() { g.pauseAnimation(); },
     resume() { g.resumeAnimation(); resize(); },

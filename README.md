@@ -111,6 +111,19 @@ npm run check-key
 
 Google verlangt beim ersten Mal eine Kreditkarte zur Identifizierung. Die Maps Embed API ist kostenlos, die Street-View-Abfragen auch – du zahlst dafür nichts.
 
+### ✋ Kamera & Handgesten (ab Phase 5)
+- Unten auf den **Hand-Knopf** klicken (oder sagen: „**Mach die Kamera an**“). Edge fragt nach der Kamera → **Zulassen**.
+- Beim ersten Mal lädt er das Handmodell (ca. 8 MB, einmalig). Alles läuft **lokal** – das Kamerabild verlässt den Laptop nie.
+- **Zeigefinger** = Cursor · **Daumen + Zeigefinger kurz zusammen** = Klick
+- **Greifen + ziehen** = Fenster verschieben (an der Titelleiste) oder die Erde drehen
+- **Mit beiden Händen greifen und auseinanderziehen** = Erde zoomen
+- **Zeichenmodus** („Zeichenmodus“ sagen oder Knopf ZEICHNEN): greifen + malen → **Rechteck, Kreis, Linie** werden erkannt und als Hologramm angezeigt
+- **Offene Hand ca. 1 Sekunde halten** (im Zeichenmodus) = alles löschen
+- Tipp: Hand ca. 40–70 cm vor der Kamera, gutes Licht.
+
+## 🔄 Updates mit einem Klick
+Doppelklick auf **`update.bat`** (vorher Hephaestion schließen). Er holt die neueste Version von GitHub – deine `.env`, dein Gedächtnis und das Handmodell bleiben erhalten.
+
 **Gehirn-Automatik:** Für normale Fragen nimmt er das schnelle, sehr günstige Modell (**Haiku**).
 Bei Wörtern wie „analysiere“, „ausführlich“, „Konzept“, „Code“ oder bei langen Texten wechselt er
 automatisch auf das starke Modell (**Opus**). Welches Modell gerade arbeitet, siehst du im Panel **SYSTEM**.
@@ -132,7 +145,7 @@ automatisch auf das starke Modell (**Opus**). Welches Modell gerade arbeitet, si
 - [x] **Phase 2:** Sprache rein und raus + Wake-Word „Hey Hephaestion“ / „Hey Heph“
 - [x] **Phase 3:** Gedächtnis mit deinem Obsidian-Vault
 - [x] **Phase 4:** 3D-Erde, Flüge zu Orten, Street View
-- [ ] **Phase 5:** Kamera und Handgesten
+- [x] **Phase 5:** Kamera und Handgesten
 - [ ] **Phase 6:** n8n, Recherche, Handy-App (PWA)
 
 ---
@@ -148,6 +161,7 @@ server/      Node-Server: hält den API-Key, spricht mit Claude, Wetter
   memory.js    Obsidian-Gedächtnis: lesen, suchen, sicher speichern
   learn.js     Lernt nach jeder Antwort automatisch dazu
   geo.js       Orte finden (OpenStreetMap) und Street View (Google)
+  vision.js    Liefert die Handerkennung aus, lädt das Modell einmalig
 src/         Web-App (das HUD)
   orb.js       Energie-Kern (Canvas, 60 FPS)
   sound.js     Sci-Fi-Sounds (Web Audio API, ohne Audiodateien)
@@ -157,6 +171,9 @@ src/         Web-App (das HUD)
   voice-utils.js  Wake-Word-Erkennung, Satz-Zerlegung, Stimmenwahl
   earth.js     3D-Hologramm-Erde (globe.gl)
   windows.js   Schwebende, verschiebbare HUD-Fenster
+  hands.js     Webcam + Handerkennung (MediaPipe, lokal)
+  gestures.js  Gesten-Logik: Cursor, Greifen, Tippen, Zoom, Formerkennung
+  gesture-ui.js  Gesten im HUD: Cursor, Kamerafenster, Zeichnungen
 ```
 
 ## 🔄 Neue Version holen

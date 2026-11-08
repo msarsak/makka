@@ -6,6 +6,9 @@
 # Persönliches Gedächtnis – NIEMALS hochladen
 vault/
 
+# Heruntergeladene Modelle (Handerkennung)
+models/
+
 node_modules/
 dist/
 *.log

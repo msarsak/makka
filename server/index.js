@@ -9,6 +9,7 @@ import { chooseModel } from './router.js';
 import { getWeather } from './weather.js';
 import { memoryStats, ensureVault, vaultRoot } from './memory.js';
 import { learnFromConversation } from './learn.js';
+import { visionRoutes } from './vision.js';
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 const dist = path.join(here, '..', 'dist');
@@ -23,12 +24,14 @@ app.get('/api/health', (_req, res) => {
   res.json({
     ok: true,
     name: 'Hephaestion',
-    phase: 4,
+    phase: 5,
     mode: hasKey() ? 'live' : 'demo',
     models: { fast: process.env.MODEL_FAST || 'claude-haiku-5-5', smart: process.env.MODEL_SMART || 'claude-opus-5-5' },
     uptimeSec: Math.round((Date.now() - startedAt) / 1000),
   });
 });
+
+visionRoutes(app);
 
 app.get('/api/memory', async (_req, res) => res.json(await memoryStats()));
 
@@ -106,7 +109,7 @@ app.post('/api/chat', async (req, res) => {
 // Fertig gebaute Web-App ausliefern (npm start)
 if (fs.existsSync(dist)) {
   app.use(express.static(dist));
-  app.get(/^(?!\/api\/).*/, (_req, res) => res.sendFile(path.join(dist, 'index.html')));
+  app.get(/^(?!\/(api|mediapipe)\/).*/, (_req, res) => res.sendFile(path.join(dist, 'index.html')));
 }
 
 ensureVault().catch((e) => console.error('[gedächtnis] Vault nicht nutzbar:', e.message));

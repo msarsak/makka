@@ -323,6 +323,36 @@ button, textarea { font: inherit; color: inherit; }
 .street-empty a { justify-self: center; color: var(--gold); border: 1px solid var(--gold); padding: 8px 16px; text-decoration: none; font-family: var(--font-hud); font-size: 11px; letter-spacing: .2em; box-shadow: var(--glow-gold); }
 .app.earth-open .core { opacity: .12; transition: opacity .6s; }
 
+/* ---------- Kamera & Handgesten ---------- */
+.gesture-layer { position: fixed; inset: 0; width: 100vw; height: 100vh; pointer-events: none; z-index: 60; }
+.draw-layer { position: fixed; inset: 0; width: 100vw; height: 100vh; pointer-events: none; z-index: 20; overflow: visible; }
+.draw-shape rect, .draw-shape ellipse, .draw-shape line, .draw-shape polyline, .draw-shape polygon { fill: none; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
+.draw-rect rect { stroke: var(--gold); fill: rgba(255, 201, 77, .05); }
+.draw-circle ellipse { stroke: var(--blue-bright); fill: rgba(92, 194, 255, .05); }
+.draw-line line { stroke: var(--red); stroke-width: 3; }
+.draw-path polyline, .draw-path polygon { stroke: var(--gold); }
+.draw-label { font-family: var(--font-hud); font-size: 10px; letter-spacing: .2em; fill: var(--gold); }
+.draw-in rect, .draw-in ellipse, .draw-in line, .draw-in polyline, .draw-in polygon { stroke-dasharray: 1; stroke-dashoffset: 1; animation: drawIn .7s var(--ease) forwards; }
+.draw-in .draw-label { opacity: 0; animation: fadeIn .4s .5s forwards; }
+.draw-out { animation: fadeOut .4s forwards; }
+@keyframes drawIn { to { stroke-dashoffset: 0; } }
+@keyframes fadeIn { to { opacity: 1; } }
+@keyframes fadeOut { to { opacity: 0; transform: scale(.98); } }
+.win-cam { left: 0; top: 0; width: min(300px, 46%); height: auto; }
+.win-cam .hudwin-body { display: flex; flex-direction: column; gap: 8px; padding: 8px; }
+.cam-stage { position: relative; aspect-ratio: 4 / 3; background: #000; overflow: hidden; border: 1px solid var(--line); }
+.cam-mirror { position: absolute; inset: 0; transform: scaleX(-1); }
+.cam-mirror video, .cam-skeleton { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.cam-mirror video { filter: saturate(.5) brightness(.75) contrast(1.1) hue-rotate(185deg); opacity: .85; }
+.cam-status { position: absolute; left: 8px; bottom: 6px; font-family: var(--font-hud); font-size: 9px; letter-spacing: .22em; color: var(--gold); text-shadow: 0 0 6px #000; }
+.cam-tools { display: flex; gap: 6px; }
+.cam-tools .toggle { min-width: 0; flex: 1; }
+.cam-help { margin: 0; font-size: 11.5px; color: var(--muted); line-height: 1.4; }
+.cam.active { border-color: var(--gold); background: rgba(255, 201, 77, .18); box-shadow: var(--glow-gold); }
+.cam.active svg { stroke: var(--gold); }
+.g-hover { outline: 2px solid var(--gold) !important; outline-offset: 2px; box-shadow: var(--glow-gold) !important; }
+body.gesture-draw .app { cursor: crosshair; }
+
 /* ---------- Gedächtnis ---------- */
 .memnote {
   align-self: center; max-width: 92%; font-size: 13px; color: var(--text); padding: 5px 12px;
@@ -401,6 +431,8 @@ button, textarea { font: inherit; color: inherit; }
   .win-street { top: auto; bottom: 90px; height: 46dvh; }
   .hudwin { background: linear-gradient(160deg, rgba(31, 111, 255, .14), transparent 45%), rgba(3, 10, 28, .97); }
   .earth-hint { display: none; }
+  .win-cam { left: auto; right: 8px; top: auto; bottom: 90px; width: 52vw; height: auto; }
+  .cam-help { display: none; }
 }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }

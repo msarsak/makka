@@ -100,6 +100,11 @@ TOOLS.push(
     input_schema: { type: 'object', properties: { place: { type: 'string' } } },
   },
   {
+    name: 'camera_control',
+    description: 'Steuert Kamera und Handgesten im HUD. on = Kamera an (Navigieren mit den Händen), draw = Zeichenmodus (Formen in die Luft zeichnen), navigate = zurück zum Navigieren, clear = Zeichnungen löschen, off = Kamera aus.',
+    input_schema: { type: 'object', properties: { action: { type: 'string', enum: ['on', 'off', 'draw', 'navigate', 'clear'] } }, required: ['action'] },
+  },
+  {
     name: 'panel_close',
     description: 'Schließt Fenster im HUD.',
     input_schema: { type: 'object', properties: { panel: { type: 'string', enum: ['earth', 'streetview', 'all'] } }, required: ['panel'] },
@@ -107,7 +112,7 @@ TOOLS.push(
 );
 const TOOL_LABEL = {
   memory_search: 'DURCHSUCHE GEDÄCHTNIS', memory_read: 'LESE NOTIZ', memory_save: 'SPEICHERE ERINNERUNG',
-  earth_show: 'ÖFFNE ERDE', earth_fly_to: 'BERECHNE FLUGROUTE', street_view: 'LADE STREET VIEW', panel_close: 'SCHLIESSE FENSTER',
+  earth_show: 'ÖFFNE ERDE', earth_fly_to: 'BERECHNE FLUGROUTE', street_view: 'LADE STREET VIEW', panel_close: 'SCHLIESSE FENSTER', camera_control: 'STEUERE KAMERA',
 };
 
 async function runTool(block, onSaved, hud = {}, onAction) {
@@ -135,6 +140,11 @@ async function runTool(block, onSaved, hud = {}, onAction) {
       return sv.ok
         ? (sv.mode === 'embed' ? `Street View geöffnet bei ${loc.name}.` : `Kein Google-Maps-Key eingerichtet – es gibt nur einen Link zu Google Maps im HUD. ${sv.note}`)
         : sv.note;
+    }
+    if (block.name === 'camera_control') {
+      const action = ['on', 'off', 'draw', 'navigate', 'clear'].includes(inp.action) ? inp.action : 'on';
+      onAction?.({ type: 'camera', action });
+      return { on: 'Kamera und Handgesten sind an.', off: 'Kamera ist aus.', draw: 'Zeichenmodus ist an.', navigate: 'Navigationsmodus ist an.', clear: 'Zeichnungen gelöscht.' }[action];
     }
     if (block.name === 'panel_close') {
       onAction?.({ type: 'close', panel: ['earth', 'streetview', 'all'].includes(inp.panel) ? inp.panel : 'all' });

@@ -2,6 +2,8 @@
 import { sfx } from './sound.js';
 
 let z = 10;
+const registry = new Map(); // Element → Fenster (für Handgesten)
+export const windowFor = (el) => registry.get(el?.closest?.('.hudwin'));
 const layer = () => document.getElementById('windows');
 
 export function createHudWindow({ id, title, className = '', onClose }) {
@@ -65,6 +67,9 @@ export function createHudWindow({ id, title, className = '', onClose }) {
       el.dataset.dx = dx; el.dataset.dy = dy;
       el.style.translate = `${dx}px ${dy}px`;
     },
+    moveBy(dx, dy) { api.moveTo(parseFloat(el.dataset.dx || 0) + dx, parseFloat(el.dataset.dy || 0) + dy); },
+    front,
   };
+  registry.set(el, api);
   return api;
 }
