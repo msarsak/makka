@@ -52,15 +52,21 @@ export function startWeather() {
         (p) => res(p.coords), () => res(null), { timeout: 6000, maximumAge: 30 * 60 * 1000 }));
     }
     try { showWeather(await fetchWeather(coords)); }
-    catch (e) { $('wxText').textContent = 'Wetter offline'; console.warn(e); }
+    catch (e) {
+      $('wxText').textContent = 'Wetter offline';
+      console.warn(e);
+      setTimeout(load, 5000); // Server evtl. noch nicht bereit – gleich nochmal
+    }
   };
   load();
   setInterval(load, 15 * 60 * 1000);
 }
 
-export async function loadHealth() {
+export async function loadHealth(attempt = 0) {
   try {
-    const h = await (await fetch('/api/health')).json();
+    const r = await fetch('/api/health');
+    if (!r.ok) throw new Error('HTTP ' + r.status);
+    const h = await r.json();
     const demo = h.mode !== 'live';
     const mode = $('stMode');
     mode.textContent = demo ? 'DEMO' : 'LIVE';
@@ -76,9 +82,11 @@ export async function loadHealth() {
     up(); setInterval(up, 1000);
     return h;
   } catch {
-    $('stMode').textContent = 'OFFLINE';
-    $('sysLine').textContent = 'SERVER NICHT ERREICHBAR';
-    return null;
+    $('stMode').textContent = attempt < 5 ? 'VERBINDE…' : 'OFFLINE';
+    $('sysLine').textContent = attempt < 5 ? 'VERBINDE MIT SERVER …' : 'SERVER NICHT ERREICHBAR';
+    // Beim Start ist der Server manchmal ein paar Sekunden langsamer als der Browser
+    await new Promise((res) => setTimeout(res, attempt < 5 ? 1500 : 5000));
+    return loadHealth(attempt + 1);
   }
 }
 
