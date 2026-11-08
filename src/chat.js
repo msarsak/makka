@@ -36,13 +36,13 @@ export function renderEmpty(log) {
 }
 
 /** Sendet die Unterhaltung und ruft Callbacks während des Streams auf. */
-export async function sendChat({ messages, turbo, signal, onMeta, onDelta, onTool, onSaved, onDone, onError }) {
+export async function sendChat({ messages, turbo, hud, signal, onMeta, onDelta, onTool, onSaved, onAction, onDone, onError }) {
   let res;
   try {
     res = await fetch('/api/chat', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ messages, turbo, timeZone: Intl.DateTimeFormat().resolvedOptions().timeZone }),
+      body: JSON.stringify({ messages, turbo, hud, timeZone: Intl.DateTimeFormat().resolvedOptions().timeZone }),
       signal,
     });
   } catch (e) {
@@ -70,6 +70,7 @@ export async function sendChat({ messages, turbo, signal, onMeta, onDelta, onToo
       else if (ev === 'delta') onDelta?.(data.text);
       else if (ev === 'tool') onTool?.(data);
       else if (ev === 'saved') onSaved?.(data);
+      else if (ev === 'action') onAction?.(data);
       else if (ev === 'done') { finished = true; onDone?.(data); }
       else if (ev === 'error') { finished = true; onError?.(data.message); }
     }

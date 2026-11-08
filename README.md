@@ -93,6 +93,21 @@ npm run check-key
 - Du kannst alles in Obsidian selbst bearbeiten oder löschen – er liest beim nächsten Gespräch den neuen Stand.
 - Passwörter, PINs, Bankdaten oder Keys speichert er nie.
 
+### 🌍 3D-Erde (ab Phase 4)
+- „**Zeig mir die Erde**“ öffnet die Hologramm-Erde. „**Geh nach New York**“, „**Flieg zum Eiffelturm**“ lässt die Kamera hinfliegen – mit goldenem Bogen von deinem Standort.
+- „**Zeig mir die Straße**“ öffnet Street View am aktuellen Ort. „**Schließ die Erde**“ / „**Schließ alles**“ schließt die Fenster.
+- Mit der Maus: ziehen = drehen, Mausrad = zoomen, Klick = Ort wählen. Fenster an der Titelleiste verschieben, ✕ schließt.
+- **Street View eingebettet** braucht einen Google-Maps-Key in der `.env` (`GOOGLE_MAPS_API_KEY=`). Ohne Key gibt es einen Link zu Google Maps.
+
+**Google-Maps-Key einrichten (ca. 10 Minuten, für dich kostenlos):**
+1. https://console.cloud.google.com → oben „Projekt auswählen“ → „Neues Projekt“ (Name z. B. Hephaestion).
+2. Links „APIs & Dienste“ → „Bibliothek“ → **„Maps Embed API“** aktivieren, dann **„Street View Static API“** aktivieren.
+3. „APIs & Dienste“ → „Anmeldedaten“ → „Anmeldedaten erstellen“ → „API-Schlüssel“ → kopieren.
+4. Key einschränken (wichtig!): Auf den Key klicken → „Anwendungseinschränkungen: Websites“ → `http://localhost:5173/*` und `http://localhost:3000/*` eintragen → „API-Einschränkungen“: nur die zwei APIs oben → Speichern.
+5. In die `.env`: `GOOGLE_MAPS_API_KEY=dein-key` und Hephaestion neu starten.
+
+Google verlangt beim ersten Mal eine Kreditkarte zur Identifizierung. Die Maps Embed API ist kostenlos, die Street-View-Abfragen auch – du zahlst dafür nichts.
+
 **Gehirn-Automatik:** Für normale Fragen nimmt er das schnelle, sehr günstige Modell (**Haiku**).
 Bei Wörtern wie „analysiere“, „ausführlich“, „Konzept“, „Code“ oder bei langen Texten wechselt er
 automatisch auf das starke Modell (**Opus**). Welches Modell gerade arbeitet, siehst du im Panel **SYSTEM**.
@@ -113,7 +128,7 @@ automatisch auf das starke Modell (**Opus**). Welches Modell gerade arbeitet, si
 - [x] **Phase 1:** HUD-Design, Energie-Kern, Sci-Fi-Sounds, Text-Chat mit Claude
 - [x] **Phase 2:** Sprache rein und raus + Wake-Word „Hey Hephaestion“ / „Hey Heph“
 - [x] **Phase 3:** Gedächtnis mit deinem Obsidian-Vault
-- [ ] **Phase 4:** 3D-Erde, Flüge zu Orten, Street View
+- [x] **Phase 4:** 3D-Erde, Flüge zu Orten, Street View
 - [ ] **Phase 5:** Kamera und Handgesten
 - [ ] **Phase 6:** n8n, Recherche, Handy-App (PWA)
 
@@ -129,6 +144,7 @@ server/      Node-Server: hält den API-Key, spricht mit Claude, Wetter
   router.js    Auswahl: schnelles oder starkes Modell
   memory.js    Obsidian-Gedächtnis: lesen, suchen, sicher speichern
   learn.js     Lernt nach jeder Antwort automatisch dazu
+  geo.js       Orte finden (OpenStreetMap) und Street View (Google)
 src/         Web-App (das HUD)
   orb.js       Energie-Kern (Canvas, 60 FPS)
   sound.js     Sci-Fi-Sounds (Web Audio API, ohne Audiodateien)
@@ -136,6 +152,8 @@ src/         Web-App (das HUD)
   chat.js      Chat-Verbindung und Anzeige
   voice.js     Spracherkennung, Wake-Word, Vorlesen, Mikrofon-Pegel
   voice-utils.js  Wake-Word-Erkennung, Satz-Zerlegung, Stimmenwahl
+  earth.js     3D-Hologramm-Erde (globe.gl)
+  windows.js   Schwebende, verschiebbare HUD-Fenster
 ```
 
 ## 🔄 Neue Version holen

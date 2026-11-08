@@ -23,7 +23,7 @@ app.get('/api/health', (_req, res) => {
   res.json({
     ok: true,
     name: 'Hephaestion',
-    phase: 3,
+    phase: 4,
     mode: hasKey() ? 'live' : 'demo',
     models: { fast: process.env.MODEL_FAST || 'claude-haiku-5-5', smart: process.env.MODEL_SMART || 'claude-opus-5-5' },
     uptimeSec: Math.round((Date.now() - startedAt) / 1000),
@@ -52,9 +52,19 @@ app.get('/api/weather', async (req, res) => {
   }
 });
 
+function sanitizeHud(h) {
+  const loc = h?.location;
+  return {
+    earthOpen: Boolean(h?.earthOpen),
+    streetOpen: Boolean(h?.streetOpen),
+    location: loc && Number.isFinite(loc.lat) && Number.isFinite(loc.lng)
+      ? { name: String(loc.name || 'Ort').slice(0, 120), lat: loc.lat, lng: loc.lng } : null,
+  };
+}
+
 // Chat als Live-Stream (Server-Sent Events)
 app.post('/api/chat', async (req, res) => {
-  const { messages, turbo, timeZone } = req.body || {};
+  const { messages, turbo, timeZone, hud } = req.body || {};
   const lastUser = [...(messages || [])].reverse().find((m) => m?.role === 'user');
   const route = chooseModel(lastUser?.content, { turbo: Boolean(turbo) });
 
@@ -80,6 +90,8 @@ app.post('/api/chat', async (req, res) => {
       onText: (text) => send('delta', { text }),
       onTool: (t) => send('tool', t),
       onSaved: (f) => send('saved', f),
+      onAction: (a) => send('action', a),
+      hud: sanitizeHud(hud),
     });
     send('done', { ...result, ms: Date.now() - t0 });
   } catch (err) {

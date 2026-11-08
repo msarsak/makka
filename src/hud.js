@@ -29,13 +29,18 @@ export function startClock() {
   setInterval(tick, 1000);
 }
 
+let homeCoords = null;
+export const getHome = () => homeCoords;
+
 async function fetchWeather(coords) {
+  if (coords) homeCoords = { lat: coords.latitude, lng: coords.longitude };
   const q = coords ? `?lat=${coords.latitude.toFixed(3)}&lon=${coords.longitude.toFixed(3)}` : '';
   const r = await fetch('/api/weather' + q);
   if (!r.ok) throw new Error((await r.json().catch(() => ({}))).error || 'HTTP ' + r.status);
   return r.json();
 }
 function showWeather(w) {
+  if (!homeCoords && Number.isFinite(w.lat)) homeCoords = { lat: w.lat, lng: w.lng };
   $('wxPlace').textContent = w.place.toUpperCase();
   $('wxTemp').textContent = w.temp;
   $('wxText').textContent = w.text;

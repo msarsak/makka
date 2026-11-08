@@ -278,6 +278,51 @@ button, textarea { font: inherit; color: inherit; }
 :focus-visible { outline: 1px solid var(--gold); outline-offset: 2px; }
 
 
+/* ---------- HUD-Fenster ---------- */
+.core-wrap { position: relative; }
+.windows { position: absolute; inset: 0; pointer-events: none; z-index: 5; }
+.hudwin {
+  position: absolute; pointer-events: auto; display: flex; flex-direction: column;
+  background: linear-gradient(160deg, rgba(31, 111, 255, .14), transparent 45%), rgba(3, 10, 28, .86);
+  border: 1px solid var(--line-strong);
+  box-shadow: 0 0 40px rgba(31, 111, 255, .25), inset 0 0 40px rgba(31, 111, 255, .1);
+  clip-path: polygon(0 0, calc(100% - 22px) 0, 100% 22px, 100% 100%, 22px 100%, 0 calc(100% - 22px));
+}
+.hudwin[hidden] { display: none; }
+.hudwin.opening { animation: winOpen .55s var(--ease) both; }
+.hudwin.closing { animation: winClose .38s var(--ease) both; }
+@keyframes winOpen {
+  0% { opacity: 0; transform: scale(.85); clip-path: inset(50% 0 50% 0); }
+  45% { opacity: 1; clip-path: inset(49% 0 49% 0); }
+  100% { opacity: 1; transform: none; clip-path: polygon(0 0, calc(100% - 22px) 0, 100% 22px, 100% 100%, 22px 100%, 0 calc(100% - 22px)); }
+}
+@keyframes winClose { to { opacity: 0; transform: scale(.9); clip-path: inset(50% 0 50% 0); } }
+.hudwin-bar {
+  display: flex; align-items: center; gap: 10px; padding: 9px 14px; cursor: grab; user-select: none; touch-action: none;
+  border-bottom: 1px solid var(--line); font-family: var(--font-hud); font-size: 11px; letter-spacing: .28em; color: var(--blue-bright);
+}
+.hudwin-bar:active { cursor: grabbing; }
+.hudwin-title { flex: none; }
+.hudwin-tools { flex: 1; min-width: 0; text-align: right; color: var(--gold); font-size: 10px; letter-spacing: .18em; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.hudwin-tools a { color: var(--gold); text-decoration: none; border: 1px solid rgba(255, 201, 77, .4); padding: 2px 8px; }
+.hudwin-tools a:hover { box-shadow: var(--glow-gold); }
+.hudwin-close { flex: none; cursor: pointer; background: transparent; border: 1px solid var(--line); color: var(--red); width: 26px; height: 24px; font-size: 12px; }
+.hudwin-close:hover { border-color: var(--red); box-shadow: var(--glow-red); }
+.hudwin-body { position: relative; flex: 1; min-height: 0; }
+.win-earth { left: 2%; top: 2%; width: 96%; height: 94%; }
+.win-street { right: 0; bottom: 4%; width: 62%; height: 58%; }
+.earth-stage { position: absolute; inset: 0; overflow: hidden; }
+.earth-stage canvas { display: block; }
+.earth-loading { position: absolute; inset: 0; display: grid; place-items: center; color: var(--muted); font-family: var(--font-hud); font-size: 11px; letter-spacing: .3em; }
+.earth-hint { position: absolute; left: 14px; bottom: 10px; font-size: 12px; color: var(--muted); letter-spacing: .08em; pointer-events: none; }
+.earth-hint b { color: var(--gold); font-weight: 600; }
+.globe-tip { font-family: var(--font-hud); font-size: 10px; letter-spacing: .2em; color: var(--gold); background: rgba(3, 10, 28, .85); border: 1px solid var(--line); padding: 3px 8px; }
+.street-frame { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; filter: saturate(.9) contrast(1.05); }
+.street-overlay { position: absolute; inset: 0; pointer-events: none; box-shadow: inset 0 0 60px rgba(31, 111, 255, .35); background: repeating-linear-gradient(to bottom, rgba(92, 194, 255, .03) 0 1px, transparent 1px 3px); }
+.street-empty { position: absolute; inset: 0; display: grid; place-content: center; gap: 14px; text-align: center; padding: 20px; color: var(--muted); }
+.street-empty a { justify-self: center; color: var(--gold); border: 1px solid var(--gold); padding: 8px 16px; text-decoration: none; font-family: var(--font-hud); font-size: 11px; letter-spacing: .2em; box-shadow: var(--glow-gold); }
+.app.earth-open .core { opacity: .12; transition: opacity .6s; }
+
 /* ---------- Gedächtnis ---------- */
 .memnote {
   align-self: center; max-width: 92%; font-size: 13px; color: var(--text); padding: 5px 12px;
@@ -351,6 +396,11 @@ button, textarea { font: inherit; color: inherit; }
   .composer textarea { font-size: 16px; }
   .turbo { padding: 0 8px; font-size: 9px; }
   .panel-voice { display: none; }
+  .windows { position: fixed; inset: 0; z-index: 30; }
+  .win-earth, .win-street { left: 8px; right: 8px; width: auto; top: max(8px, env(safe-area-inset-top)); height: 62dvh; }
+  .win-street { top: auto; bottom: 90px; height: 46dvh; }
+  .hudwin { background: linear-gradient(160deg, rgba(31, 111, 255, .14), transparent 45%), rgba(3, 10, 28, .97); }
+  .earth-hint { display: none; }
 }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }

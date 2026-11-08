@@ -2,6 +2,7 @@
 import Anthropic from '@anthropic-ai/sdk';
 import { buildSystemPrompt } from './persona.js';
 import { CATEGORIES, loadCoreMemory, searchVault, readNote, saveFact } from './memory.js';
+import { geocode, streetView } from './geo.js';
 
 const MAX_HISTORY = 30; // so viele Nachrichten schickt er maximal mit (spart Kosten)
 // Modelle, die den serverseitigen Fallback bei Ablehnungen kennen
@@ -73,11 +74,72 @@ export const TOOLS = [
     },
   },
 ];
-const TOOL_LABEL = { memory_search: 'DURCHSUCHE GEDÄCHTNIS', memory_read: 'LESE NOTIZ', memory_save: 'SPEICHERE ERINNERUNG' };
+// ---------- Werkzeuge: HUD / Erde ----------
+TOOLS.push(
+  {
+    name: 'earth_show',
+    description: 'Öffnet die 3D-Hologramm-Erde im HUD (z. B. "Zeig mir die Erde").',
+    input_schema: { type: 'object', properties: {} },
+  },
+  {
+    name: 'earth_fly_to',
+    description: 'Lässt die Kamera der 3D-Erde animiert zu einem Ort fliegen (Stadt, Land, Adresse, Sehenswürdigkeit). Öffnet die Erde automatisch. Gib zusätzlich deine beste Schätzung der Koordinaten an.',
+    input_schema: {
+      type: 'object',
+      properties: {
+        place: { type: 'string', description: 'Ort möglichst eindeutig, z. B. "New York City, USA" oder "Eiffelturm, Paris"' },
+        lat: { type: 'number' },
+        lng: { type: 'number' },
+      },
+      required: ['place'],
+    },
+  },
+  {
+    name: 'street_view',
+    description: 'Öffnet Google Street View. Ohne "place" am aktuellen Ort der Erde (siehe HUD-Zustand), sonst am genannten Ort.',
+    input_schema: { type: 'object', properties: { place: { type: 'string' } } },
+  },
+  {
+    name: 'panel_close',
+    description: 'Schließt Fenster im HUD.',
+    input_schema: { type: 'object', properties: { panel: { type: 'string', enum: ['earth', 'streetview', 'all'] } }, required: ['panel'] },
+  },
+);
+const TOOL_LABEL = {
+  memory_search: 'DURCHSUCHE GEDÄCHTNIS', memory_read: 'LESE NOTIZ', memory_save: 'SPEICHERE ERINNERUNG',
+  earth_show: 'ÖFFNE ERDE', earth_fly_to: 'BERECHNE FLUGROUTE', street_view: 'LADE STREET VIEW', panel_close: 'SCHLIESSE FENSTER',
+};
 
-async function runTool(block, onSaved) {
+async function runTool(block, onSaved, hud = {}, onAction) {
   const inp = block.input && typeof block.input === 'object' ? block.input : {};
   try {
+    if (block.name === 'earth_show') {
+      onAction?.({ type: 'earth', open: true });
+      hud.earthOpen = true;
+      return 'Erde ist geöffnet.';
+    }
+    if (block.name === 'earth_fly_to') {
+      if (typeof inp.place !== 'string') throw new Error('place fehlt');
+      const g = await geocode(inp.place, { lat: Number(inp.lat), lng: Number(inp.lng) });
+      onAction?.({ type: 'fly', ...g });
+      hud.earthOpen = true;
+      hud.location = g;
+      return `Kamera fliegt zu ${g.full} (${g.lat.toFixed(4)}, ${g.lng.toFixed(4)}).`;
+    }
+    if (block.name === 'street_view') {
+      let loc = hud.location;
+      if (typeof inp.place === 'string' && inp.place.trim()) loc = await geocode(inp.place);
+      if (!loc) return { error: true, text: 'Kein Ort gewählt. Frag den Boss, wo er hin will.' };
+      const sv = await streetView(loc);
+      if (sv.ok) onAction?.({ type: 'streetview', ...sv });
+      return sv.ok
+        ? (sv.mode === 'embed' ? `Street View geöffnet bei ${loc.name}.` : `Kein Google-Maps-Key eingerichtet – es gibt nur einen Link zu Google Maps im HUD. ${sv.note}`)
+        : sv.note;
+    }
+    if (block.name === 'panel_close') {
+      onAction?.({ type: 'close', panel: ['earth', 'streetview', 'all'].includes(inp.panel) ? inp.panel : 'all' });
+      return 'Geschlossen.';
+    }
     if (block.name === 'memory_search') {
       if (typeof inp.query !== 'string') throw new Error('query fehlt');
       const hits = await searchVault(inp.query);
@@ -103,7 +165,7 @@ async function runTool(block, onSaved) {
  * Streamt eine Antwort (mit Gedächtnis-Werkzeugen).
  * Callbacks: onText(text), onTool({name,label}), onSaved(fact). Liefert {stopReason, usage, model}.
  */
-export async function streamReply({ messages, route, timeZone, signal, onText, onTool, onSaved }) {
+export async function streamReply({ messages, route, timeZone, signal, onText, onTool, onSaved, onAction, hud = {} }) {
   const history = sanitizeHistory(messages);
   if (!history.length) throw new Error('Keine Nachricht erhalten.');
   if (!hasKey()) return mockReply({ history, onText, signal });
@@ -114,6 +176,10 @@ export async function streamReply({ messages, route, timeZone, signal, onText, o
   system.push({ type: 'text', text: memory
     ? `# Dein Gedächtnis (aus dem Obsidian-Vault des Boss)\nNutze dieses Wissen natürlich und unaufdringlich – wie ein Butler, der seinen Boss kennt. Sag nicht ständig "laut meinen Notizen".\n\n${memory}`
     : '# Dein Gedächtnis\nNoch leer – du lernst den Boss gerade erst kennen.' });
+
+  const loc = hud.location && Number.isFinite(hud.location.lat)
+    ? `${String(hud.location.name).slice(0, 80)} (${hud.location.lat.toFixed(3)}, ${hud.location.lng.toFixed(3)})` : 'keiner';
+  system.push({ type: 'text', text: `# HUD-Zustand\nErde geöffnet: ${hud.earthOpen ? 'ja' : 'nein'} · Aktueller Ort auf der Erde: ${loc} · Street View offen: ${hud.streetOpen ? 'ja' : 'nein'}` });
 
   const base = {
     model: route.model,
@@ -154,7 +220,7 @@ export async function streamReply({ messages, route, timeZone, signal, onText, o
     const results = [];
     for (const u of uses) {
       onTool?.({ name: u.name, label: TOOL_LABEL[u.name] || u.name });
-      const r = await runTool(u, onSaved);
+      const r = await runTool(u, onSaved, hud, onAction);
       results.push(typeof r === 'string'
         ? { type: 'tool_result', tool_use_id: u.id, content: r }
         : { type: 'tool_result', tool_use_id: u.id, content: r.text, is_error: true });

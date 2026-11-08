@@ -149,15 +149,15 @@ export function createOrb(canvas, { onFps } = {}) {
   requestAnimationFrame(frame);
 
   // Spart Akku, wenn der Tab nicht sichtbar ist
-  document.addEventListener('visibilitychange', () => {
-    if (document.hidden) running = false;
-    else if (!running) { running = true; last = performance.now(); requestAnimationFrame(frame); }
-  });
+  let pausedByApp = false;
+  const wake = () => { if (!running && !document.hidden && !pausedByApp) { running = true; last = performance.now(); requestAnimationFrame(frame); } };
+  document.addEventListener('visibilitychange', () => { if (document.hidden) running = false; else wake(); });
 
   return {
     setState(s) { state = STATE_ENERGY[s] !== undefined ? s : 'idle'; },
     setLevel(v) { external = Math.max(0, Math.min(1, v)); },
     pulse(v = 0.3) { burst = Math.min(0.8, burst + v); },
     refreshColors: readColors,
+    setPaused(p) { pausedByApp = p; if (p) running = false; else wake(); },
   };
 }

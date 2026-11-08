@@ -6,6 +6,8 @@ import { buildTicks, startClock, startWeather, loadHealth, loadMemory, setModelI
 import { loadHistory, saveHistory, renderMessage, renderEmpty, sendChat, format, renderMemoryNote, learn } from './chat.js';
 import { createVoice } from './voice.js';
 import { SentenceBuffer } from './voice-utils.js';
+import { createHudWindow } from './windows.js';
+import { getHome } from './hud.js';
 
 const $ = (id) => document.getElementById(id);
 const app = $('app');
@@ -140,6 +142,87 @@ micBtn.addEventListener('click', toggleTalk);
 $('core').addEventListener('click', toggleTalk);
 $('core').addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggleTalk(); } });
 
+// ---------- 3D-Erde & Street View ----------
+const hud = { earthOpen: false, streetOpen: false, location: null };
+let earthWin = null, earth = null, earthLoading = null;
+let streetWin = null;
+
+function syncCore() {
+  const open = hud.earthOpen;
+  app.classList.toggle('earth-open', open);
+  orb.setPaused(open); // Kern pausiert, solange die Erde offen ist – spart Leistung
+}
+
+function openEarth() {
+  if (!earthWin) {
+    earthWin = createHudWindow({
+      id: 'winEarth', title: 'ERDE', className: 'win-earth',
+      onClose: () => { hud.earthOpen = false; earth?.pause(); syncCore(); },
+    });
+    earthWin.body.innerHTML = '<div class="earth-stage"></div><div class="earth-loading">LADE HOLOGRAMM …</div><div class="earth-hint">Sag <b>„Geh nach Tokio“</b> · klick auf einen Ort · ziehen zum Drehen</div>';
+  }
+  earthWin.open();
+  hud.earthOpen = true;
+  syncCore();
+  if (!earthLoading) {
+    earthLoading = import('./earth.js')
+      .then(({ createEarth }) => createEarth(earthWin.body.querySelector('.earth-stage'), {
+        onPick: (loc) => { setLocation(loc); sfx.panel(); },
+      }))
+      .then((e) => {
+        earth = e;
+        earthWin.body.querySelector('.earth-loading').remove();
+        const h = getHome();
+        if (h) earth.setHome(h.lat, h.lng);
+        return e;
+      })
+      .catch((err) => {
+        earthWin.body.querySelector('.earth-loading').textContent = 'ERDE KONNTE NICHT GELADEN WERDEN (WebGL?)';
+        console.error(err);
+        earthLoading = null;
+        throw err;
+      });
+  } else earth?.resume();
+  return earthLoading;
+}
+
+function setLocation(loc) {
+  hud.location = { name: loc.name, lat: loc.lat, lng: loc.lng };
+  if (earthWin) earthWin.tools.textContent = `◎ ${String(loc.name).toUpperCase()}  ${loc.lat.toFixed(3)}, ${loc.lng.toFixed(3)}`;
+}
+
+async function flyTo(loc) {
+  setLocation(loc);
+  try { (await openEarth()).flyTo(loc); } catch { /* Meldung steht im Fenster */ }
+  sfx.activate();
+}
+
+function openStreet(sv) {
+  if (!streetWin) {
+    streetWin = createHudWindow({
+      id: 'winStreet', title: 'STREET VIEW', className: 'win-street',
+      onClose: () => { hud.streetOpen = false; streetWin.body.innerHTML = ''; },
+    });
+  }
+  const esc = (t) => String(t).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+  streetWin.tools.innerHTML = `${esc(String(sv.name || '').toUpperCase())} &nbsp;<a href="${esc(sv.external)}" target="_blank" rel="noopener">GOOGLE MAPS ↗</a>`;
+  streetWin.body.innerHTML = sv.mode === 'embed'
+    ? `<iframe class="street-frame" src="${esc(sv.url)}" allowfullscreen loading="eager" referrerpolicy="no-referrer-when-downgrade" title="Street View"></iframe><div class="street-overlay"></div>`
+    : `<div class="street-empty"><div>${esc(sv.note || 'Street View nicht verfügbar.')}</div><a href="${esc(sv.external)}" target="_blank" rel="noopener">IN GOOGLE MAPS ÖFFNEN ↗</a></div>`;
+  streetWin.open();
+  hud.streetOpen = true;
+}
+
+function handleAction(a) {
+  if (a.type === 'earth') openEarth().catch(() => {});
+  else if (a.type === 'fly') flyTo(a);
+  else if (a.type === 'streetview') openStreet(a);
+  else if (a.type === 'close') {
+    if (a.panel !== 'earth') streetWin?.close();
+    if (a.panel !== 'streetview') earthWin?.close();
+  }
+}
+
 // ---------- Boot ----------
 let booted = false;
 function boot() {
@@ -238,7 +321,9 @@ async function ask(text, { viaVoice }) {
   await sendChat({
     messages: history,
     turbo,
+    hud,
     signal: controller.signal,
+    onAction: handleAction,
     onMeta: ({ model, tier }) => {
       setModelInfo(model, tier);
       whoEl.insertAdjacentHTML('beforeend', `<em>${tier === 'smart' ? 'TIEF' : 'SCHNELL'}</em>`);
@@ -315,4 +400,4 @@ loadHealth().then(() => loadMemory());
 startWeather();
 
 // Für spätere Phasen (Gesten) und zum Ausprobieren in der Browser-Konsole
-window.hephaestion = { orb, sfx, setState, voice, ask };
+window.hephaestion = { orb, sfx, setState, voice, ask, handleAction, hud };

@@ -34,6 +34,7 @@ export async function getWeather({ lat, lon, city }) {
     '&daily=temperature_2m_max,temperature_2m_min&forecast_days=1&timezone=auto');
   const c = w.current;
   const data = {
+    lat: la, lng: lo,
     place: place || w.timezone?.split('/').pop()?.replace(/_/g, ' ') || 'Standort',
     temp: Math.round(c.temperature_2m),
     feels: Math.round(c.apparent_temperature),
