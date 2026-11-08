@@ -22,8 +22,8 @@ const mask = (v) => (v ? `${v.slice(0, 7)}…${v.slice(-4)}` : '(leer)');
 const QUESTIONS = [
   {
     key: 'ANTHROPIC_API_KEY', title: 'Claude API-Key', secret: true,
-    help: 'Von console.anthropic.com → API Keys. Beginnt mit sk-ant-',
-    check: (v) => (v.startsWith('sk-ant-') ? null : 'Ein Claude-Key beginnt normalerweise mit "sk-ant-". Trotzdem verwenden?'),
+    help: 'Von console.anthropic.com → API Keys. Beginnt mit sk-ant-api03-',
+    check: (v) => (v.startsWith('sk-ant-api') ? null : 'Ein Claude-API-Key beginnt normalerweise mit "sk-ant-api03-". Dieser sieht nach einem anderen Schlüssel aus. Trotzdem verwenden?'),
   },
   {
     key: 'GOOGLE_MAPS_API_KEY', title: 'Google-Maps-Key für Street View (optional)', secret: true,
@@ -50,7 +50,8 @@ async function ask(prompt) {
   return done ? '' : String(value);
 }
 console.log('\n  ===== HEPHAESTION · EINRICHTUNG =====');
-console.log('  Einfügen mit Rechtsklick (oder Strg+V). Enter = Wert behalten.\n');
+console.log('  Einfügen mit Rechtsklick (oder Strg+V). Enter = Wert behalten.');
+console.log('  Tipp: Keys werden nach dem Einfügen verdeckt – trotzdem keine Screenshots davon teilen.\n');
 
 for (const q of QUESTIONS) {
   const now = values[q.key] || '';
@@ -58,6 +59,10 @@ for (const q of QUESTIONS) {
   console.log(`    ${q.help}`);
   console.log(`    Aktuell: ${q.secret ? mask(now) : now || '(leer)'}`);
   let answer = (await ask('    Neu (Enter = behalten, "-" = leeren): ')).trim().replace(/^["']|["']$/g, '');
+  // Geheime Keys sofort auf dem Bildschirm verdecken (Zeile überschreiben)
+  if (q.secret && answer && answer !== '-') {
+    process.stdout.write(`\x1b[1A\x1b[2K    Neu: ${mask(answer)}  (verdeckt)\n`);
+  }
   if (answer === '-') { values[q.key] = ''; console.log('    → geleert\n'); continue; }
   if (!answer) { console.log('    → behalten\n'); continue; }
   const warn = q.check?.(answer);
