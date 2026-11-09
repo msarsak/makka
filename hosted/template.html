@@ -1,0 +1,130 @@
+<title>Hephaestion</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="theme-color" content="#02040b">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>/*CSS*/</style>
+
+<div class="bg-grid" aria-hidden="true"></div>
+<div class="bg-vignette" aria-hidden="true"></div>
+<div class="bg-scan" aria-hidden="true"></div>
+
+<div id="boot" class="boot">
+  <div class="boot-inner">
+    <div class="boot-ring"></div>
+    <h1 class="boot-title">HEPHAESTION</h1>
+    <p class="boot-sub">PERSÖNLICHES ASSISTENZSYSTEM · MARK VII</p>
+    <button id="bootBtn" class="boot-btn" type="button">SYSTEM AKTIVIEREN</button>
+    <p class="boot-hint">Tippen oder Enter drücken</p>
+  </div>
+</div>
+
+<div id="app" class="app" data-state="idle">
+  <header class="topbar">
+    <div class="brand">
+      <span class="brand-mark"></span>
+      <div>
+        <div class="brand-name">HEPHAESTION</div>
+        <div class="brand-sub"><span class="dot"></span><span id="sysLine">VERBINDE …</span></div>
+      </div>
+    </div>
+    <div class="clock">
+      <div id="clockTime" class="clock-time">--:--<span class="sec">--</span></div>
+      <div id="clockDate" class="clock-date">---</div>
+    </div>
+  </header>
+
+  <aside class="side side-left">
+    <section class="panel" id="panelSystem" style="--d:1">
+      <h2 class="panel-title"><span>SYSTEM</span><i>DIAGNOSE</i></h2>
+      <div class="stat"><span>MODUS</span><b id="stMode">--</b></div>
+      <div class="stat"><span>GEHIRN</span><b id="stModel">CLAUDE</b></div>
+      <div class="stat"><span>ANTWORTZEIT</span><b id="stLatency">--</b></div>
+      <div class="stat"><span>FRAMERATE</span><b id="stFps">--</b></div>
+      <div class="stat"><span>LAUFZEIT</span><b id="stUptime">--</b></div>
+      <div class="stat" id="speakRow"><span>STIMME</span><button id="speakBtn" class="toggle" type="button" aria-pressed="true">AN</button></div>
+      <div class="bars" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+    </section>
+
+    <section class="panel" id="panelMemory" style="--d:2">
+      <h2 class="panel-title"><span>GEDÄCHTNIS</span><b id="stMemory" class="mem-count">--</b></h2>
+      <ul id="memList" class="mem-list"></ul>
+      <button id="memShow" class="mini-btn" type="button">ALLES ANZEIGEN</button>
+    </section>
+
+    <section class="panel panel-modules" id="panelModules" style="--d:3">
+      <h2 class="panel-title"><span>MODULE</span><i>MARK VII</i></h2>
+      <ul class="modules">
+        <li class="on">HUD · KERN · AUDIO</li>
+        <li class="on">GEHIRN · CLAUDE-KONTO</li>
+        <li class="on">GEDÄCHTNIS · CLOUD</li>
+        <li class="on">ERDE · STREET VIEW</li>
+        <li class="on">SEHEN · FOTOS</li>
+        <li class="on">ZEICHNEN · PANELS</li>
+        <li>LIVE-INTERNET · N8N</li>
+      </ul>
+    </section>
+  </aside>
+
+  <main class="core-wrap">
+    <div id="windows" class="windows"></div>
+    <div class="core" id="core" role="button" tabindex="0" aria-label="Hephaestion – tippen stoppt das Vorlesen">
+      <div class="rings" aria-hidden="true">
+        <svg class="r r1" viewBox="0 0 400 400"><circle cx="200" cy="200" r="196" /></svg>
+        <svg class="r r2" viewBox="0 0 400 400"><circle cx="200" cy="200" r="186" /></svg>
+        <svg class="r r3" viewBox="0 0 400 400"><circle cx="200" cy="200" r="172" /></svg>
+        <svg class="r r4" viewBox="0 0 400 400"><circle cx="200" cy="200" r="160" /></svg>
+        <svg class="r r5" viewBox="0 0 400 400"><circle cx="200" cy="200" r="150" /><g class="ticks" id="ticks"></g></svg>
+        <svg class="r r6" viewBox="0 0 400 400">
+          <defs><linearGradient id="gGold" x1="0" x2="1"><stop offset="0" stop-color="#ffc94d" /><stop offset="1" stop-color="#ff2a45" /></linearGradient></defs>
+          <path d="M200 18 A182 182 0 0 1 382 200" /><path d="M200 382 A182 182 0 0 1 18 200" />
+        </svg>
+      </div>
+      <canvas id="orb" class="orb"></canvas>
+      <div class="core-label">
+        <div id="coreState" class="core-state">BEREIT</div>
+        <div id="coreSub" class="core-sub">WIE KANN ICH HELFEN, BOSS?</div>
+      </div>
+    </div>
+  </main>
+
+  <aside class="side side-right">
+    <section class="panel panel-chat" id="panelChat" style="--d:2">
+      <h2 class="panel-title"><span>KOMMUNIKATION</span><span class="title-btns"><button id="earthBtn" class="mini-btn" type="button">ERDE</button><button id="clearBtn" class="mini-btn" type="button" title="Neues Gespräch">NEU</button></span></h2>
+      <div id="log" class="log" aria-live="polite"></div>
+    </section>
+  </aside>
+
+  <footer class="inputbar">
+    <form id="form" class="composer" autocomplete="off">
+      <div id="attach" class="attach" hidden><img id="attachImg" alt="Ausgewähltes Foto"><button id="attachRemove" type="button" aria-label="Foto entfernen">✕</button></div>
+      <button id="muteBtn" class="icon-btn" type="button" title="Sounds an/aus" aria-label="Sounds an oder aus">
+        <svg viewBox="0 0 24 24"><path d="M4 9v6h4l5 4V5L8 9H4z" /><path class="wave" d="M16 8.5a5 5 0 0 1 0 7M18.5 6a8.5 8.5 0 0 1 0 12" /></svg>
+      </button>
+      <textarea id="input" rows="1" placeholder="Nachricht an Hephaestion…" aria-label="Nachricht"></textarea>
+      <button id="photoBtn" class="icon-btn" type="button" title="Foto zeigen – Was siehst du?" aria-label="Foto aufnehmen oder wählen">
+        <svg viewBox="0 0 24 24"><path d="M4 8h3l2-3h6l2 3h3v11H4z" /><circle cx="12" cy="13" r="3.5" /></svg>
+      </button>
+      <input id="photoInput" type="file" accept="image/jpeg,image/png,image/webp,image/gif" capture="environment" hidden>
+      <button id="drawBtn" class="icon-btn" type="button" title="Zeichnen" aria-label="Zeichenmodus">
+        <svg viewBox="0 0 24 24"><path d="M4 20l4-1 11-11-3-3L5 16z" /><path d="M14 6l3 3" /></svg>
+      </button>
+      <button id="turboBtn" class="turbo" type="button" aria-pressed="false" title="Stärkstes Modell erzwingen">TURBO</button>
+      <button id="sendBtn" class="send" type="submit" aria-label="Senden">
+        <svg viewBox="0 0 24 24"><path d="M3 11.5 21 3l-8.5 18-2-7.5L3 11.5z" /></svg>
+      </button>
+    </form>
+  </footer>
+</div>
+
+<svg id="drawLayer" class="draw-layer" aria-hidden="true"><defs><filter id="drawGlow" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs><g id="drawShapes"></g></svg>
+<canvas id="drawCanvas" class="draw-canvas"></canvas>
+<div id="drawBar" class="draw-bar" hidden>
+  <span>ZEICHENMODUS · Rechteck, Kreis oder Linie malen</span>
+  <button id="drawClear" class="mini-btn" type="button">LÖSCHEN</button>
+  <button id="drawDone" class="mini-btn" type="button">FERTIG</button>
+</div>
+
+<script type="application/json" id="worldData">/*WORLD*/</script>
+<script>/*JS*/</script>
