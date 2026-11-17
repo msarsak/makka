@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Daily Brief – KI & Welt</title>
+<meta name="theme-color" content="#0b0d12">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Daily Brief">
+<link rel="apple-touch-icon" href="icon-180.png">
+<link rel="icon" href="icon-192.png">
+<link rel="manifest" href="manifest.json">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0b0d12; --card:#151922; --card2:#1c2130; --line:#262c3b;
+  --text:#eef1f7; --muted:#9aa3b5; --accent:#7c5cff; --accent2:#22d3ee;
+  --ok:#34d399; --warn:#fbbf24;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:var(--bg);color:var(--text);font-family:Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+body{padding:env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left)}
+.wrap{max-width:640px;margin:0 auto;padding:18px 16px 40px}
+header{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;margin-bottom:14px}
+.kicker{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent2);font-weight:700}
+h1{font-size:28px;font-weight:800;line-height:1.1;margin-top:4px}
+.date{color:var(--muted);font-size:14px;margin-top:6px}
+.daypick{background:var(--card);border:1px solid var(--line);color:var(--text);border-radius:12px;padding:8px 10px;font:inherit;font-size:13px}
+.intro{background:linear-gradient(135deg,#2a1f66,#0f3a4a);border-radius:18px;padding:16px;margin-bottom:14px;line-height:1.5;font-size:15px}
+.intro b{color:#fff}
+.tabs{display:flex;gap:8px;overflow-x:auto;padding:4px 0 12px;scrollbar-width:none;position:sticky;top:0;background:var(--bg);z-index:5}
+.tabs::-webkit-scrollbar{display:none}
+.tab{flex:0 0 auto;border:1px solid var(--line);background:var(--card);color:var(--muted);border-radius:999px;padding:8px 14px;font:inherit;font-size:14px;font-weight:600;cursor:pointer}
+.tab.on{background:var(--accent);border-color:var(--accent);color:#fff}
+.regions{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px}
+.reg{border:1px solid var(--line);background:transparent;color:var(--muted);border-radius:8px;padding:5px 10px;font:inherit;font-size:12px;cursor:pointer}
+.reg.on{border-color:var(--accent2);color:var(--accent2)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:16px;margin-bottom:12px}
+.meta{display:flex;gap:6px;align-items:center;flex-wrap:wrap;margin-bottom:8px}
+.pill{font-size:11px;font-weight:700;padding:3px 8px;border-radius:6px;background:var(--card2);color:var(--muted)}
+.pill.r{color:var(--accent2)}
+.card h3{font-size:17px;line-height:1.3;font-weight:700;margin-bottom:8px}
+.card p{font-size:15px;line-height:1.55;color:#d6dbe6}
+.why{margin-top:10px;padding:10px 12px;background:var(--card2);border-radius:12px;font-size:14px;line-height:1.5}
+.why b{color:var(--warn)}
+.row{display:flex;justify-content:space-between;align-items:center;margin-top:12px;gap:10px;flex-wrap:wrap}
+.src{font-size:12px;color:var(--muted);text-decoration:none;border-bottom:1px dotted var(--muted)}
+.btn{border:0;background:#2b2f45;color:#fff;border-radius:10px;padding:8px 12px;font:inherit;font-size:13px;font-weight:600;cursor:pointer}
+.btn:disabled{opacity:.5}
+.simple{margin-top:10px;font-size:14px;line-height:1.55;color:var(--ok);display:none}
+.term{background:var(--card);border:1px dashed var(--accent);border-radius:18px;padding:16px;margin:18px 0 12px}
+.term .k{font-size:12px;color:var(--accent);font-weight:700;text-transform:uppercase;letter-spacing:.1em}
+.term h4{font-size:20px;margin:6px 0}
+.term p{font-size:15px;line-height:1.55;color:#d6dbe6}
+.state{color:var(--muted);text-align:center;padding:40px 10px;line-height:1.6}
+.ask{position:fixed;left:0;right:0;bottom:0;padding:10px 16px calc(10px + env(safe-area-inset-bottom));background:rgba(11,13,18,.95);border-top:1px solid var(--line);backdrop-filter:blur(8px)}
+.ask form{max-width:640px;margin:0 auto;display:flex;gap:8px}
+.ask input{flex:1;background:var(--card);border:1px solid var(--line);border-radius:12px;color:var(--text);padding:11px 12px;font:inherit;font-size:15px}
+.ask button{background:var(--accent);border:0;color:#fff;border-radius:12px;padding:0 16px;font:inherit;font-weight:700}
+.answer{white-space:pre-wrap}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div>
+      <div class="kicker">Daily Brief</div>
+      <h1>KI & Welt – einfach erklärt</h1>
+      <div class="date" id="date">Lädt …</div>
+    </div>
+    <select class="daypick" id="daypick" aria-label="Tag wählen"></select>
+  </header>
+
+  <div id="intro"></div>
+  <div class="tabs" id="tabs"></div>
+  <div class="regions" id="regions"></div>
+  <div id="list"><div class="state">Briefing wird geladen …</div></div>
+  <div id="term"></div>
+  <div id="answerBox"></div>
+</div>
+
+
+
+<script>
+const $ = s => document.querySelector(s);
+const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const REGION = {welt:"🌍 Welt", usa:"🇺🇸 USA", china:"🇨🇳 China", europa:"🇪🇺 Europa", asien:"🌏 Asien", oesterreich:"🇦🇹 Österreich", afrika:"🌍 Afrika", nahost:"🌍 Nahost", lateinamerika:"🌎 Lateinamerika"};
+
+let cur = null, topic = "all", region = "all";
+
+function fmtDate(d){
+  try{ return new Date(d+"T12:00:00").toLocaleDateString("de-AT",{weekday:"long",day:"numeric",month:"long",year:"numeric"}); }catch(e){ return d; }
+}
+
+function render(){
+  if(!cur){ return; }
+  $("#date").textContent = fmtDate(cur.date);
+  $("#intro").innerHTML = cur.intro ? `<div class="intro">${esc(cur.intro)}</div>` : "";
+  const topics = cur.topics || [];
+  $("#tabs").innerHTML = [`<button class="tab ${topic==="all"?"on":""}" data-t="all">✨ Alles</button>`]
+    .concat(topics.map(t => `<button class="tab ${topic===t.id?"on":""}" data-t="${esc(t.id)}">${esc(t.emoji||"")} ${esc(t.title)}</button>`)).join("");
+  const shown = topics.filter(t => topic==="all" || t.id===topic);
+  const allItems = shown.flatMap(t => (t.items||[]).map(i => ({...i, _t:t})));
+  const regs = [...new Set(allItems.map(i => i.region).filter(Boolean))];
+  $("#regions").innerHTML = regs.length>1 ? [`<button class="reg ${region==="all"?"on":""}" data-r="all">Alle Regionen</button>`]
+    .concat(regs.map(r => `<button class="reg ${region===r?"on":""}" data-r="${esc(r)}">${esc(REGION[r]||r)}</button>`)).join("") : "";
+  const items = allItems.filter(i => region==="all" || i.region===region);
+  $("#list").innerHTML = items.length ? items.map((i,n) => `
+    <article class="card">
+      <div class="meta">
+        <span class="pill">${esc(i._t.emoji||"")} ${esc(i._t.title)}</span>
+        ${i.region?`<span class="pill r">${esc(REGION[i.region]||i.region)}</span>`:""}
+      </div>
+      <h3>${esc(i.title)}</h3>
+      <p>${esc(i.text)}</p>
+      ${i.why?`<div class="why"><b>Warum wichtig?</b> ${esc(i.why)}</div>`:""}
+      <div class="row">
+        ${i.url?`<a class="src" href="${esc(i.url)}" target="_blank" rel="noopener">Quelle: ${esc(i.source||"Link")}</a>`:`<span class="src">${esc(i.source||"")}</span>`}
+        ${i.kid?`<button class="btn" data-x="${n}">🧒 Noch einfacher</button>`:""}
+      </div>
+      <div class="simple" id="s${n}"></div>
+    </article>`).join("") : `<div class="state">Keine Meldungen für diese Auswahl.</div>`;
+  $("#list").querySelectorAll("[data-x]").forEach(b => b.onclick = () => { const s=$("#s"+b.dataset.x); const on=s.style.display==="block"; s.textContent=items[+b.dataset.x].kid; s.style.display=on?"none":"block"; });
+  const t = cur.term;
+  $("#term").innerHTML = t ? `<div class="term"><div class="k">💡 Begriff des Tages</div><h4>${esc(t.word)}</h4><p>${esc(t.explain)}</p></div>` : "";
+  $("#tabs").querySelectorAll(".tab").forEach(b => b.onclick = () => { topic=b.dataset.t; region="all"; render(); });
+  $("#regions").querySelectorAll(".reg").forEach(b => b.onclick = () => { region=b.dataset.r; render(); });
+}
+
+
+function fillPicker(){
+  $("#daypick").innerHTML = dates.map(d => `<option value="${esc(d)}" ${cur&&cur.date===d?"selected":""}>${esc(new Date(d+"T12:00:00").toLocaleDateString("de-AT",{day:"2-digit",month:"2-digit"}))}</option>`).join("");
+}
+let dates = [];
+async function load(d){
+  const r = await fetch(`data/${d}.json?t=${Date.now()}`, {cache:"no-store"});
+  if(!r.ok) throw new Error(r.status);
+  cur = await r.json(); topic="all"; region="all"; render(); fillPicker(); window.scrollTo(0,0);
+}
+$("#daypick").onchange = e => load(e.target.value).catch(()=>{});
+(async () => {
+  try{
+    const r = await fetch(`data/index.json?t=${Date.now()}`, {cache:"no-store"});
+    dates = ((await r.json()).dates || []).sort().reverse();
+    if(!dates.length){ $("#list").innerHTML = `<div class="state">Noch kein Briefing da. Das erste kommt morgen früh 🌅</div>`; return; }
+    await load(dates[0]);
+  }catch(e){ $("#list").innerHTML = `<div class="state">Konnte die News nicht laden. Bitte Internet prüfen und neu öffnen.</div>`; }
+})();
+document.addEventListener("visibilitychange", () => { if(!document.hidden && dates.length){ fetch(`data/index.json?t=${Date.now()}`,{cache:"no-store"}).then(r=>r.json()).then(j=>{ const n=(j.dates||[]).sort().reverse(); if(n[0]!==dates[0]){ dates=n; load(dates[0]); } }).catch(()=>{}); } });
+</script>
+</body>
+</html>
