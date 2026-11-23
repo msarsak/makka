@@ -526,6 +526,10 @@ businessmonarcvisionz@gmail.com
 monarcvisionz.netlify.app`;
 }
 
+function splitMail(full){
+  const m = String(full || "").match(/^Betreff:\s*(.*)\n+([\s\S]*)$/);
+  return m ? {subj: m[1].trim(), body: m[2].trim()} : {subj: "", body: String(full || "").trim()};
+}
 let noteTimer = null;
 function renderDrawer(){
   const t = tickets.find(x => x.id === openId);
@@ -575,13 +579,14 @@ function renderDrawer(){
       <button class="btn small" id="addEvTicket" type="button" style="margin-top:8px">+ Termin eintragen</button>
     </div>
     <div>
-      <div class="sec-t">${t.mail ? "Persönliche E-Mail" : "Vorlage"}</div>
+      <div class="sec-t">E-Mail an ${esc(t.email || "die Firma")}</div>
       ${t.warum ? `<p class="saved" style="margin:0 0 8px"><b>Warum diese Firma:</b> ${esc(t.warum)}</p>` : ""}
-      ${t.mail ? `<textarea class="input" readonly style="min-height:200px;font-size:13px">${esc(t.mail)}</textarea>` : ""}
-      <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:8px">
-        <button class="btn small primary" id="copyMail" type="button">E-Mail kopieren</button>
-      </div>
-      <p class="saved" style="margin:6px 0 0">Kopieren, in deine Mail an ${esc(t.email || "die Firma")} einfügen und vor dem Senden kurz durchlesen.</p>
+      <div class="sec-t" style="margin:4px 0 6px">Betreff</div>
+      <input class="input" id="mailSubj" readonly style="font-size:13px" value="${esc(splitMail(t.mail || mailText(t)).subj)}">
+      <button class="btn small primary" id="copySubj" type="button" style="margin-top:8px">Betreff kopieren</button>
+      <div class="sec-t" style="margin:14px 0 6px">Text</div>
+      <textarea class="input" id="mailBody" readonly style="min-height:220px;font-size:13px">${esc(splitMail(t.mail || mailText(t)).body)}</textarea>
+      <button class="btn small primary" id="copyBody" type="button" style="margin-top:8px">Text kopieren</button>
     </div>
     <div>
       <div class="sec-t"><label for="notes">Notizen</label></div>
@@ -610,8 +615,9 @@ function renderDrawer(){
   };
   $("dClose").onclick = closeDrawer;
   d.querySelectorAll("[data-copy]").forEach(b => b.onclick = () => copy(b.dataset.copy, b.dataset.l));
-  const fullMail = t.mail || mailText(t);
-  $("copyMail").onclick = () => copy(fullMail, "E-Mail");
+  const parts = splitMail(t.mail || mailText(t));
+  $("copySubj").onclick = () => copy(parts.subj, "Betreff");
+  $("copyBody").onclick = () => copy(parts.body, "Text");
   $("addEvTicket").onclick = () => openEv(null, {ticketId: t.id, title: "Gespräch " + t.betrieb, date: today()});
   d.querySelectorAll("[data-ev]").forEach(b => b.onclick = () => openEv(b.dataset.ev));
   $("offerPick").querySelectorAll("button").forEach(b => b.onclick = async () => {
