@@ -353,8 +353,14 @@ async function loadLeads(){
       try { const r = await fetch(LEADS_URL + f, {cache: "no-store"}); if (r.ok) files[f] = await r.json(); } catch(e){}
     }));
   } catch(e){}
+  const seedById = {}; Object.values(SEED).forEach(l => l.forEach(x => seedById[x.id] = x));
   const seen = new Set(), list = [];
-  Object.keys(files).sort().forEach(f => (files[f] || []).forEach(raw => { if (raw && raw.id && !seen.has(raw.id)){ seen.add(raw.id); list.push(toTicket(raw, f)); } }));
+  Object.keys(files).sort().forEach(f => (files[f] || []).forEach(raw => {
+    if (!raw || !raw.id || seen.has(raw.id)) return;
+    const base = seedById[raw.id] || {}, merged = {...base};
+    for (const k in raw) if (raw[k] !== "" && raw[k] != null) merged[k] = raw[k];
+    seen.add(raw.id); list.push(toTicket(merged, f));
+  }));
   leadCache = list; leadTime = Date.now();
   return list;
 }
@@ -633,10 +639,9 @@ function renderDrawer(){
       ${t.warum ? `<p class="saved" style="margin:0 0 8px"><b>Warum diese Firma:</b> ${esc(t.warum)}</p>` : ""}
       ${t.mail ? `<textarea class="input" readonly style="min-height:200px;font-size:13px">${esc(t.mail)}</textarea>` : ""}
       <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:8px">
-        ${t.email ? `<a class="btn small primary" id="openMail" href="#" style="text-decoration:none">In Mail-Programm öffnen</a>` : ""}
-        <button class="btn small" id="copyMail" type="button">E-Mail kopieren</button>
+        <button class="btn small primary" id="copyMail" type="button">E-Mail kopieren</button>
       </div>
-      <p class="saved" style="margin:6px 0 0">Öffnet eine fertige Mail an ${esc(t.email || "die Firma")}. Vor dem Senden kurz durchlesen.</p>
+      <p class="saved" style="margin:6px 0 0">Kopieren, in deine Mail an ${esc(t.email || "die Firma")} einfügen und vor dem Senden kurz durchlesen.</p>
     </div>
     <div>
       <div class="sec-t"><label for="notes">Notizen</label></div>
@@ -667,13 +672,6 @@ function renderDrawer(){
   d.querySelectorAll("[data-copy]").forEach(b => b.onclick = () => copy(b.dataset.copy, b.dataset.l));
   const fullMail = t.mail || mailText(t);
   $("copyMail").onclick = () => copy(fullMail, "E-Mail");
-  const om = $("openMail");
-  if (om){
-    const m = fullMail.match(/^Betreff:\s*(.*)\n+([\s\S]*)$/);
-    const subj = m ? m[1].trim() : "Monarc Visionz", bodyTxt = m ? m[2] : fullMail;
-    om.href = "mailto:" + encodeURIComponent(t.email) + "?subject=" + encodeURIComponent(subj) + "&body=" + encodeURIComponent(bodyTxt);
-    om.onclick = () => { if (t.status === "offen") edit(t.id, {status: "angeschrieben"}, "Mail geöffnet → Status Angeschrieben"); };
-  }
   $("addEvTicket").onclick = () => openEv(null, {ticketId: t.id, title: "Gespräch " + t.betrieb, date: today()});
   d.querySelectorAll("[data-ev]").forEach(b => b.onclick = () => openEv(b.dataset.ev));
   $("offerPick").querySelectorAll("button").forEach(b => b.onclick = async () => {
