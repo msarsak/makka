@@ -1,5 +1,6 @@
 """Erzeugt aus leads/<datum>.json eine PDF mit fertigen E-Mails (Monarc Visionz).
 Aufruf: python3 leads/make_pdf.py leads/2026-11-23.json
+Schreibt außerdem die Mails in die JSON und trägt sie in leads/index.json ein (daraus lädt das Ticket-Board).
 """
 import json, sys, os
 from reportlab.lib.pagesizes import A4
@@ -53,8 +54,25 @@ def mail(t):
             "Mit freundlichen Grüßen\n" + SIGNATUR)
     return subject, body
 
+NL = {"website":"Website","anrufe":"Verpasste Anrufe","bewertungen":"Google-Bewertungen","termin":"Online-Terminbuchung","chat":"KI-Chat"}
+
+def update_json(path, firms):
+    """Schreibt die fertige Mail in die JSON (für das Ticket-Board) und trägt die Datei in leads/index.json ein."""
+    for t in firms:
+        s, b = mail(t)
+        t["mail"] = f"Betreff: {s}\n\n{b}"
+        t["angebot"] = ", ".join(NL[n] for n in t["needs"])
+    json.dump(firms, open(path, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
+    idx_path = os.path.join(os.path.dirname(path), "index.json")
+    idx = json.load(open(idx_path, encoding="utf-8")) if os.path.exists(idx_path) else {"files": []}
+    name = os.path.basename(path)
+    if name not in idx["files"]:
+        idx["files"] = sorted(idx["files"] + [name])
+    json.dump(idx, open(idx_path, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
+
 def main(path):
     firms = json.load(open(path, encoding="utf-8"))
+    update_json(path, firms)
     datum = os.path.splitext(os.path.basename(path))[0]
     out = os.path.join(os.path.dirname(path), f"Monarc_Mails_{datum}.pdf")
     accent = colors.HexColor("#5b3fd9")
