@@ -1,32 +1,551 @@
 [
-{"id":"MV-0001","betrieb":"Nagelstudio Nagelkult","branche":"Nagelstudio","ort":"Innsbruck","land":"AT","email":"info@nagelkult.at","telefon":"+43 664 2121019","needs":["website","termin"],"hook":"Ihre Kundinnen geben Ihnen auf Herold gute 4,2 Sterne. Online wirkt Ihre Website aber leider etwas in die Jahre gekommen: Die Kundenstimmen sind von 2017, und die Adresse ist nicht überall gleich."},
-{"id":"MV-0002","betrieb":"Knopf-Maid Sigrid Wagner","branche":"Änderungsschneiderei","ort":"Linz","land":"AT","email":"knopfmaid@drei.at","telefon":"+43 732 307544","needs":["website","bewertungen"],"hook":"Mit 4,9 Sternen auf Herold sind Ihre Kunden offensichtlich sehr zufrieden. Wer Sie im Internet sucht, findet aber noch keine eigene Website."},
-{"id":"MV-0003","betrieb":"Mobile KFZ-Servicewerkstätte Martin Walcher","branche":"KFZ-Werkstatt","ort":"Steyr","land":"AT","email":"martinwalcher.kfz@gmail.com","telefon":"+43 660 6502030","needs":["website","anrufe","termin"],"hook":"Als mobile Werkstatt sind Sie viel unterwegs und haben oft die Hände voll. Da geht sicher der eine oder andere Anruf verloren, und online gibt es bisher nur Ihren Herold-Eintrag."},
-{"id":"MV-0004","betrieb":"GSE Elektrotechnik Günther Schölsner","branche":"Elektriker","ort":"Seekirchen am Wallersee","land":"AT","email":"g.schoelsner-elektrotechnik@aon.at","telefon":"+43 676 5745815","needs":["website","anrufe"],"hook":"Wir sind auch aus dem Raum Salzburg und haben gesehen, dass Ihr Elektrobetrieb seit 2017 im Flachgau tätig ist, aber noch keine eigene Website hat."},
-{"id":"MV-0005","betrieb":"Sylvia Roßner Medizinische Fußpflege & Kosmetik","branche":"Fußpflege","ort":"Salzburg","land":"AT","email":"kosmetik@sylviarossner.at","telefon":"+43 662 878184","needs":["website","termin"],"hook":"Wir sind ebenfalls in Salzburg zu Hause und sind auf Ihr Studio gestoßen. Ihre Website wurde seit ca. 2020 nicht mehr verändert, und Termine kann man online noch nicht buchen."},
-{"id":"MV-0006","betrieb":"Rudolf Galsterer Metallbau & Edelstahltechnik","branche":"Schlosser","ort":"Vomp","land":"AT","email":"office@metall-ruga.com","telefon":"+43 650 9808934","needs":["website"],"hook":"Uns ist aufgefallen, dass bei Google auf Ihrer Website noch der Vorlagentext „Please enter your slogan here!“ steht. Das ist schade, denn Ihre Arbeit hat sicher einen besseren ersten Eindruck verdient."},
-{"id":"MV-0007","betrieb":"Andrea Oberkofler – Diabetische Fußpflege & Massage mobil","branche":"Fußpflege","ort":"St. Johann im Pongau","land":"AT","email":"andrea.oberkofler@sol.at","telefon":"+43 664 4314874","needs":["website","anrufe","termin"],"hook":"Sie arbeiten mobil und nur nach Termin. Während einer Behandlung kann man schlecht ans Telefon gehen, und online sind Sie bisher noch nicht zu finden."},
-{"id":"MV-0008","betrieb":"blumenbox Michaela Wurm","branche":"Blumen","ort":"Wels","land":"AT","email":"hallo@blumenbox.at","telefon":"+43 664 4246347","needs":["website","bewertungen"],"hook":"5,0 Sterne auf Herold, da machen Sie offensichtlich vieles richtig! Auf Ihrer Jimdo-Seite können Kunden aber noch keine Blumen-Abos oder Lieferungen bestellen."},
-{"id":"MV-0009","betrieb":"Needles & Pins Änderungsschneiderei","branche":"Änderungsschneiderei","ort":"Graz","land":"AT","email":"needles.pins@a1.net","telefon":"+43 316 814605","needs":["website","bewertungen"],"hook":"Seit 1996 in der Grazer Innenstadt, das ist eine schöne Geschichte. Wer Sie im Internet sucht, findet aber bis heute keine eigene Website."},
-{"id":"MV-0010","betrieb":"Nagelstudio Marion","branche":"Nagelstudio","ort":"Klagenfurt am Wörthersee","land":"AT","email":"nagelstudio-marion@gmx.at","telefon":"+43 664 5180304","needs":["website","anrufe","termin"],"hook":"Ihr Studio gibt es seit 2007, und Sie arbeiten nur nach Vereinbarung. Neue Kundinnen können aber noch nicht online nachschauen oder selbst einen Termin buchen."},
-{"id":"MV-0011","betrieb":"Coiffeur Gattinger","branche":"Friseur","ort":"St. Pölten","land":"AT","email":"margit.gattinger@gmx.at","telefon":"+43 2742 22032","needs":["website","bewertungen","termin"],"hook":"5,0 Sterne auf Herold, und Ihre Kunden loben besonders die persönliche Beratung. Online sind Sie aber noch nicht mit eigener Website und Terminbuchung vertreten."},
-{"id":"MV-0012","betrieb":"Manfred Unterweger Heizung - Sanitär","branche":"Installateur","ort":"Villach","land":"AT","email":"unterweger.manfred@aon.at","telefon":"+43 650 8800261","needs":["website","anrufe"],"hook":"Wer in Villach einen Installateur sucht, findet Sie bisher nur über Herold, und dort sind noch nicht einmal Ihre Leistungen aufgelistet."},
-{"id":"MV-0013","betrieb":"élan beauty Vienna","branche":"Kosmetik","ort":"Wien","land":"AT","email":"office@elanbeauty.at","telefon":"+43 1 9927095","needs":["website","termin","chat"],"hook":"Sie haben mit elanbeauty.at schon eine eigene Domain. Wer sie aufruft, sieht aber nur die Standardseite Ihres Hosters statt Ihrer Brows, Lashes und Nägel."},
-{"id":"MV-0014","betrieb":"tomassage Massagefachinstitut","branche":"Massage","ort":"Wien","land":"AT","email":"thomasfalkner@gmx.at","telefon":"+43 650 7041575","needs":["website","termin"],"hook":"Ihre Website ist aus ca. 2017, und in den Kontaktdaten ist leider ein falsches Land eingetragen. Das kann neue Kunden verunsichern."},
-{"id":"MV-0015","betrieb":"Monikas Massagestudio","branche":"Massage","ort":"Graz","land":"AT","email":"monikasmassagestudio@yahoo.com","telefon":"+43 664 2049329","needs":["website","anrufe","termin"],"hook":"Termine gibt es bei Ihnen nur telefonisch. Während Sie massieren, gehen dadurch bestimmt immer wieder Anrufe und damit neue Kunden verloren."},
-{"id":"MV-0016","betrieb":"Friseurmeisterei Heike Wetzel","branche":"Friseur","ort":"Chemnitz","land":"DE","email":"kontakt@friseurmeisterei-wetzel.de","telefon":"+49 371 5613065","needs":["anrufe","termin"],"hook":"4,8 Sterne bei 51 Google-Bewertungen, Ihre Kundinnen sind sehr zufrieden! Termine gibt es aber nur telefonisch, und während Sie schneiden, kann niemand abheben."},
-{"id":"MV-0017","betrieb":"Dream Team Inh. Melanie Golisch","branche":"Friseur","ort":"Berlin","land":"DE","email":"mausefaust@arcor.de","telefon":"+49 30 47363657","needs":["website","termin"],"hook":"94 Google-Bewertungen mit 4,4 Sternen, das ist für einen kleinen Salon richtig stark. Eine eigene Website, auf der man Sie findet und Termine bucht, fehlt aber noch."},
-{"id":"MV-0018","betrieb":"Auffermann KFZ-Meisterbetrieb","branche":"KFZ-Werkstatt","ort":"Dortmund","land":"DE","email":"kfz.auffermann@gmx.de","telefon":"+49 231 172493","needs":["website","anrufe","termin"],"hook":"4,9 Sterne bei 281 Google-Bewertungen, das schaffen nur wenige Werkstätten! Auf Ihrer Website steht aber noch „Wir arbeiten gerade an unserer Website“."},
-{"id":"MV-0019","betrieb":"Blumenhaus Erich Hartmann","branche":"Blumen","ort":"Bielefeld","land":"DE","email":"blumenhaushartmann@yahoo.de","telefon":"+49 521 296745","needs":["website","bewertungen"],"hook":"5,0 Sterne bei Google, und Kunden bestellen sogar von weit her telefonisch bei Ihnen. Mit einer eigenen Website würden Sie noch viel mehr Menschen erreichen."},
-{"id":"MV-0020","betrieb":"Blumen Anke Tomfort e. K.","branche":"Blumen","ort":"Hamburg","land":"DE","email":"blumen_anke_tomfort.mail@t-online.de","telefon":"+49 40 5591505","needs":["website","bewertungen"],"hook":"Mit 64 Google-Bewertungen und Ihrer Hochzeits- und Trauerfloristik haben Sie viel zu zeigen. Eine eigene Website, auf der man Ihre Arbeiten sieht, gibt es aber noch nicht."},
-{"id":"MV-0021","betrieb":"Hedel Ines, Kosmetik und Fußpflege","branche":"Kosmetik","ort":"Leipzig","land":"DE","email":"hedelines@online.de","telefon":"+49 341 8610550","needs":["website","bewertungen","termin"],"hook":"Online findet man Ihr Studio bisher nur über einen Branchenbuch-Eintrag. Neue Kundinnen sehen dort weder Ihre Behandlungen noch Preise."},
-{"id":"MV-0022","betrieb":"Elektroanlagen Ralf Kunze","branche":"Elektriker","ort":"Dresden","land":"DE","email":"ralfkunze@vodafone.de","telefon":"+49 172 7968330","needs":["website","anrufe","bewertungen"],"hook":"5,0 Sterne bei Google, und Ihre Kunden loben besonders die schnelle Hilfe. Bisher gibt es aber nur ein Branchenbuch-Profil und keine eigene Website."},
-{"id":"MV-0023","betrieb":"Wagner Heizungs- u. Sanitärtechnik","branche":"Installateur","ort":"Münster","land":"DE","email":"swagner-muenster@unitybox.de","telefon":"+49 251 35285","needs":["website","anrufe"],"hook":"Ihr Betrieb hat 4,3 Sterne bei Google. Wer aber in Münster nach einem Heizungsbauer sucht, findet bei Ihnen noch keine eigene Website."},
-{"id":"MV-0024","betrieb":"RTK Immobilien","branche":"Immobilienbüro","ort":"Bochum","land":"DE","email":"info@rtk-immobilien.de","telefon":"+49 234 35781969","needs":["website","chat"],"hook":"Ihre Website hat Bilder aus ca. 2014 bis 2019 und verlinkt noch auf Google+, das es schon lange nicht mehr gibt. Gerade bei Immobilien zählt der erste Eindruck."},
-{"id":"MV-0025","betrieb":"Friseur Haarstudio Burger","branche":"Friseur","ort":"Freiburg","land":"DE","email":"info@friseur-burger.de","telefon":"+49 761 484587","needs":["website","termin"],"hook":"4,4 Sterne bei 43 Google-Bewertungen, da sind Ihre Kunden zufrieden. Uns ist aber aufgefallen, dass Ihre hinterlegte Website beim Test nicht erreichbar war."},
-{"id":"MV-0026","betrieb":"Haustechnik Zeilberger – Meisterbetrieb","branche":"Installateur","ort":"Passau","land":"DE","email":"info@haustechnik-zeilberger.de","telefon":"+49 171 2128386","needs":["website","anrufe"],"hook":"Ihre Jimdo-Seite ist aus ca. 2017 und hat nur drei Unterseiten. Für einen Meisterbetrieb wie Ihren geht da deutlich mehr."},
-{"id":"MV-0027","betrieb":"Dachdeckerei Paul Horner","branche":"Dachdecker","ort":"Rosenheim","land":"DE","email":"horner@dachdeckerei-horner.de","telefon":"+49 8031 41613","needs":["website","bewertungen"],"hook":"4,5 Sterne bei Google, das spricht für Ihren Familienbetrieb. Auf Ihrer Website sind aber noch Reste der Vorlage zu sehen, zum Beispiel ein Zähler, der auf 0 steht."},
-{"id":"MV-0028","betrieb":"Fliesen Cosic","branche":"Fliesenleger","ort":"Ulm","land":"DE","email":"cosic75@gmx.de","telefon":"+49 1520 2044034","needs":["website","anrufe","bewertungen"],"hook":"5,0 Sterne bei Google, Ihre Kunden sind begeistert! Bisher findet man Sie aber nur in Verzeichnissen und nicht auf einer eigenen Website mit Fotos Ihrer Arbeiten."},
-{"id":"MV-0029","betrieb":"Christian Schweitz Garten-, Landschaftsbau und Pflege","branche":"Gärtner","ort":"Karlsruhe","land":"DE","email":"info@schweitz-galabau.de","telefon":"+49 172 7104049","needs":["website","anrufe"],"hook":"5,0 Sterne bei Google und eine eigene Domain, das ist eine gute Basis. Die Website unter schweitz-galabau.de war bei unserem Test aber leider nicht erreichbar."},
-{"id":"MV-0030","betrieb":"Herzenssache – Praxis für Fachfußpflege","branche":"Fußpflege","ort":"Regensburg","land":"DE","email":"fusspflege-praxis@t-online.de","telefon":"+49 941 59409171","needs":["website","termin"],"hook":"Durchwegs 5 Sterne auf 11880, Ihre Patientinnen und Patienten fühlen sich bei Ihnen wohl. Online gibt es aber noch keine eigene Website und keine Terminbuchung."}
+ {
+  "id": "MV-0001",
+  "betrieb": "Nagelstudio Nagelkult",
+  "branche": "Nagelstudio",
+  "ort": "Innsbruck",
+  "land": "AT",
+  "email": "info@nagelkult.at",
+  "telefon": "+43 664 2121019",
+  "needs": [
+   "website",
+   "termin"
+  ],
+  "hook": "Ihre Kundinnen geben Ihnen auf Herold gute 4,2 Sterne. Online wirkt Ihre Website aber leider etwas in die Jahre gekommen: Die Kundenstimmen sind von 2017, und die Adresse ist nicht überall gleich.",
+  "adresse": "Maximilianstraße 5, 6020 Innsbruck",
+  "websiteStatus": "Veraltete Baukasten-Website (Kundenstimmen von 2017)",
+  "quelle": "Herold",
+  "website": ""
+ },
+ {
+  "id": "MV-0002",
+  "betrieb": "Knopf-Maid Sigrid Wagner",
+  "branche": "Änderungsschneiderei",
+  "ort": "Linz",
+  "land": "AT",
+  "email": "knopfmaid@drei.at",
+  "telefon": "+43 732 307544",
+  "needs": [
+   "website",
+   "bewertungen"
+  ],
+  "hook": "Mit 4,9 Sternen auf Herold sind Ihre Kunden offensichtlich sehr zufrieden. Wer Sie im Internet sucht, findet aber noch keine eigene Website.",
+  "adresse": "Simonystraße 7, 4030 Linz",
+  "websiteStatus": "Keine Website",
+  "quelle": "Herold",
+  "website": ""
+ },
+ {
+  "id": "MV-0003",
+  "betrieb": "Mobile KFZ-Servicewerkstätte Martin Walcher",
+  "branche": "KFZ-Werkstatt",
+  "ort": "Steyr",
+  "land": "AT",
+  "email": "martinwalcher.kfz@gmail.com",
+  "telefon": "+43 660 6502030",
+  "needs": [
+   "website",
+   "anrufe",
+   "termin"
+  ],
+  "hook": "Als mobile Werkstatt sind Sie viel unterwegs und haben oft die Hände voll. Da geht sicher der eine oder andere Anruf verloren, und online gibt es bisher nur Ihren Herold-Eintrag.",
+  "adresse": "Anton-Azwanger-Straße 36, 4400 Steyr",
+  "websiteStatus": "Keine Website",
+  "quelle": "Herold",
+  "website": ""
+ },
+ {
+  "id": "MV-0004",
+  "betrieb": "GSE Elektrotechnik Günther Schölsner",
+  "branche": "Elektriker",
+  "ort": "Seekirchen am Wallersee",
+  "land": "AT",
+  "email": "g.schoelsner-elektrotechnik@aon.at",
+  "telefon": "+43 676 5745815",
+  "needs": [
+   "website",
+   "anrufe"
+  ],
+  "hook": "Wir sind auch aus dem Raum Salzburg und haben gesehen, dass Ihr Elektrobetrieb seit 2017 im Flachgau tätig ist, aber noch keine eigene Website hat.",
+  "adresse": "Bahnhofstraße 66, 5201 Seekirchen am Wallersee",
+  "websiteStatus": "Keine Website",
+  "quelle": "Herold",
+  "website": ""
+ },
+ {
+  "id": "MV-0005",
+  "betrieb": "Sylvia Roßner Medizinische Fußpflege & Kosmetik",
+  "branche": "Fußpflege",
+  "ort": "Salzburg",
+  "land": "AT",
+  "email": "kosmetik@sylviarossner.at",
+  "telefon": "+43 662 878184",
+  "needs": [
+   "website",
+   "termin"
+  ],
+  "hook": "Wir sind ebenfalls in Salzburg zu Hause und sind auf Ihr Studio gestoßen. Ihre Website wurde seit ca. 2020 nicht mehr verändert, und Termine kann man online noch nicht buchen.",
+  "adresse": "Faberstraße 2, 5020 Salzburg",
+  "websiteStatus": "Veraltete Website (zuletzt geändert ca. 2020)",
+  "quelle": "Herold",
+  "website": ""
+ },
+ {
+  "id": "MV-0006",
+  "betrieb": "Rudolf Galsterer Metallbau & Edelstahltechnik",
+  "branche": "Schlosser",
+  "ort": "Vomp",
+  "land": "AT",
+  "email": "office@metall-ruga.com",
+  "telefon": "+43 650 9808934",
+  "needs": [
+   "website"
+  ],
+  "hook": "Uns ist aufgefallen, dass bei Google auf Ihrer Website noch der Vorlagentext „Please enter your slogan here!“ steht. Das ist schade, denn Ihre Arbeit hat sicher einen besseren ersten Eindruck verdient.",
+  "adresse": "Pirchat 4, 6134 Vomp",
+  "websiteStatus": "Baukasten-Website mit Platzhaltertext",
+  "quelle": "Herold",
+  "website": ""
+ },
+ {
+  "id": "MV-0007",
+  "betrieb": "Andrea Oberkofler – Diabetische Fußpflege & Massage mobil",
+  "branche": "Fußpflege",
+  "ort": "St. Johann im Pongau",
+  "land": "AT",
+  "email": "andrea.oberkofler@sol.at",
+  "telefon": "+43 664 4314874",
+  "needs": [
+   "website",
+   "anrufe",
+   "termin"
+  ],
+  "hook": "Sie arbeiten mobil und nur nach Termin. Während einer Behandlung kann man schlecht ans Telefon gehen, und online sind Sie bisher noch nicht zu finden.",
+  "adresse": "Hubstraße 2a, 5600 St. Johann im Pongau",
+  "websiteStatus": "Keine Website",
+  "quelle": "Herold",
+  "website": ""
+ },
+ {
+  "id": "MV-0008",
+  "betrieb": "blumenbox Michaela Wurm",
+  "branche": "Blumen",
+  "ort": "Wels",
+  "land": "AT",
+  "email": "hallo@blumenbox.at",
+  "telefon": "+43 664 4246347",
+  "needs": [
+   "website",
+   "bewertungen"
+  ],
+  "hook": "5,0 Sterne auf Herold, da machen Sie offensichtlich vieles richtig! Auf Ihrer Jimdo-Seite können Kunden aber noch keine Blumen-Abos oder Lieferungen bestellen.",
+  "adresse": "Dragonerstraße 54, 4600 Wels",
+  "websiteStatus": "Baukasten-Website (Jimdo), keine Online-Bestellung",
+  "quelle": "Herold",
+  "website": ""
+ },
+ {
+  "id": "MV-0009",
+  "betrieb": "Needles & Pins Änderungsschneiderei",
+  "branche": "Änderungsschneiderei",
+  "ort": "Graz",
+  "land": "AT",
+  "email": "needles.pins@a1.net",
+  "telefon": "+43 316 814605",
+  "needs": [
+   "website",
+   "bewertungen"
+  ],
+  "hook": "Seit 1996 in der Grazer Innenstadt, das ist eine schöne Geschichte. Wer Sie im Internet sucht, findet aber bis heute keine eigene Website.",
+  "adresse": "Hans-Sachs-Gasse 12, 8010 Graz",
+  "websiteStatus": "Keine Website",
+  "quelle": "Herold",
+  "website": ""
+ },
+ {
+  "id": "MV-0010",
+  "betrieb": "Nagelstudio Marion",
+  "branche": "Nagelstudio",
+  "ort": "Klagenfurt am Wörthersee",
+  "land": "AT",
+  "email": "nagelstudio-marion@gmx.at",
+  "telefon": "+43 664 5180304",
+  "needs": [
+   "website",
+   "anrufe",
+   "termin"
+  ],
+  "hook": "Ihr Studio gibt es seit 2007, und Sie arbeiten nur nach Vereinbarung. Neue Kundinnen können aber noch nicht online nachschauen oder selbst einen Termin buchen.",
+  "adresse": "Dr.-Richard-Canaval-Gasse 110/1/118, 9020 Klagenfurt am Wörthersee",
+  "websiteStatus": "Keine Website",
+  "quelle": "Herold",
+  "website": ""
+ },
+ {
+  "id": "MV-0011",
+  "betrieb": "Coiffeur Gattinger",
+  "branche": "Friseur",
+  "ort": "St. Pölten",
+  "land": "AT",
+  "email": "margit.gattinger@gmx.at",
+  "telefon": "+43 2742 22032",
+  "needs": [
+   "website",
+   "bewertungen",
+   "termin"
+  ],
+  "hook": "5,0 Sterne auf Herold, und Ihre Kunden loben besonders die persönliche Beratung. Online sind Sie aber noch nicht mit eigener Website und Terminbuchung vertreten.",
+  "adresse": "Daniel Gran-Straße 32, 3100 St. Pölten",
+  "websiteStatus": "Keine Website",
+  "quelle": "Herold",
+  "website": ""
+ },
+ {
+  "id": "MV-0012",
+  "betrieb": "Manfred Unterweger Heizung - Sanitär",
+  "branche": "Installateur",
+  "ort": "Villach",
+  "land": "AT",
+  "email": "unterweger.manfred@aon.at",
+  "telefon": "+43 650 8800261",
+  "needs": [
+   "website",
+   "anrufe"
+  ],
+  "hook": "Wer in Villach einen Installateur sucht, findet Sie bisher nur über Herold, und dort sind noch nicht einmal Ihre Leistungen aufgelistet.",
+  "adresse": "Dr.Semmelweis-Straße 18, 9500 Villach",
+  "websiteStatus": "Keine Website",
+  "quelle": "Herold",
+  "website": ""
+ },
+ {
+  "id": "MV-0013",
+  "betrieb": "élan beauty Vienna",
+  "branche": "Kosmetik",
+  "ort": "Wien",
+  "land": "AT",
+  "email": "office@elanbeauty.at",
+  "telefon": "+43 1 9927095",
+  "needs": [
+   "website",
+   "termin",
+   "chat"
+  ],
+  "hook": "Sie haben mit elanbeauty.at schon eine eigene Domain. Wer sie aufruft, sieht aber nur die Standardseite Ihres Hosters statt Ihrer Brows, Lashes und Nägel.",
+  "adresse": "Taborstraße 119/5, 1020 Wien",
+  "websiteStatus": "Nur Platzhalterseite (Hoster-Standardseite)",
+  "quelle": "Herold",
+  "website": ""
+ },
+ {
+  "id": "MV-0014",
+  "betrieb": "tomassage Massagefachinstitut",
+  "branche": "Massage",
+  "ort": "Wien",
+  "land": "AT",
+  "email": "thomasfalkner@gmx.at",
+  "telefon": "+43 650 7041575",
+  "needs": [
+   "website",
+   "termin"
+  ],
+  "hook": "Ihre Website ist aus ca. 2017, und in den Kontaktdaten ist leider ein falsches Land eingetragen. Das kann neue Kunden verunsichern.",
+  "adresse": "Jedlersdorfer Straße 94, 1210 Wien",
+  "websiteStatus": "Veraltete Website (Baukasten, ca. 2017)",
+  "quelle": "Herold",
+  "website": ""
+ },
+ {
+  "id": "MV-0015",
+  "betrieb": "Monikas Massagestudio",
+  "branche": "Massage",
+  "ort": "Graz",
+  "land": "AT",
+  "email": "monikasmassagestudio@yahoo.com",
+  "telefon": "+43 664 2049329",
+  "needs": [
+   "website",
+   "anrufe",
+   "termin"
+  ],
+  "hook": "Termine gibt es bei Ihnen nur telefonisch. Während Sie massieren, gehen dadurch bestimmt immer wieder Anrufe und damit neue Kunden verloren.",
+  "adresse": "Neupauerweg 22a, 8052 Graz",
+  "websiteStatus": "Baukasten-Website (Jimdo), Termine nur telefonisch",
+  "quelle": "Herold",
+  "website": ""
+ },
+ {
+  "id": "MV-0016",
+  "betrieb": "Friseurmeisterei Heike Wetzel",
+  "branche": "Friseur",
+  "ort": "Chemnitz",
+  "land": "DE",
+  "email": "kontakt@friseurmeisterei-wetzel.de",
+  "telefon": "+49 371 5613065",
+  "needs": [
+   "anrufe",
+   "termin"
+  ],
+  "hook": "4,8 Sterne bei 51 Google-Bewertungen, Ihre Kundinnen sind sehr zufrieden! Termine gibt es aber nur telefonisch, und während Sie schneiden, kann niemand abheben.",
+  "adresse": "Bernhardstr. 131, 09126 Chemnitz",
+  "websiteStatus": "Baukasten-Website, keine Online-Terminbuchung",
+  "quelle": "Google",
+  "website": ""
+ },
+ {
+  "id": "MV-0017",
+  "betrieb": "Dream Team Inh. Melanie Golisch",
+  "branche": "Friseur",
+  "ort": "Berlin",
+  "land": "DE",
+  "email": "mausefaust@arcor.de",
+  "telefon": "+49 30 47363657",
+  "needs": [
+   "website",
+   "termin"
+  ],
+  "hook": "94 Google-Bewertungen mit 4,4 Sternen, das ist für einen kleinen Salon richtig stark. Eine eigene Website, auf der man Sie findet und Termine bucht, fehlt aber noch.",
+  "adresse": "Kiefholzstr. 270, 12437 Berlin",
+  "websiteStatus": "Keine Website",
+  "quelle": "Google",
+  "website": ""
+ },
+ {
+  "id": "MV-0018",
+  "betrieb": "Auffermann KFZ-Meisterbetrieb",
+  "branche": "KFZ-Werkstatt",
+  "ort": "Dortmund",
+  "land": "DE",
+  "email": "kfz.auffermann@gmx.de",
+  "telefon": "+49 231 172493",
+  "needs": [
+   "website",
+   "anrufe",
+   "termin"
+  ],
+  "hook": "4,9 Sterne bei 281 Google-Bewertungen, das schaffen nur wenige Werkstätten! Auf Ihrer Website steht aber noch „Wir arbeiten gerade an unserer Website“.",
+  "adresse": "Walter-Welp-Str. 6, 44149 Dortmund",
+  "websiteStatus": "Nur Platzhalterseite (\"Wir arbeiten gerade an unserer Website\")",
+  "quelle": "Google",
+  "website": ""
+ },
+ {
+  "id": "MV-0019",
+  "betrieb": "Blumenhaus Erich Hartmann",
+  "branche": "Blumen",
+  "ort": "Bielefeld",
+  "land": "DE",
+  "email": "blumenhaushartmann@yahoo.de",
+  "telefon": "+49 521 296745",
+  "needs": [
+   "website",
+   "bewertungen"
+  ],
+  "hook": "5,0 Sterne bei Google, und Kunden bestellen sogar von weit her telefonisch bei Ihnen. Mit einer eigenen Website würden Sie noch viel mehr Menschen erreichen.",
+  "adresse": "Ehlentruper Weg 55, 33604 Bielefeld",
+  "websiteStatus": "Keine Website",
+  "quelle": "Google",
+  "website": ""
+ },
+ {
+  "id": "MV-0020",
+  "betrieb": "Blumen Anke Tomfort e. K.",
+  "branche": "Blumen",
+  "ort": "Hamburg",
+  "land": "DE",
+  "email": "blumen_anke_tomfort.mail@t-online.de",
+  "telefon": "+49 40 5591505",
+  "needs": [
+   "website",
+   "bewertungen"
+  ],
+  "hook": "Mit 64 Google-Bewertungen und Ihrer Hochzeits- und Trauerfloristik haben Sie viel zu zeigen. Eine eigene Website, auf der man Ihre Arbeiten sieht, gibt es aber noch nicht.",
+  "adresse": "Frohmestr. 44, 22457 Hamburg",
+  "websiteStatus": "Keine Website",
+  "quelle": "Google",
+  "website": ""
+ },
+ {
+  "id": "MV-0021",
+  "betrieb": "Hedel Ines, Kosmetik und Fußpflege",
+  "branche": "Kosmetik",
+  "ort": "Leipzig",
+  "land": "DE",
+  "email": "hedelines@online.de",
+  "telefon": "+49 341 8610550",
+  "needs": [
+   "website",
+   "bewertungen",
+   "termin"
+  ],
+  "hook": "Online findet man Ihr Studio bisher nur über einen Branchenbuch-Eintrag. Neue Kundinnen sehen dort weder Ihre Behandlungen noch Preise.",
+  "adresse": "Lene-Voigt-Str. 6/135, 04289 Leipzig",
+  "websiteStatus": "Keine Website",
+  "quelle": "Branchenbuch",
+  "website": ""
+ },
+ {
+  "id": "MV-0022",
+  "betrieb": "Elektroanlagen Ralf Kunze",
+  "branche": "Elektriker",
+  "ort": "Dresden",
+  "land": "DE",
+  "email": "ralfkunze@vodafone.de",
+  "telefon": "+49 172 7968330",
+  "needs": [
+   "website",
+   "anrufe",
+   "bewertungen"
+  ],
+  "hook": "5,0 Sterne bei Google, und Ihre Kunden loben besonders die schnelle Hilfe. Bisher gibt es aber nur ein Branchenbuch-Profil und keine eigene Website.",
+  "adresse": "Cunnersdorfer Str. 11, 01328 Dresden",
+  "websiteStatus": "Keine eigene Website (nur Branchenbuch-Profil)",
+  "quelle": "Google",
+  "website": ""
+ },
+ {
+  "id": "MV-0023",
+  "betrieb": "Wagner Heizungs- u. Sanitärtechnik",
+  "branche": "Installateur",
+  "ort": "Münster",
+  "land": "DE",
+  "email": "swagner-muenster@unitybox.de",
+  "telefon": "+49 251 35285",
+  "needs": [
+   "website",
+   "anrufe"
+  ],
+  "hook": "Ihr Betrieb hat 4,3 Sterne bei Google. Wer aber in Münster nach einem Heizungsbauer sucht, findet bei Ihnen noch keine eigene Website.",
+  "adresse": "Warendorfer Str. 113, 48145 Münster",
+  "websiteStatus": "Keine Website",
+  "quelle": "Google",
+  "website": ""
+ },
+ {
+  "id": "MV-0024",
+  "betrieb": "RTK Immobilien",
+  "branche": "Immobilienbüro",
+  "ort": "Bochum",
+  "land": "DE",
+  "email": "info@rtk-immobilien.de",
+  "telefon": "+49 234 35781969",
+  "needs": [
+   "website",
+   "chat"
+  ],
+  "hook": "Ihre Website hat Bilder aus ca. 2014 bis 2019 und verlinkt noch auf Google+, das es schon lange nicht mehr gibt. Gerade bei Immobilien zählt der erste Eindruck.",
+  "adresse": "Am Schamberge 2, 44879 Bochum",
+  "websiteStatus": "Veraltete Baukasten-Website (Bilder ca. 2014–2019)",
+  "quelle": "Google",
+  "website": ""
+ },
+ {
+  "id": "MV-0025",
+  "betrieb": "Friseur Haarstudio Burger",
+  "branche": "Friseur",
+  "ort": "Freiburg",
+  "land": "DE",
+  "email": "info@friseur-burger.de",
+  "telefon": "+49 761 484587",
+  "needs": [
+   "website",
+   "termin"
+  ],
+  "hook": "4,4 Sterne bei 43 Google-Bewertungen, da sind Ihre Kunden zufrieden. Uns ist aber aufgefallen, dass Ihre hinterlegte Website beim Test nicht erreichbar war.",
+  "adresse": "Andreas-Hofer-Str. 128, 79111 Freiburg",
+  "websiteStatus": "Website hinterlegt, beim Test nicht erreichbar",
+  "quelle": "Google",
+  "website": ""
+ },
+ {
+  "id": "MV-0026",
+  "betrieb": "Haustechnik Zeilberger – Meisterbetrieb",
+  "branche": "Installateur",
+  "ort": "Passau",
+  "land": "DE",
+  "email": "info@haustechnik-zeilberger.de",
+  "telefon": "+49 171 2128386",
+  "needs": [
+   "website",
+   "anrufe"
+  ],
+  "hook": "Ihre Jimdo-Seite ist aus ca. 2017 und hat nur drei Unterseiten. Für einen Meisterbetrieb wie Ihren geht da deutlich mehr.",
+  "adresse": "Gionstr. 15, 94036 Passau",
+  "websiteStatus": "Veraltete Baukasten-Website (Jimdo, ca. 2017)",
+  "quelle": "Google",
+  "website": ""
+ },
+ {
+  "id": "MV-0027",
+  "betrieb": "Dachdeckerei Paul Horner",
+  "branche": "Dachdecker",
+  "ort": "Rosenheim",
+  "land": "DE",
+  "email": "horner@dachdeckerei-horner.de",
+  "telefon": "+49 8031 41613",
+  "needs": [
+   "website",
+   "bewertungen"
+  ],
+  "hook": "4,5 Sterne bei Google, das spricht für Ihren Familienbetrieb. Auf Ihrer Website sind aber noch Reste der Vorlage zu sehen, zum Beispiel ein Zähler, der auf 0 steht.",
+  "adresse": "Mangfallstr. 55, 83026 Rosenheim",
+  "websiteStatus": "Vorlagen-Onepager mit Platzhalter-Resten",
+  "quelle": "Google",
+  "website": ""
+ },
+ {
+  "id": "MV-0028",
+  "betrieb": "Fliesen Cosic",
+  "branche": "Fliesenleger",
+  "ort": "Ulm",
+  "land": "DE",
+  "email": "cosic75@gmx.de",
+  "telefon": "+49 1520 2044034",
+  "needs": [
+   "website",
+   "anrufe",
+   "bewertungen"
+  ],
+  "hook": "5,0 Sterne bei Google, Ihre Kunden sind begeistert! Bisher findet man Sie aber nur in Verzeichnissen und nicht auf einer eigenen Website mit Fotos Ihrer Arbeiten.",
+  "adresse": "Helfensteinweg 4, 89075 Ulm",
+  "websiteStatus": "Keine Website",
+  "quelle": "Google",
+  "website": ""
+ },
+ {
+  "id": "MV-0029",
+  "betrieb": "Christian Schweitz Garten-, Landschaftsbau und Pflege",
+  "branche": "Gärtner",
+  "ort": "Karlsruhe",
+  "land": "DE",
+  "email": "info@schweitz-galabau.de",
+  "telefon": "+49 172 7104049",
+  "needs": [
+   "website",
+   "anrufe"
+  ],
+  "hook": "5,0 Sterne bei Google und eine eigene Domain, das ist eine gute Basis. Die Website unter schweitz-galabau.de war bei unserem Test aber leider nicht erreichbar.",
+  "adresse": "Haid-und-Neu-Str. 62, 76131 Karlsruhe",
+  "websiteStatus": "Website hinterlegt, beim Test nicht erreichbar",
+  "quelle": "Google",
+  "website": ""
+ },
+ {
+  "id": "MV-0030",
+  "betrieb": "Herzenssache – Praxis für Fachfußpflege",
+  "branche": "Fußpflege",
+  "ort": "Regensburg",
+  "land": "DE",
+  "email": "fusspflege-praxis@t-online.de",
+  "telefon": "+49 941 59409171",
+  "needs": [
+   "website",
+   "termin"
+  ],
+  "hook": "Durchwegs 5 Sterne auf 11880, Ihre Patientinnen und Patienten fühlen sich bei Ihnen wohl. Online gibt es aber noch keine eigene Website und keine Terminbuchung.",
+  "adresse": "Straubinger Str. 40, 93055 Regensburg",
+  "websiteStatus": "Keine Website",
+  "quelle": "11880",
+  "website": ""
+ }
 ]

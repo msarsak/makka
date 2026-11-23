@@ -1,0 +1,6 @@
+# Netlify: Monarc Tickets (Seite + Server ohne Passwort) liegt im Ordner monarc-tickets.
+[build]
+  base = "monarc-tickets"
+  publish = "public"
+  functions = "netlify/functions"
+  command = "npm install"
