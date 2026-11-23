@@ -639,16 +639,6 @@ function renderDrawer(){
       <button class="btn small" id="addEvTicket" type="button" style="margin-top:8px">+ Termin eintragen</button>
     </div>
     <div>
-      <div class="sec-t">E-Mail an ${esc(t.email || "die Firma")}</div>
-      ${t.warum ? `<p class="saved" style="margin:0 0 8px"><b>Warum diese Firma:</b> ${esc(t.warum)}</p>` : ""}
-      <div class="sec-t" style="margin:4px 0 6px">Betreff</div>
-      <input class="input" id="mailSubj" readonly style="font-size:13px" value="${esc(splitMail(t.mail || mailText(t)).subj)}">
-      <button class="btn small primary" id="copySubj" type="button" style="margin-top:8px">Betreff kopieren</button>
-      <div class="sec-t" style="margin:14px 0 6px">Text</div>
-      <textarea class="input" id="mailBody" readonly style="min-height:220px;font-size:13px">${esc(splitMail(t.mail || mailText(t)).body)}</textarea>
-      <button class="btn small primary" id="copyBody" type="button" style="margin-top:8px">Text kopieren</button>
-    </div>
-    <div>
       <div class="sec-t"><label for="notes">Notizen</label></div>
       <textarea class="input" id="notes" placeholder="z. B. Angerufen, Chef ab 14 Uhr erreichbar …">${esc(t.notes || "")}</textarea>
       <div class="saved" id="savedNote"></div>
@@ -675,9 +665,6 @@ function renderDrawer(){
   };
   $("dClose").onclick = closeDrawer;
   d.querySelectorAll("[data-copy]").forEach(b => b.onclick = () => copy(b.dataset.copy, b.dataset.l));
-  const parts = splitMail(t.mail || mailText(t));
-  $("copySubj").onclick = () => copy(parts.subj, "Betreff");
-  $("copyBody").onclick = () => copy(parts.body, "Text");
   $("addEvTicket").onclick = () => openEv(null, {ticketId: t.id, title: "Gespräch " + t.betrieb, date: today()});
   d.querySelectorAll("[data-ev]").forEach(b => b.onclick = () => openEv(b.dataset.ev));
   $("offerPick").querySelectorAll("button").forEach(b => b.onclick = async () => {
